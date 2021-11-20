@@ -1,0 +1,58 @@
+.example-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+.example-sidenav-content {
+    display: flex;                            
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(247, 250, 252);
+    padding: 5px 10px;
+}
+
+.example-sidenav {
+    background-color: whitesmoke;
+    width: 15%;
+}
+
+.mat-drawer-content{
+  background-color: whitesmoke !important;
+}
+
+.mat-list-item{
+  color: black !important;
+}
+
+.main-body{
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.image-container{
+  border-radius: 300px;
+}
+
+.user-image{
+  border-radius: 500px;
+  height: 35px;
+  width:  35px;
+}
+
+.menu-icon{
+  color: black;
+}
+
+.main-left{
+  background-color: rgb(232, 243, 243);
+  width: 50%;
+  color: black;
+}
+
+.main-right{
+  background-color: rgb(235, 235, 235);
+  width: 50%;
+  color: black;
+}
