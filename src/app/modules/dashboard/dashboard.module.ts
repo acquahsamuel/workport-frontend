@@ -2,19 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from 'src/app/material.module';
 import { SharedModule } from 'src/app/shared/modules/shared.module';
+import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-// import { AuthService } from 'src/app/shared/services/auth.service';
-// import { Dash }
+
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    DashboardComponent
+  ],
 
   imports: [
     CommonModule,
-    DashboardRoutingModule,
+    MaterialModule,
     SharedModule,
-    MaterialModule
+    DashboardRoutingModule
   ]
 })
 export class DashboardModule { }
+
+

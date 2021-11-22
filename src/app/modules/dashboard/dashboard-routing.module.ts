@@ -8,8 +8,6 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: '', component: DashboardComponent },
-      // { path: 'about', component: AboutComponent },
-      // { path: 'faq', component: FaqComponent },
     ]
   },
 ];
