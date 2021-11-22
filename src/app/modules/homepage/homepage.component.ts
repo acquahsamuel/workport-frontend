@@ -12,5 +12,11 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  onClick() {
+    console.log('Hello world');
+  }
+
+  pageTitle = "Home";
+  pageBrand = "Workport"
+
 }

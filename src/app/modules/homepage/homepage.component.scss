@@ -1,0 +1,15 @@
+.hero {
+  height: 45vh;
+  background: rgb(107, 106, 104);
+}
+
+.overlay{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+    height: inherit;
+}
+
