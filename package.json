@@ -3,10 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "start:server": "node server.js",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o",
+    "preinstall": "npm install -g @angular/cli",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -45,7 +51,7 @@
     "typescript": "~4.3.5"
   },
   "engines": {
-    "node" : "14.15.4",
+    "node": "14.15.4",
     "npm": "7.7.6"
   }
 }
