@@ -3,11 +3,12 @@ const path = require('path');
 const app = express();
 
 
-app.use(express.static(__dirname + '/dist/workport'));
+// app.use(express.static(__dirname + '/dist/workport'));
+app.use(express.static(__dirname + '/dist/finale-app'));
 
 
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/<app-name>/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/finale-app/index.html'));
 });
 
 

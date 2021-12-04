@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  // production: false
+
+  production: false,
+  assetPreLoader : '',
+  APP : 'Workport',
+  // APIPreLoader : 'PerfectionTracker',
+  // APIPreLoader_2 : 'base',
 };
 
 /*
