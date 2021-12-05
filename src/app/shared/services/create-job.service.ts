@@ -8,16 +8,13 @@ export class CreateJobService {
 
   constructor(private http: HttpClient) { }
 
-
   all() {
     return this.http.get(``)
   }
 
   find(itemId: any) {
-    
     console.log(itemId);
   }
-
 
   create(itemPayload: any) {
     console.log(itemPayload);
@@ -27,7 +24,5 @@ export class CreateJobService {
     console.log(itemId, itemPayload)
   }
 
-
   delete() { }
-
 }
