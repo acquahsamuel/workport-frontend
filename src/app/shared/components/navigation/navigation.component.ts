@@ -12,4 +12,11 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  title = 'Login'
+  isAuthenticated = false;
+
+
+  logout(){
+
+  }
 }

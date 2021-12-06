@@ -1,0 +1,36 @@
+.header {
+  //   background-color: rgb(202, 198, 198);
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 3rem;
+}
+
+.nav-brand img {
+  width: 6rem;
+}
+
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.nav-items a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 .7rem;
+  color: whitesmoke;
+}
+
+
+.signup {
+  border: 1px solid black;
+  padding: .5rem 1rem;
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+
+}

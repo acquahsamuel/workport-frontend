@@ -1,1 +1,38 @@
-<p>navigation works!</p>
+<section>
+    <header class="header">
+        <div class="logo">
+            <div class="nav-brand">
+                <a routerLink="/">
+                    <img src="/assets/images/job-logo.svg" />
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-items">
+            <div class="nav-link-group">
+                <a routerLink="/"> Home </a>
+            </div>
+            <!-- if isNot Authenticated -->
+            <div *ngIf="!isAuthenticated; else other_content" class="nav-link-group">
+                <a routerLink="/auth" routerLinkActive="active"> Sign in </a>
+
+                <a routerLink="/auth/signup" routerLinkActive="active">
+                    <button class="signup"> Post a job</button>
+                </a>
+            </div>
+        </div>
+
+
+        <ng-template #other_content>
+            <div class="nav-links-group">
+                <a routerLink="/dashboard/courses" routerLinkActive="active"> Dashboard </a>
+
+                <a (click)="logout()" routerLinkActive="active">
+                    <button class="signup">Logout</button>
+                </a>
+                <!-- <div style="margin-right: 20px;"></div> -->
+                <!-- <app-cart (navigateToCart)="navigateToCart()"></app-cart> -->
+            </div>
+        </ng-template>
+    </header>
+</section>
