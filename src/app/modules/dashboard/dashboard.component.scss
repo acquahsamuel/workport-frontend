@@ -1,0 +1,96 @@
+.dashboard-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.dashboard-sidenav {
+  width: 13%;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 1.5rem;
+  background-color: bisque;
+}
+
+.logo-image {
+  height: 20px;
+
+  background-size: cover;
+
+}
+
+.menu-title {
+  text-transform: uppercase;
+  margin-left: 1.5rem;
+}
+
+.nav-link {
+  height: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+
+.dashboard-sidenav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6%;
+  background-color: rgb(233, 233, 233);
+}
+
+.mat-drawer-content {
+  background-color: whitesmoke;
+}
+
+.main-body {
+  max-width: 120rem;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  height: auto;
+}
+
+.image-container {
+  border-radius: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.user-image {
+  border-radius: 600px;
+  height: 3rem;
+  width: 2.8rem;
+}
+
+.main-left {
+  background-color: rgb(232, 243, 243);
+  width: 50%;
+  color: black;
+}
+
+.main-right {
+  background-color: rgb(235, 235, 235);
+  width: 50%;
+  color: black;
+}
+
+.user-title {
+  font-weight: normal;
+}
+
+.mat-grid-tile {
+  background: lightblue;
+}
