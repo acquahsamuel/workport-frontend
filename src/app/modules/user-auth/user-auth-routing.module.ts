@@ -8,16 +8,21 @@ const routes: Routes = [
   {
     path: '',
     component: SignupComponent,
-    children: [
-      { path: 'signup', component: SignupComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'reset-password', component: ResetPasswordComponent }
-    ]
   },
+  {
+    path: 'signup', component: SignupComponent
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'reset-password', component: ResetPasswordComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class UserAuthRoutingModule { }

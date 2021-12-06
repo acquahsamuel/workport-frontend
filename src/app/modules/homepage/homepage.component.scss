@@ -1,7 +1,12 @@
 .hero {
   height: 45vh;
-  background: rgb(107, 106, 104);
+  // background: rgb(107, 106, 104);
 }
+
+.hero-header{
+  font-size: 30px;
+}
+
 
 .overlay{
     display: flex;
@@ -9,7 +14,7 @@
     justify-content: center;
     align-items: center;
 
-    border: 1px solid black;
+    // border: 1px solid black;
     height: inherit;
 }
 
