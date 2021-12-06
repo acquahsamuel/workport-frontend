@@ -1,28 +1,42 @@
-<section class="login-section">
-    <div class="login-container">
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>
-                    Login
-                </mat-card-title>
-            </mat-card-header>
-            <form>
-                <mat-card-content>
-                    <mat-form-field class="full-width">
-                        <input matInput placeholder="Email" type="text" name="email" />
-                    </mat-form-field>
-                    <mat-form-field class="full-width">
-                        <input matInput placeholder="Password" type="password" name="password">
-                    </mat-form-field>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button type="submit" mat-button color="primary">Login</button>
-                </mat-card-actions>
-            </form>
-        </mat-card>
-    </div>
-</section>
+<div class="login-container">
+    <mat-card>    
+        <span class="back-link" routerLink="/"> &LeftArrow; Home </span>
+    
+        <div class="">
+            <h2 style="text-align: center;"> Login </h2>
+        </div>
+        <form class="form" #form="ngForm">
+            <mat-form-field appearance="outline">
+                <mat-label> Email </mat-label>
+                <input matInput placeholder="Email">
+            </mat-form-field>
 
+            <mat-form-field appearance="outline">
+                <mat-label> Password </mat-label>
+                <input matInput placeholder="Password">
+            </mat-form-field>
+
+            <button mat-flat-button color="primary"> Login </button>
+        </form>
+
+        <section style="padding: 5px 0;">
+            <a class="forgot-pass" routerLink="reset-password" style="text-decoration: none;">Forgot Password?</a>
+        </section>
+
+        <section>
+            <p class="signUpHere" style="color: rgb(7, 7, 12);">Dont have an account yet ? <span class="link"
+                    routerLink="/auth/signup">Sign Up Here</span>
+            </p>
+        </section>
+    </mat-card>
+</div>
+
+
+
+
+<ng-template #google>
+    <p> Google </p>
+</ng-template>
 
 
 <ng-template #success>
@@ -40,3 +54,9 @@
 <ng-template #incorrectPasswor>
 </ng-template>
 
+
+<ng-template #loginProgress>
+    <div class="loginProgress">
+        <mat-spinner strokeWidth="3" [diameter]="30"></mat-spinner>
+    </div>
+</ng-template>
