@@ -14,7 +14,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
   declarations: [
     LoginComponent,
     SignupComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
   ],
   imports: [
     CommonModule,
