@@ -12,27 +12,20 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   title = '';
   username = 'Acquah Samuel';
   userProfile = './assets/images/user.jpg';
 
-
   links = [
     { path: '/home', icon: 'dashboard', title: 'Dashboard' },
-    { path: '/home', icon: 'home', title: 'Home' },
-    // { path: '/home', icon: 'account_circle', title: 'Home' },
-    // { path: '/home', icon: 'settings', title: 'Home' },
-    // { path: '/home', icon: 'assignment', title: 'Home' },
-    // { path: '/home', icon: 'bookmark_border', title: 'Home' },
-    // { path: '/home', icon: 'delete', title: 'Home' },
-    // { path: '/home', icon: 'exit_to_app', title: 'Logout' },
-    // { path: '/home', icon: 'lock', title: 'All Statistics' },
-    { path: '/home', icon: 'redeem', title: 'Add User' },
-    { path: '/home', icon: 'forum', title: 'Add Job' },
-    { path: '/home', icon: 'add', title: 'Add Company' },
-    { path: '/home', icon: 'add', title: 'All Users' },
-    { path: '/home', icon: 'add', title: 'All Users' },
+    { path: '/add-user', icon: 'account_circle', title: 'Add User' },
+    { path: '/add-job', icon: 'forum', title: 'Add Job' },
+    { path: '/add-company', icon: 'business', title: 'Add Company' },
+    { path: '/all-users', icon: 'group_add', title: 'All Users' },
+    { path: '/all-users', icon: 'apps', title: 'All Statistics' },
+    { path: '/all-users', icon: 'account_circle', title: 'Job' },
+    { path: '/explore', icon: 'redeem', title: 'Explore' },
+    { path: '/logout', icon: 'exit_to_app', title: 'Logout' },
   ]
 
   isLoading = true;

@@ -1,5 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { StateStorageService } from '../services/state-storage.service';
+// import { StateStorageService } from '../services/state-storage.service';
 import { LoaderComponent } from '../components/loader/loader.component';
 import { CommonModule, } from '@angular/common';
 import { MaterialModule } from 'src/app/material.module';
@@ -13,8 +13,7 @@ import { MaterialModule } from 'src/app/material.module';
     CommonModule,
     MaterialModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [StateStorageService],
+  providers: [],
   exports: [LoaderComponent]
 })
 

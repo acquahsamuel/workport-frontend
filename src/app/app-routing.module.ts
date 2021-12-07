@@ -18,6 +18,7 @@ const routes: Routes = [
     path: "dashboard",
     loadChildren: () => import('./modules/dashboard/dashboard-routing.module')
       .then((m) => m.DashboardRoutingModule)
+
   },
   {
     path: "admin",
@@ -34,4 +35,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule { } 
+export class AppRoutingModule { }
