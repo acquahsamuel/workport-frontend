@@ -7,7 +7,9 @@ import { HomepageComponent } from './homepage.component';
 import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { NavigationComponent } from 'src/app/shared/components/navigation/navigation.component';
+import { SidebarComponent } from 'src/app/shared/components/sidebar/sidebar.component';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
+
 
 @NgModule({
     declarations: [
@@ -15,7 +17,8 @@ import { HeaderComponent } from 'src/app/shared/components/header/header.compone
         AboutComponent,
         HomepageComponent,
         NavigationComponent,
-        HeaderComponent
+        HeaderComponent,
+        SidebarComponent
     ],
     imports: [
         CommonModule,

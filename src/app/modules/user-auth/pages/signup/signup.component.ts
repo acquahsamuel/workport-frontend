@@ -30,13 +30,23 @@ export class SignupComponent implements OnInit {
 
   }
 
-  // signup : FormGroup()
 
-  onSubmit() {
+  signUpForm = new FormGroup({
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
+
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5)
+    ]),
+  })
+
+
+  signUpSubmit(){
 
   }
-
-  
 
 
 }

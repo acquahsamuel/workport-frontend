@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Router, CanActivate, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import {
+  Router,
+  CanActivate,
+  ActivatedRoute,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot
+} from '@angular/router';
 import { AuthService } from './auth.service';
 // import { StateStorageService } from './state-storage.service';
 
@@ -24,14 +30,13 @@ export class AuthGuardService implements CanActivate {
 
   ) { }
 
-
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if (!this.auth.isAuthenticated()) {
-      // this.stateStorageService.storeUrl(state.url);
-      this.router.navigate(['/auth']);
-      return false;
-    }
+    // if (!this.auth.isAuthenticated()) {
+    
+    //   this.router.navigate(['/auth']);
+    //   return false;
+    // }
 
-    return true;
+    return false;
   }
 }

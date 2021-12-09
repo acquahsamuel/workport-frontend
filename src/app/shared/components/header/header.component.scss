@@ -1,242 +1,244 @@
-* {
-    --black-30: rgba(0, 0, 0, 0.842);
-    --black-50: rgba(0, 0, 0, 0.5);
-    --pink-red: #ff005e;
-    --pumpkin-orange: #ff8100;
-    --gradient: #ff8100;
-  }
-  
-  .image-header {
-    width: 100%;
-    background-color: black;
-    height: 600px;
-    position: relative;
-  }
-  
-  .image-header img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  .header-description {
-    color: white;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  
-    margin-left: -160px;
-  }
-  
-  .header-description .title {
-    width: 560px;
-    /* height: 106px; */
-    /* font-size: 44px; */
-    font-family: SFUIText-Light;
-    /* font-family: consolas; */
-    /* font-family: "Raleway", sans-serif; */
-    /* text-shadow: 2px 2px 8px var(--black-50); */
-    /* font-weight: 300; */
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-  
-    margin-bottom: 20px;
-  }
-  
-  .header-description .title::after {
-    display: block;
-    content: " ";
-    width: 50px;
-    height: 3px;
-    background-color: #ff8100;
-    margin-top: 10px;
-  }
-  
-  .header-description .description {
-    font-size: 13px;
-    width: 562px;
-    /* height: 52px; */
-    font-family: SFUIText-Light;
-  
-    /* font-family: "Lato", sans-serif; */
-  
-    /* text-shadow: 0 2px 4px var(--black-50); */
-    /* font-weight: 300; */
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: normal;
-  
-    margin-bottom: 10px;
-  }
-  
-  /* button Design */
-  .header-description .button-group {
-    width: 562px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
-    color: white;
-  
-    font-family: SFUIText-Medium;
-    margin-top: 40px;
-  }
-  .header-description .button-group button {
-    cursor: pointer;
-  
-    /* box-shadow: inset 0px 0px 0px #ff800046; */
-  
-    /* transition: all 0.5s !important ; */
-    border-radius: 4px;
-    font-size: 15px;
-  
-    font-family: SFUIText-Medium;
-  }
-//   .header-description .button-group button:hover {
-//     /* transition: all 0.5s !important ; */
+// * {
+//     --black-30: rgba(0, 0, 0, 0.842);
+//     --black-50: rgba(0, 0, 0, 0.5);
+//     --pink-red: #ff005e;
+//     --pumpkin-orange: #ff8100;
+//     --gradient: #ff8100;
 //   }
   
-  .header-description .button-group button:focus {
-    outline: none !important;
-    /* border: none !important; */
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-  }
+//   .image-header {
+//     width: 100%;
+//     background-color: black;
+//     height: 600px;
+//     position: relative;
+//   }
   
-  .header-description .button-group .browse-catalog {
-    width: 221px;
-    height: 50px;
-    /* border-radius: 4px; */
-    border: solid 2px white;
-    background: none;
-    color: white;
+//   .image-header img {
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     object-fit: cover;
+//     object-position: center;
+//   }
   
-    margin-right: 20px;
-  }
+//   .header-description {
+//     color: white;
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
   
-  .header-description .button-group .browse-catalog:hover {
-    /* background-image: linear-gradient(
-      103deg,
-      var(--pink-red) 1%,
-      var(--pumpkin-orange) 99%
-    ); */
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
   
-    color: white;
-    /* box-shadow: inset 0px 80px 0px var(--gradient); */
+//     margin-left: -160px;
+//   }
   
-    /* border: none; */
-  }
-  .header-description .button-group .enroll {
-    width: 144px;
-    height: 50px;
-    color: white;
-    /* border-radius: 2px; */
-    /* box-shadow: 0 3px 6px 0 var(--black-30); */
-    /* background-image: linear-gradient(
-      103deg,
-      var(--pink-red) 1%,
-      var(--pumpkin-orange) 99%
-    ); */
+//   .header-description .title {
+//     width: 560px;
+//     /* height: 106px; */
+//     /* font-size: 44px; */
+//     font-family: SFUIText-Light;
+//     /* font-family: consolas; */
+//     /* font-family: "Raleway", sans-serif; */
+//     /* text-shadow: 2px 2px 8px var(--black-50); */
+//     /* font-weight: 300; */
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: normal;
+//     letter-spacing: normal;
   
-    background-color: var(--pumpkin-orange);
-    outline: none !important;
-    border: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-  }
+//     margin-bottom: 20px;
+//   }
   
-  .header-description .button-group .enroll:hover {
-    background-image: #ff005e;
-    /* border: 2px solid white; */
+//   .header-description .title::after {
+//     display: block;
+//     content: " ";
+//     width: 50px;
+//     height: 3px;
+//     background-color: #ff8100;
+//     margin-top: 10px;
+//   }
   
-    /* todo cleanup this */
-  }
+//   .header-description .description {
+//     font-size: 13px;
+//     width: 562px;
+//     /* height: 52px; */
+//     font-family: SFUIText-Light;
   
-  @media only screen and (max-device-width: 480px), (max-width: 1200px) {
-    /* styles for mobile browsers smaller than 480px; (iPhone) */
+//     /* font-family: "Lato", sans-serif; */
   
-    .header-description {
-      margin-left: 0px;
+//     /* text-shadow: 0 2px 4px var(--black-50); */
+//     /* font-weight: 300; */
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: 1.3;
+//     letter-spacing: normal;
   
-      text-align: left;
-    }
-    .header-description .title,
-    .header-description .description,
-    .header-description .button-group {
-      width: 90%;
+//     margin-bottom: 10px;
+//   }
   
-      text-align: center;
+//   /* button Design */
+//   .header-description .button-group {
+//     width: 562px;
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//     flex-direction: row;
+//     color: white;
   
-      text-align: left;
-    }
+//     font-family: SFUIText-Medium;
+//     margin-top: 40px;
+//   }
+//   .header-description .button-group button {
+//     cursor: pointer;
   
-    .header-description .title {
-      font-size: 2.12rem;
-      height: fit-content;
-      text-align: left;
-      margin-bottom: 20px;
-    }
+//     /* box-shadow: inset 0px 0px 0px #ff800046; */
   
-    .header-description .description {
-      text-align: left;
-    }
-    .header-description .button-group {
-      /* width: 100%; */
-      flex-direction: column;
+//     /* transition: all 0.5s !important ; */
+//     border-radius: 4px;
+//     font-size: 15px;
   
-      justify-content: center;
-      align-items: flex-start;
-      /* padding-top: 20px; */
-    }
+//     font-family: SFUIText-Medium;
+//   }
+// //   .header-description .button-group button:hover {
+// //     /* transition: all 0.5s !important ; */
+// //   }
   
-    .header-description .button-group button {
-      margin-bottom: 20px;
-    }
-  }
+//   .header-description .button-group button:focus {
+//     outline: none !important;
+//     /* border: none !important; */
+//     -webkit-box-shadow: none !important;
+//     box-shadow: none !important;
+//   }
   
-  /* ============================================== */
-  /* HDTV                                           */
-  /*                                      1920x1080 */
-  /* ============================================== */
-  @media screen and (min-width: 1080px) and (max-width: 1920px) {
-    /* ADD YOUR CSS ADJUSTMENTS BELOW HERE */
+//   .header-description .button-group .browse-catalog {
+//     width: 221px;
+//     height: 50px;
+//     /* border-radius: 4px; */
+//     border: solid 2px white;
+//     background: none;
+//     color: white;
   
-    .header-description .title,
-    .header-description .description,
-    .header-description .button-group {
-      width: 50%;
-      font-size: 1.52rem;
-      text-align: left;
-      margin-left: -100px;
-    }
+//     margin-right: 20px;
+//   }
   
-    .header-description .title {
-      font-size: 3.52rem;
-      height: fit-content;
+//   .header-description .button-group .browse-catalog:hover {
+//     /* background-image: linear-gradient(
+//       103deg,
+//       var(--pink-red) 1%,
+//       var(--pumpkin-orange) 99%
+//     ); */
   
-      /* font-family: "Raleway", sans-serif; */
-      font-weight: 300;
-      line-height: 1.2;
-    }
+//     color: white;
+//     /* box-shadow: inset 0px 80px 0px var(--gradient); */
   
-    .header-description .button-group {
-      width: 50%;
-      flex-direction: row;
+//     /* border: none; */
+//   }
+//   .header-description .button-group .enroll {
+//     width: 144px;
+//     height: 50px;
+//     color: white;
+//     /* border-radius: 2px; */
+//     /* box-shadow: 0 3px 6px 0 var(--black-30); */
+//     /* background-image: linear-gradient(
+//       103deg,
+//       var(--pink-red) 1%,
+//       var(--pumpkin-orange) 99%
+//     ); */
   
-      justify-content: flex-start;
-      align-items: center;
-      /* padding-top: 20px; */
-      margin-top: 20px;
-    }
-  }
+//     background-color: var(--pumpkin-orange);
+//     outline: none !important;
+//     border: none !important;
+//     -webkit-box-shadow: none !important;
+//     box-shadow: none !important;
+//   }
   
+//   .header-description .button-group .enroll:hover {
+//     background-image: #ff005e;
+//     /* border: 2px solid white; */
+  
+//     /* todo cleanup this */
+//   }
+  
+//   @media only screen and (max-device-width: 480px), (max-width: 1200px) {
+//     /* styles for mobile browsers smaller than 480px; (iPhone) */
+  
+//     .header-description {
+//       margin-left: 0px;
+  
+//       text-align: left;
+//     }
+//     .header-description .title,
+//     .header-description .description,
+//     .header-description .button-group {
+//       width: 90%;
+  
+//       text-align: center;
+  
+//       text-align: left;
+//     }
+  
+//     .header-description .title {
+//       font-size: 2.12rem;
+//       height: fit-content;
+//       text-align: left;
+//       margin-bottom: 20px;
+//     }
+  
+//     .header-description .description {
+//       text-align: left;
+//     }
+//     .header-description .button-group {
+//       /* width: 100%; */
+//       flex-direction: column;
+  
+//       justify-content: center;
+//       align-items: flex-start;
+//       /* padding-top: 20px; */
+//     }
+  
+//     .header-description .button-group button {
+//       margin-bottom: 20px;
+//     }
+//   }
+  
+//   /* ============================================== */
+//   /* HDTV                                           */
+//   /*                                      1920x1080 */
+//   /* ============================================== */
+//   @media screen and (min-width: 1080px) and (max-width: 1920px) {
+//     /* ADD YOUR CSS ADJUSTMENTS BELOW HERE */
+  
+//     .header-description .title,
+//     .header-description .description,
+//     .header-description .button-group {
+//       width: 50%;
+//       font-size: 1.52rem;
+//       text-align: left;
+//       margin-left: -100px;
+//     }
+  
+//     .header-description .title {
+//       font-size: 3.52rem;
+//       height: fit-content;
+  
+//       /* font-family: "Raleway", sans-serif; */
+//       font-weight: 300;
+//       line-height: 1.2;
+//     }
+  
+//     .header-description .button-group {
+//       width: 50%;
+//       flex-direction: row;
+  
+//       justify-content: flex-start;
+//       align-items: center;
+//       /* padding-top: 20px; */
+//       margin-top: 20px;
+//     }
+//   }
+  
+
+

@@ -5,15 +5,18 @@
         <div class="">
             <h2 style="text-align: center;"> Login </h2>
         </div>
-        <form class="form" #form="ngForm">
+          
+           <!-- <form class="form" (ngSubmit)="loginSubmit()" [formGroup]="loginForm"> -->
+             <form #form ngForm class="form" (ngSubmit)="loginSubmit()" [formGroup]="loginForm">
+
             <mat-form-field appearance="outline">
                 <mat-label> Email </mat-label>
-                <input matInput placeholder="Email">
+                <input matInput placeholder="Email" name="email">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label> Password </mat-label>
-                <input matInput placeholder="Password">
+                <input matInput placeholder="Password" name="password">
             </mat-form-field>
 
             <button mat-flat-button color="primary"> Login </button>

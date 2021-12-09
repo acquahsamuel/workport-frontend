@@ -10,6 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'auth',
+    // canActivate : []
     loadChildren: () =>
       import('./modules/user-auth/user-auth-routing.module')
         .then((m) => m.UserAuthRoutingModule),
@@ -26,7 +27,7 @@ const routes: Routes = [
       .then((m) => m.AdminRoutingModule)
   },
   {
-    path: '**', redirectTo: '/home'
+    path: '**', redirectTo: 'home'
   }
 ];
 

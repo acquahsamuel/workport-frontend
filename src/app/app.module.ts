@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxWebstorageModule } from 'ngx-webstorage';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //
@@ -22,7 +21,6 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    ReactiveFormsModule,
     NgxWebstorageModule.forRoot(),
 
     //TODO NOT BEST APPROACH (REFACTOR)

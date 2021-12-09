@@ -1,18 +1,58 @@
 import { Component, OnInit } from '@angular/core';
-// import  { Navigation }
+import { AuthService } from 'src/app/shared/services/auth.service';
+import {
+  FormControl,
+  NgForm,
+  FormGroupDirective,
+  FormGroup, Validators,
+  FormArray,
+  FormBuilder
+} from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
 
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
+
 export class LoginComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(
+    private auth: AuthService,
+    // private fb: FormBuilder
+  ) {
   }
 
-  
+  ngOnInit(): void {
+
+  }
+
+  loginForm = new FormGroup({
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
+
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5)
+    ]),
+  })
+
+
+  loginSubmit(){
+
+  }
+
+
 }

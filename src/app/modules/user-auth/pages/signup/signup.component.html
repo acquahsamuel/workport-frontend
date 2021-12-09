@@ -5,21 +5,30 @@
         <div class="">
             <h2 style="text-align: center;"> Register </h2>
         </div>
-        <!-- Template driven forms -->
-        <!-- Reactive Forms -->
-        <form #form ngForm (ngSubmit)="onSubmit()"  class="form">
+        
+        <form #form ngForm class="form" [formGroup]="signUpForm" (ngSubmit)="signUpSubmit()">
+            <mat-form-field appearance="outline">
+                <mat-label> Username </mat-label>
+                <input matInput name="name" type="name" formControlName="name">
+            </mat-form-field>
+
             <mat-form-field appearance="outline">
                 <mat-label> Email </mat-label>
-                <input matInput id="email" name="email" type="email" formControlName="email">
+                <input matInput name="email" type="email" formControlName="email">
             </mat-form-field>
+
+
+            <!-- <mat-form-field appearance="outline">
+                <mat-label> </mat-label>
+                <input matInput hidden value="user" name="role" type="text" formControlName="role">
+            </mat-form-field> -->
 
 
             <mat-form-field appearance="outline">
                 <mat-label> Password </mat-label>
-                <input matInput id="password" name="password" type="password" formControlName="password">
+                <input matInput name="password" type="password" formControlName="password">
             </mat-form-field>
-
-            <button type="submit" [disabled]="" mat-flat-button color="primary"> Create Account
+            <button type="submit" [disabled]="!signUpForm.valid" mat-flat-button color="primary"> Create Account
             </button>
         </form>
 
