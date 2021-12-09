@@ -1,0 +1,77 @@
+<section class="sidebar-search">
+    <div class="search-aside">
+        <div class="search-content">
+            <h3> What do you want to do? </h3>
+            <a routerLink="" onclick="clearBox">Clear filters </a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form class="search-form">
+            <mat-form-field appearance="outline">
+                <mat-label> Search </mat-label>
+                <input matInput placeholder="Software engineering, Design ,Sales">
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label> Search </mat-label>
+                <input matInput placeholder="Software engineering, Design ,Sales">
+            </mat-form-field>
+
+
+            <mat-accordion class="mat-accordion">
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-description>
+                            {{panelOpenState ? '' : 'Location'}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label> Search </mat-label>
+                        <input matInput placeholder="Software engineering, Design ,Sales">
+                    </mat-form-field>
+
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            <mat-accordion class="mat-accordion">
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-description>
+                            {{panelOpenState ? 'open' : ' Skill and Qualifications'}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label> Search </mat-label>
+                        <input matInput placeholder="Software engineering, Design ,Sales">
+                    </mat-form-field>
+
+                    <!-- Location Skill and Qualifications Degree Job Types Organizations -->
+                </mat-expansion-panel>
+            </mat-accordion>
+
+
+            <mat-accordion class="mat-accordion">
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-description>
+                            {{panelOpenState ? 'open' : 'Degree Job'}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label> Search </mat-label>
+                        <input matInput placeholder="Software engineering, Design ,Sales">
+                    </mat-form-field>
+
+                    <!-- Location Skill and Qualifications Degree Job Types Organizations -->
+                </mat-expansion-panel>
+            </mat-accordion>
+
+
+        </form>
+    </div>
+</section>
