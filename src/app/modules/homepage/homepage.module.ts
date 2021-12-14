@@ -8,7 +8,7 @@ import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { NavigationComponent } from 'src/app/shared/components/navigation/navigation.component';
 import { SidebarComponent } from 'src/app/shared/components/sidebar/sidebar.component';
-import { HeaderComponent } from 'src/app/shared/components/header/header.component';
+import { MainContentComponent } from 'src/app/shared/components/main-content/main-content.component';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { HeaderComponent } from 'src/app/shared/components/header/header.compone
         AboutComponent,
         HomepageComponent,
         NavigationComponent,
-        HeaderComponent,
+        MainContentComponent,
         SidebarComponent
     ],
     imports: [

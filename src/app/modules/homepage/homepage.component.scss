@@ -1,19 +1,35 @@
-.hero {
-  // height: 45vh;
-  // background: rgb(107, 106, 104);
+.main-body {
+  display: flex;
 }
 
-.hero-header {
-  // font-size: 30px;
+.right-section {
+  flex-grow: 2;
+  margin-left: 26.7rem;
+  padding: 2.5rem;
+}
+
+.left-section {
+  position: fixed;
 }
 
 
-.overlay {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 
-  // border: 1px solid black;
-  // height: inherit;
+  .right-section{
+ // width: ;
+  }
+
+  .left-section{
+    display: none;
+    margin-left: 0;
+  }
+
+  .main-body {
+    flex-direction: column;
+  }
+
+  .left-section {}
 }
