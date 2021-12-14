@@ -1,10 +1,10 @@
 <mat-drawer-container class="dashboard-container" autosize>
-    <mat-drawer #drawer class="dashboard-sidenav" mode="over" opened>
+    <mat-drawer #drawer class="dashboard-sidenav" mode="side" opened>
         <div class="sidebar-wrapper">
             <div class="logo">
                 <img src="./assets/images/job-logo-dark.svg" class="logo-image" alt="user profile">
             </div>
-            
+
             <!-- <h4 class="menu-title"> app menu </h4> -->
             <div class="link-container" *ngFor="let link of links" routerLinkActive="div-active">
                 <a mat-button class="nav-link" [routerLink]="link.path" routerLinkActive="active">
@@ -33,8 +33,11 @@
         </div>
     </div>
 
+   
     <div class="main-body">
         <div class="container">
+            <router-outlet>
+            </router-outlet>
         </div>
     </div>
 

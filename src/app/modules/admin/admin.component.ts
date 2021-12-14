@@ -14,7 +14,7 @@ export class AdminComponent implements OnInit {
 
   title = '';
   username = 'Acquah Samuel';
-  userProfile = './assets/images/user.jpg';
+  userProfile = './assets/images/placeholder.png';
 
   links = [
     { path: '/home', icon: 'dashboard', title: 'Dashboard' },
