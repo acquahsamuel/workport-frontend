@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,kBAAkB,AAAC,CACjB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,gBAAgB,CAAE,OAAkB,CACpC,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACpB,AAGD,AAAA,aAAa,AAAC,CACZ,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,OAAO,CAChB,AAGD,AAAA,KAAK,AAAC,CACJ,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACvB,AAGD,AAAA,UAAU,AAAC,CACT,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,eAAe,CACxB,AAED,AAAA,WAAW,AAAC,CACV,KAAK,CAAE,GAAG,CACX",
+    "sources": [
+        "../src/app/modules/dashboard/pages/post-job/post-job.component.scss"
+    ],
+    "names": [],
+    "file": "post-job.component.css"
+}

@@ -2,11 +2,8 @@
   height: 100vh;
   width: 400px;
   box-sizing: border-box;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-  // border: 1px solid black;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
 .search-aside {
@@ -63,5 +60,4 @@
 mat-expansion-panel-header {
   width: 100%;
   box-shadow: 0;
-
 }

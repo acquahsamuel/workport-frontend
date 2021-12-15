@@ -5,19 +5,10 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: SignupComponent,
-  },
-  {
-    path: 'signup', component: SignupComponent
-  },
-  {
-    path: 'login', component: LoginComponent
-  },
-  {
-    path: 'reset-password', component: ResetPasswordComponent
-  }
+  { path: '', component: SignupComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'reset-password', component: ResetPasswordComponent }
 ];
 
 @NgModule({

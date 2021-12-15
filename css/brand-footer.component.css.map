@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/shared/components/brand-footer/brand-footer.component.scss"
+    ],
+    "names": [],
+    "file": "brand-footer.component.css"
+}

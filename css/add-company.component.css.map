@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/modules/admin/pages/add-company/add-company.component.scss"
+    ],
+    "names": [],
+    "file": "add-company.component.css"
+}

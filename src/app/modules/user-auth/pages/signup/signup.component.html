@@ -7,21 +7,15 @@
         </div>
         
         <form #form ngForm class="form" [formGroup]="signUpForm" (ngSubmit)="signUpSubmit()">
-            <mat-form-field appearance="outline">
+            <!-- <mat-form-field appearance="outline">
                 <mat-label> Username </mat-label>
                 <input matInput name="name" type="name" formControlName="name">
-            </mat-form-field>
+            </mat-form-field> -->
 
             <mat-form-field appearance="outline">
                 <mat-label> Email </mat-label>
                 <input matInput name="email" type="email" formControlName="email">
             </mat-form-field>
-
-
-            <!-- <mat-form-field appearance="outline">
-                <mat-label> </mat-label>
-                <input matInput hidden value="user" name="role" type="text" formControlName="role">
-            </mat-form-field> -->
 
 
             <mat-form-field appearance="outline">
@@ -32,7 +26,7 @@
             </button>
         </form>
 
-        <p class="signUpHere"> Already have an account ? <span class="link" routerLink="/auth/login">Log in Here</span>
+        <p class="signUpHere"> Already have an account ? <span class="link" routerLink="/login">Log in Here</span>
         </p>
     </mat-card>
 </div>

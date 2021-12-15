@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/shared/components/loader/loader.component.scss"
+    ],
+    "names": [],
+    "file": "loader.component.css"
+}

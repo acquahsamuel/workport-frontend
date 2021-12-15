@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/modules/admin/pages/add-user/add-user.component.scss"
+    ],
+    "names": [],
+    "file": "add-user.component.css"
+}

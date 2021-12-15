@@ -1,28 +1,29 @@
 .main-body {
   display: flex;
+  // border: 1px solid black;
 }
 
 .right-section {
   flex-grow: 2;
   margin-left: 26.7rem;
   padding: 2.5rem;
+  max-width: 60rem;
 }
 
 .left-section {
   position: fixed;
 }
 
-
 @media only screen and (max-width: 600px) {
   body {
     background-color: lightblue;
   }
 
-  .right-section{
- // width: ;
+  .right-section {
+    margin-left: 0;
   }
 
-  .left-section{
+  .left-section {
     display: none;
     margin-left: 0;
   }

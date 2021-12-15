@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/app/shared/components/dialog/dialog.component.scss"
+    ],
+    "names": [],
+    "file": "dialog.component.css"
+}

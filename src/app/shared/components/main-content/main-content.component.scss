@@ -1,9 +1,26 @@
-body {
-  // border: 1px solid blue;
+body {}
+
+.card {
+  box-shadow: none;
 }
 
-.example-card{
-    // border: 1px solid black;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px -12px;
-    border-radius: 0px;
+.card-content {
+  margin-bottom: 5px;
+  border: 1px solid rgb(223, 222, 222);
+  padding: 13px;
+}
+
+.card-content button {
+  margin-bottom: 5px;
+}
+
+
+.card h6,
+p {
+  font-size: 16px;
+}
+
+
+.card-content {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px -12px;
 }
