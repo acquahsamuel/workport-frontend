@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    
     //  console.log(this.route.snapshot.params.j)
   }
 

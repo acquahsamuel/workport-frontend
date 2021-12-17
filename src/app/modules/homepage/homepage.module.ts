@@ -11,6 +11,7 @@ import { SidebarComponent } from 'src/app/shared/components/sidebar/sidebar.comp
 import { JobPostingComponent } from './pages/job-posting/job-posting.component';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { MainContentComponent } from './components/main-content/main-content.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
         SidebarComponent,
         JobDetailsComponent,
         JobPostingComponent,
+        MainContentComponent,
         PagenotfoundComponent,
     ],
     imports: [

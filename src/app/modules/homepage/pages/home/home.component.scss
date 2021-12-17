@@ -1,13 +1,13 @@
 .main-body {
   display: flex;
-  // border: 1px solid black;
 }
 
 .right-section {
   flex-grow: 2;
-  margin-left: 26.7rem;
+  margin-top: 3rem;
+  margin-left: 35rem;
   padding: 2.5rem;
-  max-width: 60rem;
+  max-width: 65rem;
 }
 
 .left-section {
@@ -31,6 +31,4 @@
   .main-body {
     flex-direction: column;
   }
-
-  .left-section {}
 }
