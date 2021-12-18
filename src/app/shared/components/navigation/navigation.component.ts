@@ -15,7 +15,8 @@ export class NavigationComponent implements OnInit {
   title = 'Login'
   isAuthenticated = false;
 
-  logout(){
+  logout() {
 
   }
+
 }

@@ -1,0 +1,37 @@
+mat-card-subtitle {
+  display: flex;
+  align-items: center;
+}
+
+.qualification-li {
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+
+mat-card-subtitle mat-icon {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(7, 12, 71);
+}
+
+.card-content {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 4px;
+}
+
+.card-content:hover {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 5px 6px, rgba(17, 17, 26, 0.1) 0px 5px 5px;
+}
+
+.card-content button {
+  margin: 10px;
+}
+
+.qualification-li {
+  font-size: 16px;
+}

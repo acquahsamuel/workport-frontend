@@ -28,7 +28,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 
 export class LoginComponent implements OnInit {
   constructor(
-    private auth: AuthService,
+    // private auth: AuthService,
     // private fb: FormBuilder
   ) {
   }
@@ -37,22 +37,8 @@ export class LoginComponent implements OnInit {
 
   }
 
-  loginForm = new FormGroup({
-    email: new FormControl('', [
-      Validators.required,
-      Validators.email
-    ]),
-
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(5)
-    ]),
-  })
-
-
-  loginSubmit(){
+  loginSubmit() {
 
   }
-
 
 }

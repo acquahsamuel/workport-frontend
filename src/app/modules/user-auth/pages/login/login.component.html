@@ -1,40 +1,41 @@
 <div class="login-container">
-    <mat-card>
-        <span class="back-link" routerLink="/"> &LeftArrow; Home </span>
+  <mat-card>
+    <span class="back-link" routerLink="/"> &LeftArrow; Home </span>
 
-        <div class="">
-            <h2 style="text-align: center;"> Login </h2>
-        </div>
+    <div class="">
+      <h2 style="text-align: center">Login</h2>
+    </div>
 
-        <!-- <form class="form" (ngSubmit)="loginSubmit()" [formGroup]="loginForm"> -->
-        <form #form ngForm class="form" (ngSubmit)="loginSubmit()" [formGroup]="loginForm">
+    <!-- <form class="form" (ngSubmit)="loginSubmit()" [formGroup]="loginForm"> -->
+    <form class="form">
+      <mat-form-field appearance="outline">
+        <mat-label> Email </mat-label>
+        <input matInput placeholder="Email" name="email" />
+      </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label> Email </mat-label>
-                <input matInput placeholder="Email" name="email">
-            </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label> Password </mat-label>
+        <input matInput placeholder="Password" name="password" />
+      </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label> Password </mat-label>
-                <input matInput placeholder="Password" name="password">
-            </mat-form-field>
+      <button mat-flat-button color="primary">Login</button>
+    </form>
 
-            <button mat-flat-button color="primary"> Login </button>
-        </form>
-
-        <section style="padding: 5px 0;">
-            <a class="forgot-pass" routerLink="reset-password" style="text-decoration: none;">Forgot Password?</a>
-        </section>
-        <section>
-            <p class="signUpHere">Dont have an account yet? <span class="link" routerLink="/auth/signup">Sign Up Here</span>
-            </p>
-        </section>
-    </mat-card>
+    <section style="padding: 5px 0">
+      <a
+        class="forgot-pass"
+        routerLink="reset-password"
+        style="text-decoration: none"
+        >Forgot Password?</a
+      >
+    </section>
+    <section>
+      <p class="signUpHere">
+        Dont have an account yet?
+        <span class="link" routerLink="/auth/signup">Sign Up Here</span>
+      </p>
+    </section>
+  </mat-card>
 </div>
 
 
-<ng-template #loginProgress>
-    <div class="loginProgress">
-        <mat-spinner strokeWidth="3" [diameter]="30"></mat-spinner>
-    </div>
-</ng-template>

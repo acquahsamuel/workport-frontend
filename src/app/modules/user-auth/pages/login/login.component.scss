@@ -7,11 +7,9 @@
   mat-card {
     width: 400px;
     padding: 3rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-   
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 9px 0px;
   }
 }
-
 
 .form {
   display: flex;
@@ -21,10 +19,6 @@
 .signupHere:hover {
   cursor: pointer;
 }
-
-// .heading-h3 {
-//   text-align: center;
-// }
 
 .back-link {
   font-size: .9rem;

@@ -1,10 +1,65 @@
 <app-navigation></app-navigation>
 <div class="main-body">
-    <div class="left-section">
-        <app-sidebar></app-sidebar>
-    </div>
+  <div class="left-section">
+    <app-sidebar></app-sidebar>
+  </div>
 
+  <ng-container>
     <div class="right-section">
-        <app-job-details></app-job-details>
+      <section *ngFor="let job of jobs">
+        <div class="card-content">
+          <mat-card-title>
+            <mat-icon> business </mat-icon> {{ job.company }}
+          </mat-card-title>
+
+          <mat-card-subtitle>
+            <mat-icon> location_on </mat-icon> {{ job.locationAllowed }}
+            <mat-icon> alarm_on </mat-icon> {{ job.jobStatus }}
+            <mat-icon> location_on </mat-icon> {{ job.salaryInterval }}
+          </mat-card-subtitle>
+
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <h3>Qualifications:</h3>
+            <ng-container class="qualification-content">
+              <ul class="qualification-ul">
+                <li
+                  class="qualification-li"
+                  *ngFor="let item of job.minimumQualification"
+                >
+                  {{ item }}
+                </li>
+              </ul>
+            </ng-container>
+          </mat-card-content>
+          <br />
+          <mat-card-content>
+            <h3>Minimum qualifications:</h3>
+            <ng-container class="qualifications-description">
+              <ul>
+                <li *ngFor="let item of job.jobDescription">
+                  <p>{{ item }}</p>
+                </li>
+              </ul>
+            </ng-container>
+
+            <ng-container class="qualifications-about">
+              <h3>About the job</h3>
+              <p class="qualifications-p">
+                {{ job.aboutJob }}
+              </p>
+            </ng-container>
+          </mat-card-content>
+          <mat-divider></mat-divider>
+          <mat-card-actions>
+            <button mat-flat-button color="primary">View</button>
+          </mat-card-actions>
+        </div>
+      </section>
     </div>
+  </ng-container>
 </div>
+
+<ng-template #loader>
+  <mat-spinner></mat-spinner>
+</ng-template>
