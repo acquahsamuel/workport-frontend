@@ -1,0 +1,36 @@
+.search-container {
+  height: 40vh;
+  background: rgb(238, 238, 238);
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex-direction: column;
+  height: inherit;
+}
+
+.form input {
+  padding: 1rem;
+  border: none;
+  width: 35%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+
+.btn {
+  outline: none;
+  padding: .9rem;
+  border: none;
+}
+
+
+.btn-dark {
+  background-color: rgb(12, 11, 10);
+  color: white;
+}

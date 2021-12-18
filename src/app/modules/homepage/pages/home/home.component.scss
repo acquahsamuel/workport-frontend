@@ -1,31 +1,15 @@
-.main-body {
-  display: flex;
-}
-
-.right-section {
-  flex-grow: 2;
+.main-content {
   margin-top: 3rem;
-  margin-left: 35rem;
-  padding: 2.5rem;
-  max-width: 65rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.left-section {
-  position: fixed;
-}
 
 @media only screen and (max-width: 600px) {
   body {
     background-color: lightblue;
-  }
-
-  .right-section {
-    margin-left: 0;
-  }
-
-  .left-section {
-    display: none;
-    margin-left: 0;
   }
 
   .main-body {

@@ -8,7 +8,6 @@ mat-card-subtitle {
   font-size: 15px;
 }
 
-
 mat-card-subtitle mat-icon {
   font-size: 16px;
   display: flex;
@@ -20,8 +19,9 @@ mat-card-subtitle mat-icon {
 .card-content {
   margin-bottom: 2rem;
   padding: 1rem;
-  border: 1px solid rgb(228, 228, 228);
-  border-radius: 4px;
+  border: 1px solid rgb(214, 212, 212);
+  // border-radius: 4px;
+  max-width: 65rem;
 }
 
 .card-content:hover {

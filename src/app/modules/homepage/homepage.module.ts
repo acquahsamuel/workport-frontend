@@ -11,7 +11,7 @@ import { JobPostingComponent } from './pages/job-posting/job-posting.component';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { NavigationComponent } from 'src/app/shared/components/navigation/navigation.component';
-// import { MainContentComponent } from './components/main-content/main-content.component';
+import { SearchBarComponent } from 'src/app/shared/components/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -23,6 +23,7 @@ import { NavigationComponent } from 'src/app/shared/components/navigation/naviga
         SidebarComponent,
         JobDetailsComponent,
         JobPostingComponent,
+        SearchBarComponent,
         PagenotfoundComponent,
     ],
     imports: [
