@@ -1,9 +1,15 @@
 mat-card-subtitle {
   display: flex;
   align-items: center;
+  // border: 1px solid black;
 }
 
-.qualification-li {
+.card-header {
+  margin-bottom: .5rem;
+}
+
+
+.card-li {
   line-height: 1.7;
   font-size: 15px;
 }
@@ -19,12 +25,12 @@ mat-card-subtitle mat-icon {
 .card-content {
   margin-bottom: 2rem;
   padding: 1rem;
-  border: 1px solid rgb(214, 212, 212);
-  // border-radius: 4px;
+  border: 1px solid rgb(230, 229, 229);
   max-width: 65rem;
 }
 
 .card-content:hover {
+  cursor: pointer;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 5px 6px, rgba(17, 17, 26, 0.1) 0px 5px 5px;
 }
 
@@ -32,6 +38,20 @@ mat-card-subtitle mat-icon {
   margin: 10px;
 }
 
-.qualification-li {
+.card-li {
   font-size: 16px;
+}
+
+
+.btn {
+  border: none;
+  color: rgb(5, 4, 4);
+  padding: .5rem 2rem;
+  font-size: 14px;
+  border: 1px solid black;
+  background: white;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
