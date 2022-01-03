@@ -1,8 +1,10 @@
+<mat-spinner *ngIf="jobs.length === 0"></mat-spinner>
+
 <section *ngFor="let job of jobs">
   <div class="card-content">
     <div class="card-header">
       <mat-card-title>
-        <mat-icon> business </mat-icon> {{ job.company }}
+        <mat-icon> business </mat-icon> {{ job.position }}
       </mat-card-title>
       <mat-card-subtitle>
         <mat-icon> location_on </mat-icon> {{ job.locationAllowed }}
@@ -15,10 +17,7 @@
       <h3>Qualifications:</h3>
       <ng-container class="card-content">
         <ul class="card-ul">
-          <li
-            class="card-li"
-            *ngFor="let item of job.minimumQualification"
-          >
+          <li class="card-li" *ngFor="let item of job.minimumQualification">
             {{ item }}
           </li>
         </ul>
@@ -30,3 +29,7 @@
     </mat-card-actions>
   </div>
 </section>
+
+<ng-template #loader>
+  <mat-spinner></mat-spinner>
+</ng-template>

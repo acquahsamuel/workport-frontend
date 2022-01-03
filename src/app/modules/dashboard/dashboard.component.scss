@@ -1,6 +1,7 @@
 .dashboard-container {
   width: 100vw;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 .dashboard-sidenav {
@@ -53,12 +54,12 @@
 }
 
 .main-body {
-  max-width: 120rem;
-  padding: 2rem 1rem;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  // padding: 2rem 1rem;
+  // margin: 0 auto;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .image-container {
@@ -77,13 +78,11 @@
 
 .main-left {
   background-color: rgb(232, 243, 243);
-  width: 50%;
   color: black;
 }
 
 .main-right {
   background-color: rgb(235, 235, 235);
-  width: 50%;
   color: black;
 }
 

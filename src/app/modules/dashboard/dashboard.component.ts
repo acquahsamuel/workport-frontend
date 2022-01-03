@@ -38,4 +38,6 @@ export class DashboardComponent implements OnInit {
   logOut() { }
 
   enrollWithTrx() { }
+
+  
 }

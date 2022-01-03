@@ -24,5 +24,5 @@ export class CreateJobService {
     console.log(itemId, itemPayload)
   }
 
-  delete() { }
+  // delete() { }
 }

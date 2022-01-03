@@ -13,7 +13,6 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
 import { NavigationComponent } from 'src/app/shared/components/navigation/navigation.component';
 import { SearchBarComponent } from 'src/app/shared/components/search-bar/search-bar.component';
 
-
 @NgModule({
     declarations: [
         HomeComponent,

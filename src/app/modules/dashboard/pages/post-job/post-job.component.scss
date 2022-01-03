@@ -1,16 +1,12 @@
 .section-container {
-  width: 90em;
+  max-width: 90em;
   height: 55em;
   background-color: rgb(241, 238, 238);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 
 .main-content {
-  width: 100%;
-  height: inherit;
+  border: 1px solid black;
 }
 
 
@@ -21,8 +17,8 @@
 
 
 .main-left {
-  width: 50%;
-  border: 1px solid black;
+  // width: 50%;
+  // width: 100%;
 }
 
 .main-right {

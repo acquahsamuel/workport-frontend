@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,22 +7,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  pageTitle = "Home";
+  pageBrand = "Workport"
+  jobs = [];
 
   constructor(
-    private httpClient: HttpClient,
     private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    //  console.log(this.route.snapshot.params.j)
-  }
-
+  ngOnInit(): void {}
+  
 
   onClick() {
     console.log('Hello world');
   }
-
-  pageTitle = "Home";
-  pageBrand = "Workport"
-
 
 }
