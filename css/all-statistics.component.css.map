@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../src/app/modules/admin/pages/all-statistics/all-statistics.component.scss"
-    ],
-    "names": [],
-    "file": "all-statistics.component.css"
-}

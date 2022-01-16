@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const BASE_URL = `http://localhost:5000/api/v1/jobs`;
+const BASE_URL = `http://localhost:3000/jobs`;
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class JobService {
 
   // Add IJob interface
   createJob() {
-    return 'Create job';
+    // this.httpClient.post()
   }
 
 }

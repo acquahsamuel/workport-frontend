@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../src/app/modules/homepage/pages/faq/faq.component.scss"
-    ],
-    "names": [],
-    "file": "faq.component.css"
-}

@@ -33,14 +33,5 @@ $finale-app-theme: mat.define-light-theme((color: (primary: $finale-app-primary,
 // html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  // font-family: Roboto, "Helvetica Neue", sans-serif;
-  // background: whitesmoke !important;
+  font-family: 'Roboto', sans-serif;
 }
-
-html,
-body {
-  height: 100%;
-  font-family: 'Open Sans', sans-serif;
-}
- 

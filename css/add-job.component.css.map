@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../src/app/modules/admin/pages/add-job/add-job.component.scss"
-    ],
-    "names": [],
-    "file": "add-job.component.css"
-}

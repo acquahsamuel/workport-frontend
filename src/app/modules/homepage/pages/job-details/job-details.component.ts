@@ -14,3 +14,5 @@ export class JobDetailsComponent implements OnInit {
   }
 
 }
+
+

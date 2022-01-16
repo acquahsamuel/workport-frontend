@@ -6,10 +6,10 @@
     "start": "ng serve",
     "test": "ng test",
     "lint": "ng lint",
-    "build": "ng build --prod",
+    "server": "json-server server/db.json",
     "start:server": "node server.js",
-    "start:json-server": "json-server server/data.json",
     "server:all": "concurrently \"npm run server\" \"ng serve\"",
+    "build": "ng build --prod",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,

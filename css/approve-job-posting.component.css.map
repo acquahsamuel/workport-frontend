@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../src/app/modules/admin/pages/approve-job-posting/approve-job-posting.component.scss"
-    ],
-    "names": [],
-    "file": "approve-job-posting.component.css"
-}

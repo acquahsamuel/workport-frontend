@@ -16,6 +16,22 @@ export class JobPostingComponent implements OnInit {
   constructor(private jobService: JobService) { }
 
   ngOnInit(): void {
-
+    this.loadAllJobs();
+    this.loadAllCompanies();
   }
+
+
+  loadAllJobs() {
+    //implement an interface 
+    this.jobService.getAllJobs().subscribe(x => {
+      console.log(x);
+    })
+  }
+
+  loadAllCompanies() {
+    console.log('Companies Loaded')
+  }
+
+
+
 }

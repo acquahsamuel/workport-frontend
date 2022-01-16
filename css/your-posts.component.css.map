@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../src/app/modules/dashboard/pages/your-posts/your-posts.component.scss"
-    ],
-    "names": [],
-    "file": "your-posts.component.css"
-}

@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,iBAAiB,AAAC,CAChB,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,MAAM,CACvB,MAAM,CAAE,iBAAiB,CAO1B,AAXD,AAME,iBANe,CAMf,QAAQ,AAAC,CACP,KAAK,CAAE,KAAK,CACZ,OAAO,CAAE,IAAI,CACb,UAAU,CAAE,qBAAwB,CAAC,GAAG,CAAC,GAAG,CAAC,IAAI,CAAC,GAAG,CACtD,AAGH,AAAA,KAAK,AAAC,CACJ,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACvB,AAED,AAAA,WAAW,CAAC,IAAI,AAAA,MAAM,AAAC,CACrB,MAAM,CAAE,OAAO,CAChB",
-    "sources": [
-        "../src/app/modules/user-auth/pages/signup/signup.component.scss"
-    ],
-    "names": [],
-    "file": "signup.component.css"
-}

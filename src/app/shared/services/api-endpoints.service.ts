@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const BASE_URL = `http://localhost:5000/api/v1`;
+// const BASE_URL = `http://localhost:5000/api/v1`;
+// const BASE_URL = 'http://localhost:3000/jobs';
+const BASE_URL = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiEndpointsService {
-  userToken: any;
-
+  // userToken: any;
   private companies = BASE_URL + '/companies';
   private jobs = BASE_URL + '/jobs';
   private auth = BASE_URL + '/auth';

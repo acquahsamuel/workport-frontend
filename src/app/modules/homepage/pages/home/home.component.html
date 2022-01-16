@@ -1,36 +1,4 @@
-<div class="top-banner">
-  New! Create and manage your own job posts with Wrk.
-  <a href=""> Learn More </a>
-</div>
-
-<header class="header">
-  <div class="logo-container">
-    <strong class="logo">
-      <a routerLink="/" routerLinkActive="active"> rmtwrk </a>
-    </strong>
-  </div>
-
-  <div class="search-container">
-    <input type="text" class="search-input" placeholder="Search for jobs..." />
-  </div>
-
-  <div class="navigation-link">
-    <ul class="navigation-lists">
-      <li class="navigation-list">
-        <a routerLink="/top-companies" routerLinkActive="active">
-          Top Companies
-        </a>
-      </li>
-      <li class="navigation-list">
-        <a routerLink="/subscribe" routerLinkActive="active"> Subscribe </a>
-      </li>
-      <li class="navigation-list">
-        <a routerLink="/signup" routerLinkActive="active">Post a job</a>
-      </li>
-    </ul>
-  </div>
-</header>
-
+<app-header></app-header>
 <section class="main-content">
   <div class="container">
     <div class="main-body">
@@ -72,22 +40,5 @@
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="logo-container">
-        <strong class="logo"> rmtwrk </strong>
-      </div>
+<app-brand-footer></app-brand-footer>
 
-      <div class="footer-ads">
-        <ul class="footer-lists">
-          <!-- <p>Links</p> -->
-          <li><a routerLink="/"> Home </a></li>
-          <li><a routerLink=""> Privacy Policy</a></li>
-          <li><a routerLink="/signup"> Sign up</a></li>
-          <li><a routerLink="/login"> Login </a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>

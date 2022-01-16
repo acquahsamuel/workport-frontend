@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../src/app/modules/homepage/pages/about/about.component.scss"
-    ],
-    "names": [],
-    "file": "about.component.css"
-}

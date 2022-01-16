@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,AAAC,CACH,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACpB",
-    "sources": [
-        "../src/app/modules/homepage/pages/coming-soon/coming-soon.component.scss"
-    ],
-    "names": [],
-    "file": "coming-soon.component.css"
-}
