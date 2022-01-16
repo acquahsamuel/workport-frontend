@@ -22,34 +22,36 @@ function UserCtrl() {
 
  uCtrl.user.first 
  uCtrl.user.bye 
-
 */
+ 
+const roads = [
+    "Alice's House-Bob's House", "Alice's House-Cabin",
+    "Alice's House-Post Office", "Bob's House-Town Hall",
+    "Daria's House-Ernie's House", "Daria's House-Town Hall",
+    "Ernie's House-Grete's House", "Grete's House-Farm",
+    "Grete's House-Shop", "Marketplace-Farm",
+    "Marketplace-Post Office", "Marketplace-Shop",
+    "Marketplace-Town Hall", "Shop-Town Hall"
+];
 
 
-function checkUser(ev) {
-    e.preventDefault();
-    let status = false;
+function buildGraph(edges) {
+    let graph = Object.create(null);
 
-    let username = document.getElementById('');
-    let password = document.getElementById('');
-
-    for (let i = 0; i < userList.length; i++) {
-        let user = userList[i];
-        console.log(user.username);
-        console.log(user.password);
-
-        if (user.username == username && user.password == password) {
-            console.log('Logged In');
-            localStorage.setItem('currentUser', userList[i]);
-
-            currentUser = userList[i];
-            status = true;
-            break;
+    function addEdge(from, to) {
+        if (graph[from] == null) {
+            graph[from] == [to];
+        } else {
+            graph[from].push(to);
         }
     }
 
-    if (status == true) {
-        location.href = "homepagetest.html";
+    for (let [from, to] of edges.map(r => r.split("-"))) {
+        addEdge(from, to);
+        addEdge(to, from);
     }
-
+    return graph;
 }
+
+const roadGraph = buildGraph(roads);
+
