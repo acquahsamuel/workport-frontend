@@ -1,14 +1,11 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-// import { StateStorageService } from '../services/state-storage.service';
-import { LoaderComponent } from '../components/loader/loader.component';
+import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { MaterialModule } from 'src/app/material.module';
+import { LoaderComponent } from '../components/loader/loader.component';
 
 
 @NgModule({
-  declarations: [
-    LoaderComponent,
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     MaterialModule
@@ -16,7 +13,6 @@ import { MaterialModule } from 'src/app/material.module';
   providers: [],
   exports: [LoaderComponent]
 })
-
 
 export class SharedModule { }
 

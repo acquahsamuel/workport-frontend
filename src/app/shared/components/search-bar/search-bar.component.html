@@ -1,6 +1,5 @@
 <section class="search-container">
   <form class="form">
-    <input type="text" name="" id="" />
-    <button class="btn btn-dark">Search </button>
+    <input type="text" (input)="onSearch($event.target.value)" />
   </form>
 </section>

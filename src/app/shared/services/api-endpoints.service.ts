@@ -14,7 +14,7 @@ export class ApiEndpointsService {
   private auth = BASE_URL + '/auth';
   private users = BASE_URL + '/users';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   getJobUrl() {
     return this.httpClient.get(`${BASE_URL}/${this.jobs}`);
@@ -32,7 +32,6 @@ export class ApiEndpointsService {
     return this.httpClient.get(`${BASE_URL}/${this.users}`);
   }
 
-  getJobById(id : number){}
 
 }
 

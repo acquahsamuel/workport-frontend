@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import decode from 'jwt-decode';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ICreateUser } from '../interface/user.model';
-// import { ISignUp} form '../'
 
 
 @Injectable()
@@ -13,41 +12,29 @@ export class AuthService {
     private httpClient: HttpClient
   ) { }
 
-
   private BASE_URL = 'http://localhost:5000/api/v1';
 
   public isAuthenticated(): boolean {
-    const token = localStorage.getItem('token');
-    // Check whether the token is expired and return
-    // true or false
+    console.log('User authenticated');
+    return true;
 
-    // return !this.jwtHelper.isTokenExpired(token);
-    return false;
+    
+
   }
 
-
-  public login(email : string , password : string) {
-    const hash = btoa(email + ':' + password );
-
-    const httpOptions = {
-      headers : new HttpHeaders({
-        'Content-Type' : 'application/json',
-        Authorization : 'Basic' + hash,
-      })
-    }
-    return this.httpClient.post(`${this.BASE_URL}/auth/login`, httpOptions);
-  }
 
  //ISignUp = create user interface
   signUp(user: ICreateUser) {
-    return this.httpClient.post(this.BASE_URL + '/auth/login', user);
+    // return this.httpClient.post(this.BASE_URL + '/auth/login', user);
+    return 'User created'
   }
 
   /**
    * Removes a token from the LocalStorage
    */
   logout() {
-    localStorage.removeItem('currentUser');
+    // localStorage.removeItem('currentUser');
+    console.log('remove user id, token or user')
   }
 
   /**

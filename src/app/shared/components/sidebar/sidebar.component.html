@@ -1,26 +1,5 @@
-<section class="sidebar-search">
-    <div class="search-aside">
-        <div class="search-content">
-            <h3> What do you want to do? </h3>
-            <a routerLink="" onclick="clearBox">Clear filters </a>
-        </div>
-    </div>
+<li class="category-list">
+  <input [type]="[inputType]" />
+  {{ title }}
+</li>
 
-    <div class="form-container">
-        <form class="search-form">
-            <mat-form-field appearance="outline">
-                <mat-label> Search </mat-label>
-                <input matInput placeholder="Software engineering, Design ,Sales">
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label> Search </mat-label>
-                <input matInput placeholder="Software engineering, Design ,Sales">
-            </mat-form-field>
-
-            <div class="search-button">
-                <button mat-flat-button color="primary"> Search </button>
-            </div>
-        </form>
-    </div>
-</section>
