@@ -1,60 +1,41 @@
 <div class="signup-container">
-    <mat-card>
-        <span class="back-link" routerLink="/"> &LeftArrow; Home </span>
+  <form class="form">
+    <h3>Signup</h3>
+    <div class="btn-group">
+      <button class="btn btn-default">Sign up with Google</button>
+    </div>
 
-        <div class="">
-            <h2 style="text-align: center;"> Register </h2>
-        </div>
-        
-        <form #form ngForm class="form" [formGroup]="signUpForm" (ngSubmit)="signUpSubmit()">
-            <!-- <mat-form-field appearance="outline">
-                <mat-label> Username </mat-label>
-                <input matInput name="name" type="name" formControlName="name">
-            </mat-form-field> -->
+    <div class="form-group">
+      <label for=""> Username</label>
+      <input class="form-input" type="text" placeholder="username" />
+    </div>
 
-            <mat-form-field appearance="outline">
-                <mat-label> Email </mat-label>
-                <input matInput name="email" type="email" formControlName="email">
-            </mat-form-field>
+    <div class="form-group">
+      <label for=""> Password </label>
+      <input class="form-input" type="password" placeholder="password" />
+    </div>
 
+    <div class="form-group terms">
+      <input type="checkbox" />
+      <p>I agree with <a href=""> Term </a> and <a href=""> Privacy </a></p>
+    </div>
 
-            <mat-form-field appearance="outline">
-                <mat-label> Password </mat-label>
-                <input matInput name="password" type="password" formControlName="password">
-            </mat-form-field>
-            <button type="submit" [disabled]="!signUpForm.valid" mat-flat-button color="primary"> Create Account
-            </button>
-        </form>
+    <button class="btn btn-dark">Register</button>
 
-        <p class="signUpHere"> Already have an account ? <span class="link" routerLink="/login">Log in Here</span>
-        </p>
-    </mat-card>
+    <!-- <hr> -->
+    <hr class="border-line"/>
+    <div class="btn-cta">
+        <span>Already have an account</span>
+        <a routerLink="/login"> Log in </a>
+      </div>
+
+  </form>
+
+  
 </div>
 
-
-<ng-template #google>
-    <p> Google </p>
-</ng-template>
-
-
-<ng-template #success>
-</ng-template>
-
-<ng-template #error>
-</ng-template>
-
-<ng-template #invalidEmail>
-</ng-template>
-
-<ng-template #invalidPassword>
-</ng-template>
-
-<ng-template #incorrectPasswor>
-</ng-template>
-
-
 <ng-template #loginProgress>
-    <div class="loginProgress">
-        <mat-spinner strokeWidth="3" [diameter]="30"></mat-spinner>
-    </div>
+  <div class="loginProgress">
+    <mat-spinner strokeWidth="3" [diameter]="30"></mat-spinner>
+  </div>
 </ng-template>

@@ -1,60 +1,36 @@
-mat-card-subtitle {
+.main-content-listings {
+  border: 1px solid rgb(63, 62, 62);
+  border-radius: 3px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  // border: 1px solid black;
+  padding: 0 9px;
 }
 
-.card-header {
-  margin-bottom: .5rem;
-}
-
-
-.card-li {
-  line-height: 1.7;
-  font-size: 15px;
-}
-
-mat-card-subtitle mat-icon {
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(7, 12, 71);
-}
-
-.card-content {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border: 1px solid rgb(230, 229, 229);
-  max-width: 65rem;
-}
-
-.card-content:hover {
+.main-content-listings:hover {
   cursor: pointer;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 5px 6px, rgba(17, 17, 26, 0.1) 0px 5px 5px;
 }
 
-.card-content button {
-  margin: 10px;
-}
-
-.card-li {
-  font-size: 16px;
+a {
+  text-decoration: none;
+  color: rgb(185, 179, 179);
 }
 
 
 .btn {
+  padding: 5px 20px;
   border: none;
-  color: rgb(5, 4, 4);
-  padding: .5rem 2rem;
-  font-size: 14px;
-  border: 1px solid black;
-  background: white;
+  color: white;
+  border-radius: 4px;
+  outline: none;
 }
+
 
 .btn:hover {
   cursor: pointer;
 }
 
 
-
+.btn-dark {
+  background: rgb(92, 87, 87);
+}

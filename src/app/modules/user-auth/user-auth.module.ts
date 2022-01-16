@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from 'src/app/shared/modules/shared.module';
+// import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +18,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
   ],
   imports: [
     CommonModule,
-    SharedModule,
+    // SharedModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,

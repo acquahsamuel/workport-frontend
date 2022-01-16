@@ -4,7 +4,6 @@ import { MaterialModule } from 'src/app/material.module';
 import { FaqComponent } from './pages/faq/faq.component';
 import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
-import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { SidebarComponent } from 'src/app/shared/components/sidebar/sidebar.component';
 import { JobPostingComponent } from './pages/job-posting/job-posting.component';
@@ -28,10 +27,11 @@ import { SearchBarComponent } from 'src/app/shared/components/search-bar/search-
     imports: [
         CommonModule,
         MaterialModule,
-        SharedModule,
         HomepageRoutingModule
     ],
     providers: []
 
 })
 export class HomepageModule { }
+
+

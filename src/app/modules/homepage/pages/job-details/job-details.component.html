@@ -1,65 +1,87 @@
-<app-navigation></app-navigation>
-<div class="main-body">
-  <div class="left-section">
-    <app-sidebar></app-sidebar>
-  </div>
+<!-- <app-navigation></app-navigation>  -->
 
-  <ng-container>
-    <div class="right-section">
-      <section *ngFor="let job of jobs">
-        <div class="card-content">
-          <mat-card-title>
-            <mat-icon> business </mat-icon> {{ job.company }}
-          </mat-card-title>
-
-          <mat-card-subtitle>
-            <mat-icon> location_on </mat-icon> {{ job.locationAllowed }}
-            <mat-icon> alarm_on </mat-icon> {{ job.jobStatus }}
-            <mat-icon> location_on </mat-icon> {{ job.salaryInterval }}
-          </mat-card-subtitle>
-
-          <mat-divider></mat-divider>
-          <mat-card-content>
-            <h3>Qualifications:</h3>
-            <ng-container class="qualification-content">
-              <ul class="qualification-ul">
-                <li
-                  class="qualification-li"
-                  *ngFor="let item of job.minimumQualification"
-                >
-                  {{ item }}
-                </li>
-              </ul>
-            </ng-container>
-          </mat-card-content>
-          <br />
-          <mat-card-content>
-            <h3>Minimum qualifications:</h3>
-            <ng-container class="qualifications-description">
-              <ul>
-                <li *ngFor="let item of job.jobDescription">
-                  <p>{{ item }}</p>
-                </li>
-              </ul>
-            </ng-container>
-
-            <ng-container class="qualifications-about">
-              <h3>About the job</h3>
-              <p class="qualifications-p">
-                {{ job.aboutJob }}
-              </p>
-            </ng-container>
-          </mat-card-content>
-          <mat-divider></mat-divider>
-          <mat-card-actions>
-            <button mat-flat-button color="primary">View</button>
-          </mat-card-actions>
-        </div>
-      </section>
+<section class="container">
+  <div class="main-overview">
+    <div class="logo-container">
+      <img
+        class="logo"
+        src="https://s3.remote.io/img/company/628815334705.png"
+        alt=""
+        srcset=""
+      />
     </div>
-  </ng-container>
-</div>
 
-<ng-template #loader>
-  <mat-spinner></mat-spinner>
-</ng-template>
+    <h5>Dribble</h5>
+    <h2>Full Stack Engineer</h2>
+
+    <div class="header">
+      <p>Tags</p>
+      <span>
+        <i> </i>
+        <p>Engineering</p>
+      </span>
+      <span>
+        <i> </i>
+        <p>Full-Time</p>
+      </span>
+      <span>
+        <i> </i>
+        <p>https://dribble.com</p>
+      </span>
+    </div>
+
+    <div class="post-overview">
+      <div class="post-desc">
+        <p>Posted on january 17th, 2018</p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa,
+          temporibus id eaque dolorum eius at eum minima praesentium possimus
+          nobis aliquam, quidem pariatur asperiores!
+        </p>
+
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa,
+          temporibus id eaque dolorum eius at eum minima praesentium possimus
+          nobis aliquam, quidem pariatur asperiores! Culpa voluptas corporis
+          consequatur reprehenderit rem? Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Non impedit eum ratione recusandae autem veniam vel
+          vero, ex reiciendis libero cumque. Facilis, similique dolores illum
+          magnam dignissimos eum eligendi dicta.
+        </p>
+      </div>
+
+      <div class="social-links">
+        <p>Tell a friend</p>
+        <p>Tweet this job</p>
+        <p>Post on Linkedin</p>
+
+        <p>Report this post</p>
+      </div>
+    </div>
+
+    <h3>Requirement</h3>
+    <ul>
+      <li>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique amet
+        alias repellendus 
+      </li>
+      <li>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
+        recusandae odit ad facere dicta
+      </li>
+      <li>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
+      </li>
+      <li>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
+      </li>
+      <li>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
+        recusandae odit 
+      </li>
+      <li>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { JobService } from 'src/app/shared/services/job.service';
-import { ICreateJob } from 'src/app/shared/interface/job.model';
 
 @Component({
   selector: 'app-job-posting',
@@ -10,19 +9,13 @@ import { ICreateJob } from 'src/app/shared/interface/job.model';
 
 
 export class JobPostingComponent implements OnInit {
-  constructor(
-    private jobService: JobService) { }
+  @Input() title: string;
+  @Input() jobTitle: string;
+  @Input() hours: string;
+
+  constructor(private jobService: JobService) { }
 
   ngOnInit(): void {
-    this.loadAllJobs();
-  }
 
-  jobs = [];
-
-  loadAllJobs() {
-    this.jobService.getAllJobs().subscribe((jobs: ICreateJob[]) => {
-      this.jobs = jobs;
-      // this.isLoading = false;
-    })
   }
 }

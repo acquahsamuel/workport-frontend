@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from 'src/app/material.module';
-import { SharedModule } from 'src/app/shared/modules/shared.module';
+// import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { YourPostsComponent } from './pages/your-posts/your-posts.component';
@@ -18,7 +18,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 
   imports: [
     CommonModule,
-    SharedModule,
+    // SharedModule,
     MaterialModule,
     DashboardRoutingModule
   ]

@@ -1,27 +1,121 @@
-.login-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 6px);
+.signup-container {
 
-  mat-card {
-    width: 400px;
-    padding: 3rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 9px 0px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  background: rgb(224, 223, 221);
 }
 
 .form {
+  border-radius: 5px;
+  background: white;
+  // height: 30rem;
+  width: 20rem;
+  padding: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+label {
+  font-weight: 400;
+  padding: .5rem 0;
+  text-transform: capitalize;
+}
+
+.form-group {
+  margin: 1.2rem 0;
   display: flex;
   flex-direction: column;
 }
 
-.signupHere:hover {
+.form-group.terms {
+  display: flex;
+  flex-direction: row;
+  padding: 0 3px;
+
+  p {
+    padding-left: 6px;
+    font-size: 15px;
+
+    a {
+      text-decoration: none;
+      color: dodgerblue;
+
+    }
+  }
+}
+
+.form-input {
+  padding: .7rem;
+  border-radius: .4rem;
+  outline: none;
+  font-size: 13px;
+  border: 1px solid rgb(226, 224, 221);
+}
+
+.form-input:focus {
+  outline: blue;
+  border: 1.4px solid dodgerblue;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 13px 20px;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn:hover {
   cursor: pointer;
 }
 
-.back-link {
-  font-size: .9rem;
-  border-radius: 2px;
-  padding: 0 4px;
+.btn-dark {
+  background: rgb(20, 26, 26);
+  margin-bottom: 1rem;
+}
+
+
+
+.border-line{
+  width: 70%;
+  border: 1px solid rgb(229, 229, 241);
+}
+
+.btn-group {
+  margin-bottom: .8rem;
+  width: 100%;
+}
+
+.btn-default {
+  color: white;
+  border: 1px solid rgb(240, 234, 234);
+  background: whitesmoke;
+  color: rgb(92, 88, 88);
+}
+
+
+.btn-cta {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+
+  span {
+    margin-right: 1rem;
+    font-size: 15px;
+  }
+
+  a {
+    color: dodgerblue;
+    font-weight: 400;
+    text-decoration: none;
+  }
 }

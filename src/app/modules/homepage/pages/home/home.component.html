@@ -1,10 +1,93 @@
-<app-navigation></app-navigation>
-<div class="main-body">
-  <div class="search-content">
-    <app-search-bar></app-search-bar>
+<div class="top-banner">
+  New! Create and manage your own job posts with Wrk.
+  <a href=""> Learn More </a>
+</div>
+
+<header class="header">
+  <div class="logo-container">
+    <strong class="logo">
+      <a routerLink="/" routerLinkActive="active"> rmtwrk </a>
+    </strong>
   </div>
 
-  <div class="main-content">
-    <app-job-posting routerLink="/job-details"></app-job-posting>
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="Search for jobs..." />
   </div>
-</div>
+
+  <div class="navigation-link">
+    <ul class="navigation-lists">
+      <li class="navigation-list">
+        <a routerLink="/top-companies" routerLinkActive="active">
+          Top Companies
+        </a>
+      </li>
+      <li class="navigation-list">
+        <a routerLink="/subscribe" routerLinkActive="active"> Subscribe </a>
+      </li>
+      <li class="navigation-list">
+        <a routerLink="/signup" routerLinkActive="active">Post a job</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<section class="main-content">
+  <div class="container">
+    <div class="main-body">
+      <div class="sidebar">
+        <ul class="category-lists">
+          <p>Category</p>
+          <app-sidebar
+            *ngFor="let category of categories"
+            [title]="category.title"
+          ></app-sidebar>
+          <br />
+          <h4>Job Types</h4>
+          <app-sidebar
+            *ngFor="let type of jobTypes"
+            [title]="type.title"
+          ></app-sidebar>
+        </ul>
+      </div>
+
+      <div class="main-content-listing">
+        <div class="main-content-listing-cta">
+          <h3>Browse remote job listings from all accross the web</h3>
+          <p>
+            We surf the internet to find remote working opporunities and then
+            display them here on one convenient place
+          </p>
+        </div>
+
+        <h3 class="title">New Remote jobs</h3>
+        <app-job-posting
+          *ngFor="let job of posts"
+          [title]="job.title"
+          [jobTitle]="job.jobTitle"
+          [hours]="job.hoursAgo"
+        >
+        </app-job-posting>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="logo-container">
+        <strong class="logo"> rmtwrk </strong>
+      </div>
+
+      <div class="footer-ads">
+        <ul class="footer-lists">
+          <!-- <p>Links</p> -->
+          <li><a routerLink="/"> Home </a></li>
+          <li><a routerLink=""> Privacy Policy</a></li>
+          <li><a routerLink="/signup"> Sign up</a></li>
+          <li><a routerLink="/login"> Login </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
