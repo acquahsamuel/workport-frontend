@@ -22,6 +22,7 @@ import { SearchBarComponent } from 'src/app/shared/components/search-bar/search-
         JobDetailsComponent,
         JobPostingComponent,
         SearchBarComponent,
+        
         PagenotfoundComponent,
     ],
     imports: [

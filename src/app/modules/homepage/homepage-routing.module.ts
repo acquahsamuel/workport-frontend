@@ -11,8 +11,6 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'faq', component: FaqComponent },
     { path: 'job-details', component: JobDetailsComponent },
-    // { path: 'job-details/:job-id', component: JobDetailsComponent },
-    // { path: '**', component: PagenotfoundComponent, pathMatch: 'full' }
 ];
 
 

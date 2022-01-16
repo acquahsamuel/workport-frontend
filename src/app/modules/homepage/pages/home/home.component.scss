@@ -1,7 +1,7 @@
 .top-banner {
   background: rgb(230, 219, 157);
   text-align: center;
-  padding: .6rem;
+  padding: 0.6rem;
 }
 
 .container {
@@ -12,7 +12,7 @@
 .logo {
   font-size: 19px;
   color: white;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
 
   a {
     text-decoration: none;
@@ -26,7 +26,7 @@
 
 .search-input {
   width: 100%;
-  padding: .7rem;
+  padding: 0.7rem;
   border-radius: 13px;
   outline: none;
   border: none;
@@ -121,11 +121,10 @@
 
 .footer-lists {
   display: flex;
-
 }
 
 .footer-lists p {
-  font-size: 23px;
+  font-size: 1.2rem;
   color: white;
 }
 
@@ -136,13 +135,10 @@
   color: rgb(231, 201, 144);
 }
 
-
-
-
 @media screen and (max-width: 500px) {
   .logo-container {
     // background-color: blue;
-    padding: .4rem;
+    padding: 0.4rem;
   }
 
   .header {
@@ -152,10 +148,9 @@
 
   .search-container {
     order: 3;
-    padding-bottom: .7rem;
+    padding-bottom: 0.7rem;
     width: 80%;
   }
-
 
   .main-body {
     .sidebar {
@@ -166,13 +161,15 @@
       padding: 1rem;
     }
 
+    .footer-lists {
+      font-size: .9rem;
+    }
   }
 }
 
-
 @media screen and (max-width: 855px) {
   .logo-container {
-    padding: .4rem;
+    padding: 0.4rem;
   }
 
   .header {
@@ -182,7 +179,7 @@
 
   .search-container {
     order: 3;
-    padding-bottom: .7rem;
+    padding-bottom: 0.7rem;
     width: 80%;
   }
 
@@ -193,6 +190,10 @@
 
     .main-content-listing {
       padding: 1rem;
+    }
+
+    .footer-lists {
+      font-size: .9rem;
     }
   }
 }

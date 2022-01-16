@@ -1,5 +1,4 @@
 .signup-container {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,7 +83,7 @@ label {
 
 
 
-.border-line{
+.border-line {
   width: 70%;
   border: 1px solid rgb(229, 229, 241);
 }
@@ -117,5 +116,14 @@ label {
     color: dodgerblue;
     font-weight: 400;
     text-decoration: none;
+  }
+}
+
+
+
+@media screen and (max-width: 500px) {
+  .form {
+    width: 17rem;
+    padding: 2rem;
   }
 }
