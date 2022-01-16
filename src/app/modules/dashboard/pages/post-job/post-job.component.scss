@@ -1,26 +1,56 @@
-.section-container {
-  max-width: 90em;
-  height: 55em;
-  background-color: rgb(241, 238, 238);
-}
-
-
-.main-content {
-  border: 1px solid black;
+.container {
+  width: 71.25rem;
+  margin: 0 auto;
 }
 
 
 .form {
   display: flex;
   flex-direction: column;
+  width: 50%;
+  padding: 1rem;
 }
 
 
-.main-left {
-  // width: 50%;
-  // width: 100%;
+.form-group {
+  margin: 1.2rem 0;
+}
+
+
+.form-input {
+  padding: .5rem;
+  border-radius: .4rem;
+  outline: none;
+  font-size: 13px;
+  border: 1px solid rgb(226, 224, 221);
+  width: 100%;
 }
 
 .main-right {
   width: 50%;
+}
+
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 1rem;
+    max-width: 20rem;
+    // overflow: hidden;
+  }
+
+  .form {
+    width: 100%;
+    border: 1px solid black;
+    overflow: hidden;
+  }
+
+
+  .form-input {
+    width: 100%;
+  }
+
+  .form-group {
+    width: 100%;
+
+  }
 }
