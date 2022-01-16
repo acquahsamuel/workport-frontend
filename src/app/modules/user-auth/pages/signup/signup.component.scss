@@ -116,3 +116,11 @@ label {
     text-decoration: none;
   }
 }
+
+
+@media screen and (max-width: 500px) {
+  .form {
+    width: 17rem;
+    padding: 2rem;
+  }
+}
