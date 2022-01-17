@@ -34,7 +34,7 @@ import { SubscribeComponent } from './pages/subscribe/subscribe.component';
         HeaderComponent,
         HeaderAdComponent,
         BrandFooterComponent,
-        SubscribeComponent
+        SubscribeComponent,
     ],
     imports: [
         CommonModule,

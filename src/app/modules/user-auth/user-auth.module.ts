@@ -6,12 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserAuthRoutingModule } from './user-auth-routing.module';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { LogoComponent } from '../homepage/components/logo/logo.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     SignupComponent,
+    LogoComponent,
     ResetPasswordComponent
     
   ],

@@ -1,18 +1,10 @@
-// .subscribe-section {
-//   background-color: #F5F5F5;
-//   font-family: 'Roboto', sans-serif;
-//   min-height: 100vh;
-//   //   width: 100vw;
-// }
-
 .container {
   max-width: 65rem;
   margin: 0 auto;
-  //   box-sizing: border-box;
 }
 
 .header-cta {
-  height: 50vh;
+  height: 45vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,6 +17,7 @@
 .header-cta h3 {
   font-size: 2rem;
   font-weight: 700;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header-cta p {
@@ -38,21 +31,32 @@
   justify-content: space-between;
 }
 
+.main-body:not(:first-child) {
+  margin-bottom: 2rem;
+}
+
 .card {
   border: 1px solid rgb(214, 214, 218);
   min-height: 10rem;
   border-radius: .8rem;
   padding: .7rem;
   width: 20rem;
+}
 
-  &.body {}
-
+.card-title {
+  font-weight: 400;
+  text-transform: capitalize;
+//   padding: 0;
+  //   border: 1px solid black;
 }
 
 
+mat-icon {
+  font-size: 2rem;
+}
+
 @media screen and (max-width: 500px) {
   .main-body {
-    // border: 1px solid black;
     flex-direction: column;
   }
 
