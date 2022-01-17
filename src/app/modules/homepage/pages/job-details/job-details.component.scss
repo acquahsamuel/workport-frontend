@@ -84,10 +84,14 @@ li {
 .btn {
   border: none;
   padding: .8rem 1.2rem;
-  background-color: rgb(15, 12, 12);
+
   color: white;
   margin-top: .5rem;
   border-radius: .8rem;
+}
+
+.btn-default{
+  background-color: rgb(15, 12, 12);
 }
 
 

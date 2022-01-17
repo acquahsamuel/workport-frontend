@@ -18,6 +18,7 @@ import { JobService } from 'src/app/shared/services/job.service';
 import { CompanyService } from 'src/app/shared/services/company.service';
 import { HeaderComponent } from './pages/home/header/header.component';
 import { HeaderAdComponent } from './pages/home/header-ad/header-ad.component';
+import { SubscribeComponent } from './pages/subscribe/subscribe.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { HeaderAdComponent } from './pages/home/header-ad/header-ad.component';
         PagenotfoundComponent,
         HeaderComponent,
         HeaderAdComponent,
-        BrandFooterComponent
+        BrandFooterComponent,
+        SubscribeComponent
     ],
     imports: [
         CommonModule,

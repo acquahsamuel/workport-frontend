@@ -4,28 +4,59 @@
       <div class="form-group">
         <label for=""> Job Title </label>
         <input class="form-input" type="text" placeholder="" />
-        <span>
+        <span class="text-small">
           Example: “Senior Designer”. Titles must describe one position.
         </span>
       </div>
 
       <div class="form-group">
         <label for=""> Category </label>
-
-        <select>
-          <option value="">Cegory</option>
+        <select name="jobs" id="" class="form-select">
+          <option value="Web Development">Web Development</option>
+          <option value="design">Design</option>
+          <option value="product">Product</option>
+          <option value="customer">Customer Service</option>
+          <option value="data">Data</option>
+          <option value="sales">Sales</option>
+          <option value="devOps">DevOps/SysAdmin</option>
+          <option value="business">Business</option>
+          <option value="finance">finance</option>
+          <option value="legail">Legal</option>
+          <option value="human-resources">Human Resources</option>
+          <option value="medical">Medical</option>
+          <option value="teaching">Teaching</option>
+          <option value="other">Other</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for=""> Application Link or Email </label>
-        <input class="form-input" type="text" placeholder="" />
+        <input class="form-input" type="email" placeholder="" />
       </div>
 
       <div class="form-group">
-        <label for=""> Job Description </label>
-        <!-- <input  class="form-input" type="text" placeholder="" /> -->
-        <textarea name="" id="" cols="72" rows="10"></textarea>
+        <mat-card-header>
+          <mat-card-title>Description</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <editor
+            apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo"
+            [init]="{
+              height: 200,
+              menubar: false,
+              plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+              ],
+              toolbar:
+                'undo redo | formatselect | bold italic backcolor | \
+            alignleft aligncenter alignright alignjustify | \
+            bullist numlist outdent indent | removeformat | help'
+            }"
+          ></editor>
+        </mat-card-content>
       </div>
 
       <p>Tell us More about your Company</p>
@@ -56,15 +87,37 @@
 
       <div class="form-group">
         <label for=""> Email </label>
-        <input class="form-input" type="text" placeholder="" />
+        <input class="form-input" type="email" placeholder="" />
       </div>
 
       <div class="form-group">
-        <label for=""> Company Description </label>
-        <!-- <input  class="form-input" type="text" placeholder="" /> -->
-        <textarea name="" id="" cols="72" rows="10"></textarea>
+        <mat-card-header>
+          <mat-card-title> Company Description </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <editor
+            apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo"
+            [init]="{
+              height: 200,
+              menubar: false,
+              plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+              ],
+              toolbar:
+                'undo redo | formatselect | bold italic backcolor | \
+            alignleft aligncenter alignright alignjustify | \
+            bullist numlist outdent indent | removeformat | help'
+            }"
+          ></editor>
+        </mat-card-content>
+      </div>
+
+      <div class="">
+        <button class="btn btn-default">Post job</button>
       </div>
     </form>
   </div>
-  <!-- <div class="main-right"></div> -->
 </section>
