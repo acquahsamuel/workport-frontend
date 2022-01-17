@@ -32,7 +32,5 @@ export class ApiEndpointsService {
   getUsersUrl() {
     return this.httpClient.get(`${BASE_URL}/${this.users}`);
   }
-
-
 }
 
