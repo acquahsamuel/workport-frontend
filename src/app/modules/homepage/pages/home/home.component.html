@@ -28,11 +28,11 @@
         </div>
 
         <h3 class="title">New Remote jobs</h3>
-        <app-job-posting
-          *ngFor="let job of posts"
-          [title]="job.title"
-          [jobTitle]="job.jobTitle"
-          [hours]="job.hoursAgo"
+        <app-job-posting 
+          *ngFor="let job of jobListings"
+          [title]="job.name"
+          [jobTitle]="job.position"
+          [hours]="job.jobStatus"
         >
         </app-job-posting>
       </div>

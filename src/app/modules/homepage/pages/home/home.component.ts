@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { JobService } from 'src/app/shared/services/job.service';
 import { CompanyService } from 'src/app/shared/services/company.service';
 import { ICreateJob } from 'src/app/shared/interface/job.model';
@@ -37,17 +37,39 @@ export class HomeComponent implements OnInit {
     { title: 'Other' },
   ]
 
-  posts = [
-    { title: 'ToGo Technology', jobTitle: 'Fullstack Javascript developer', hoursAgo: '5d' },
-    { title: 'Google Inc', jobTitle: 'Data science', hoursAgo: '2 week ago' },
-    { title: 'Surfline Internet', jobTitle: 'MVC4 C# fullstack Application developer', hoursAgo: '15d' },
-    { title: 'AirtelTigo', jobTitle: 'Operation manager for Data center', hoursAgo: '2d' },
+  jobListings = [
+
+    {
+      "name": "Backend Engineers",
+      "position": "Senior Systems Engineer",
+      "locationAllowed": "USA",
+      "salaryInterval": "yearly",
+      "jobStatus": "full-time",
+      "user": "6163439ef04c8f59b734a4e3",
+      "company": "6166a9f1e420ee9791f6e640"
+    },
+    {
+      "name": "Stanbic Bank Ghana",
+      "position": "Full stack integrations engineer",
+      "salaryInterval": "yearly",
+      "jobStatus": "Part-time",
+      "user": "6163439ef04c8f59b734a4e3",
+      "company": "6166a9f1e420ee9791f6e640"
+    },
+    {
+      "name": "Stanbic Bank Ghana",
+      "position": "Full stack integrations engineer",
+      "salaryInterval": "yearly",
+      "jobStatus": "Part-time",
+      "user": "6163439ef04c8f59b734a4e3",
+      "company": "6166a9f1e420ee9791f6e640"
+    }
   ]
 
   constructor(
     private route: ActivatedRoute,
     private jobService: JobService,
-    private companyService: CompanyService
+    private companyService: CompanyService,
   ) {
   }
 
@@ -59,7 +81,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadAllJobs();
-    this.loadAllCompanies();
     this.loadAllCategories();
   }
 
@@ -68,10 +89,6 @@ export class HomeComponent implements OnInit {
     this.jobService.getAllJobs().subscribe(x => {
       console.log(x);
     })
-  }
-
-  loadAllCompanies() {
-    console.log('Companies Loaded')
   }
 
   loadAllCategories() {

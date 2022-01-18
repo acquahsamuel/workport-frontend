@@ -1,7 +1,6 @@
-<!-- <app-navigation></app-navigation>  -->
-
+<app-header></app-header>
 <section class="container">
-  <div class="main-overview">
+  <div class="main-overview" *ngFor="let job of jobDetails">
     <div class="logo-container">
       <img
         class="logo"
@@ -11,8 +10,8 @@
       />
     </div>
 
-    <h5>Dribble</h5>
-    <h2>Full Stack Engineer</h2>
+    <h5>{{ job.name }}</h5>
+    <h2>{{ job.position }}</h2>
 
     <div class="header">
       <p>Tags</p>
@@ -22,7 +21,7 @@
       </span>
       <span>
         <i> </i>
-        <p>Full-Time</p>
+        <p>{{ job.jobStatus }}</p>
       </span>
       <span>
         <i> </i>
@@ -33,15 +32,8 @@
     <div class="post-overview">
       <div class="social-links">
         <ul>
-          <li>
-            <a href=""> Tell a friend </a>
-          </li>
-          <li><a href=""> Tweet this job </a></li>
-          <li>
-            <a href=""> Post on Linkedin</a>
-          </li>
-          <li>
-            <a href=""> Report this post</a>
+          <li *ngFor="let tag of job.jobTags">
+            <a> {{ tag }} </a>
           </li>
         </ul>
       </div>
@@ -50,72 +42,38 @@
 
       <div class="post-desc">
         <h2>Requirement</h2>
-
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa,
-          temporibus id eaque dolorum eius at eum minima praesentium possimus
-          nobis aliquam, quidem pariatur asperiores!
+          Flexible working hours and the possibility to work remotely. An
+          enthusiastic and friendly team in a productive working environment.
+          Varied and challenging activities in a constantly growing and
+          future-oriented industry. Great coaching and development
+          opportunities. We have an annual budget for external training courses
+          and conferences. We previously attended GitHub Universe in London and
+          Amsterdam. An afternoon each sprint (every 2 weeks) to work on
+          something that interests you. Want to learn a new programming
+          language?
         </p>
 
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa,
-          temporibus id eaque dolorum eius at eum minima praesentium possimus
-          nobis aliquam, quidem pariatur asperiores! Culpa voluptas corporis
-          consequatur reprehenderit rem? Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Non impedit eum ratione recusandae autem veniam vel
-          vero, ex reiciendis libero cumque. Facilis, similique dolores illum
-          magnam dignissimos eum eligendi dicta.
+          That’s fine by us. It doesn't have to be work-related. It’s there to
+          help you expand your skill set and keep the creative juices flowing.
+          Always a cold Fritz-Kola in the fridge (if you decide to stop by our
+          office). Join us for whole company get-togethers. Our past retreats
+          have been in Belgium, Prague & Spain. Our next one is in Portugal.
         </p>
       </div>
 
-      <h2>Requirement</h2>
-      <ul class="job-lists">
+      <h2>Experience</h2>
+      <h4>Your requirements for the job</h4>
+      <ul class="job-lists" *ngFor="let jobdescription of job.jobDescription">
         <li class="job-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-          amet alias repellendus
-        </li>
-        <li class="job-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-          recusandae odit ad facere dicta
-        </li>
-        <li class="job-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-        </li>
-        <li>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-        </li>
-        <li class="job-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-          recusandae odit
-        </li>
-        <li class="job-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
+          {{jobdescription}}
         </li>
       </ul>
 
       <h2>Skills Required</h2>
-      <ul class="job-lists">
-        <li class="job-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-          amet alias repellendus
-        </li>
-        <li class="job-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-          recusandae odit ad facere dicta
-        </li>
-        <li class="job-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-        </li>
-        <li>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-        </li>
-        <li class="job-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-          recusandae odit
-        </li>
-        <li class="job-list">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-        </li>
+      <ul class="job-lists" *ngFor="let skill of job.skills">
+        <li class="job-list">{{ skill }}</li>
       </ul>
       <div class="">
         <button class="btn btn-default">Apply for position</button>

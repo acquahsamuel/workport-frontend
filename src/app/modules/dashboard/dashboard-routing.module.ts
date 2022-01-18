@@ -3,16 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutes } from 'src/app/shared/constants/app.constants';
 import { AuthGuardService } from 'src/app/shared/services/auth-guard.service';
 import { LoginComponent } from '../user-auth/pages/login/login.component';
-import { DashboardComponent } from './dashboard.component';
 import { PostJobComponent } from './pages/post-job/post-job.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { YourPostsComponent } from './pages/your-posts/your-posts.component';
 
-
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
+    component: YourPostsComponent,
     children: [
       { path: "post-job", component: PostJobComponent },
       { path: "your-posts", component: YourPostsComponent },

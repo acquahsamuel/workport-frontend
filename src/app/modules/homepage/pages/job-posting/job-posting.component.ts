@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { JobService } from 'src/app/shared/services/job.service';
 
 @Component({
@@ -12,8 +13,8 @@ export class JobPostingComponent implements OnInit {
   @Input() title: string;
   @Input() jobTitle: string;
   @Input() hours: string;
-
-  constructor(private jobService: JobService) { }
+ 
+  constructor(private jobService: JobService, private route: Router) { }
 
   ngOnInit(): void {
     this.loadAllJobs();
@@ -32,6 +33,5 @@ export class JobPostingComponent implements OnInit {
     console.log('Companies Loaded')
   }
 
-
-
+  
 }

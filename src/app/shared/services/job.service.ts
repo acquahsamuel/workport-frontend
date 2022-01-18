@@ -16,6 +16,7 @@ export class JobService {
 
   getJob(id: number) {
     return this.httpClient.get(BASE_URL);
+    // return { ...this.p};
   }
 
   // Add IJob interface

@@ -20,7 +20,6 @@ import { ProfileComponent } from './pages/profile/profile.component';
 
   imports: [
     CommonModule,
-    // SharedModule,
     EditorModule,
     MaterialModule,
     DashboardRoutingModule

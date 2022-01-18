@@ -1,6 +1,7 @@
 .container {
   max-width: 71.25rem;
   margin: auto;
+  // font-family: 'Outfit', sans-serif;
 }
 
 .main-overview {
@@ -8,14 +9,15 @@
 }
 
 .header {
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
   padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
 }
 
 h5 {
   font-size: 1.4rem;
   color: rgb(90, 89, 88);
   font-weight: 300;
+  font-family: 'Roboto', sans-serif;
 }
 
 h2 {
@@ -26,7 +28,12 @@ p,
 li {
   color: rgb(59, 57, 57);
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  overflow-wrap: break-word;
+  color: rgba(0, 0, 0, 0.86);
+  text-rendering: optimizeLegibility;
 }
 
 .post-overview {
@@ -34,12 +41,11 @@ li {
   flex-direction: column;
   padding: 2rem;
   margin-top: 1rem;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
 }
 
 
 .logo {
-  border: 1px solid black;
   border-radius: 13rem;
   width: 5rem;
 }

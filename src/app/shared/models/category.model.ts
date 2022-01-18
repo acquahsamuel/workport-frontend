@@ -1,6 +1,11 @@
 export class MCategory {
-    // categoryName: string
-    
+    categoryName: string;
 }
 
+export class MUpdateCategory {
+    categoryName: string;
+}
 
+export class MCreateCategory {
+    categoryName: string;
+}
