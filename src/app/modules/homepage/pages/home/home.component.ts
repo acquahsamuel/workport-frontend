@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { JobService } from 'src/app/shared/services/job.service';
 import { CompanyService } from 'src/app/shared/services/company.service';
-import { ICreateJob } from 'src/app/shared/interface/job.model';
-import { ICategory, IUpdateCategory } from 'src/app/shared/interface/category.interface';
-import { ICreateCompany } from 'src/app/shared/interface/company.interface';
 
 
 @Component({
@@ -73,19 +70,18 @@ export class HomeComponent implements OnInit {
   ) {
   }
 
-  jobs: ICreateJob[] = [];
-  companies: ICreateCompany[];
-  // categories: ICategory[] = [];
+
   isLoading = true;
 
 
   ngOnInit(): void {
     this.loadAllJobs();
     this.loadAllCategories();
+    let id = this.route.snapshot.paramMap.get('id');
   }
 
   loadAllJobs() {
-    //implement an interface 
+    //implement an interface  
     this.jobService.getAllJobs().subscribe(x => {
       console.log(x);
     })

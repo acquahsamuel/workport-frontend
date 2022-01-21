@@ -55,3 +55,14 @@ function buildGraph(edges) {
 
 const roadGraph = buildGraph(roads);
 
+
+// access a route parameter
+/*
+ngOnInit(){
+    this.route.paramMap.subscribe(params =>{
+        // convert number to string 
+        let id = +params.get('id');
+        console.log(id);
+    })
+}
+*/

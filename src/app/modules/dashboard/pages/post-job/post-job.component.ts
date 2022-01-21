@@ -14,9 +14,6 @@ import { NotificationService } from 'src/app/shared/services/notification.servic
 export class PostJobComponent implements OnInit {
 
   constructor(
-    private jobService: JobService,
-    private userService: UserService,
-    // private authService: AuthService,
     private notification: NotificationService
   ) { }
 

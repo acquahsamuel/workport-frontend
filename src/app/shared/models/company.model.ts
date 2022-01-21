@@ -8,11 +8,10 @@ export class MCompany {
     companyEmail: string;
     invoiceNotes: string;
 
-    // TODO: check model again
-    // jobs: string;
+   
 }
 
-export class MCreateCompany extends MCompany { }
+export class MCreateCompany{ }
 
 
-export class MUpdateCompany extends MCompany { }
+export class MUpdateCompany{ }

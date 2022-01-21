@@ -1,50 +1,64 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import decode from 'jwt-decode';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { ICreateUser } from '../interface/user.model';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import decode from 'jwt-decode';
 
 
 @Injectable()
 export class AuthService {
   constructor(
-    public jwtHelper: JwtHelperService,
+    private jwtHelper: JwtHelperService,
+    private router: Router,
     private httpClient: HttpClient
   ) { }
 
-  private BASE_URL = 'http://localhost:5000/api/v1';
+  BASE_URL = 'http://localhost:5000/api/v1';
+  NAME_KEY = 'name';
+  TOKEN_KEY = 'token';
+
+   getname() {
+    return localStorage.getItem(this.NAME_KEY);
+  }
 
   public isAuthenticated(): boolean {
-    console.log('User authenticated');
-    return true;
-
-    
-
+    return !!localStorage.getItem(this.TOKEN_KEY);
   }
 
 
- //ISignUp = create user interface
-  signUp(user: ICreateUser) {
-    // return this.httpClient.post(this.BASE_URL + '/auth/login', user);
-    return 'User created'
+  public tokenHeader() {
+    let header = new Headers({ 'Authorization': 'Bearer' + localStorage.getItem(this.TOKEN_KEY) });
+    // return new RequestOptions({ headers: header });
+    return 'request options';
   }
 
-  /**
-   * Removes a token from the LocalStorage
-   */
-  logout() {
-    // localStorage.removeItem('currentUser');
-    console.log('remove user id, token or user')
+  //pass in login payload (fields)
+  public login(loginData) {
+    this.httpClient.post(this.BASE_URL + '/login', loginData).subscribe(response => {
+      this.authenticate(response);
+    })
   }
 
-  /**
-   * Saves a User token to the LocalStorage
-   * @param token - the users token
-   */
-  saveUserToken(token: string) {
-    // localStorage.setItem('currentUser', JSON.stringify(x.token));
-    localStorage.setItem('currentUser', token);
+
+  public logout() {
+    localStorage.removeItem(this.NAME_KEY);
+    localStorage.removeItem(this.TOKEN_KEY);
   }
+
+
+  public authenticate(res) {
+    var authResponse = res.json();
+
+    if (!authResponse.token)
+      return;
+
+    localStorage.setItem(this.TOKEN_KEY, authResponse.token)
+    localStorage.setItem(this.NAME_KEY, authResponse.firstName)
+    this.router.navigate(['/']);
+  }
+
+
+
 
 
 

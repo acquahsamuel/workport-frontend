@@ -17,7 +17,6 @@
 
 .footer {
   background-color: rgb(54, 53, 53);
-  padding: 1em;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -42,7 +41,6 @@
 }
 
 .footer-lists p {
-  font-size: 1.2rem;
   color: white;
 }
 
@@ -60,6 +58,10 @@
 
   .footer-lists {
     font-size: .9rem;
+  }
+
+  .footer-lists li {
+    padding-left: .8rem;
   }
 
 }
@@ -90,7 +92,7 @@
     }
 
     .footer-lists {
-      font-size: .9rem;
+      font-size: .6rem;
     }
   }
 }

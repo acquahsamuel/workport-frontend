@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,13 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    // private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
   }
 
   title = '';
-  username = 'Acquah Samuel';
+  username = '';
   userProfile = './assets/images/placeholder.png';
 
 
@@ -32,12 +38,8 @@ export class DashboardComponent implements OnInit {
     profile_pic: '../images'
   }
 
+  logout() {
+    // this.router.navigateByUrl('home');
+  }
 
-  authService = '';
-
-  logOut() { }
-
-  enrollWithTrx() { }
-
-  
 }

@@ -1,22 +1,21 @@
-export class MJob {
-    position: string;
-    locationAllowed: string;
-    jobStatus: string;
-    jobCategory: string;
-    jobTags: [string];
-    slug: string;
-    currency: string;
-    salaryInterval: string;
-    jobDescription: string;
-    applicationURL: string;
-    applyToEmail: string;
-    postingDate: string;
+export class IJob {
+    public position: string;
+    public locationAllowed: string;
+    public jobStatus: string;
+    public jobCategory: string;
+    public jobTags: string[];
+    public slug: string;
+    public currency: string;
+    public salaryInterval: string;
+    public jobDescription: string;
+    public applicationURL: string;
+    public applyToEmail: string;
+    public postingDate: string;
 
-    //make reference to companyInterface
-    //make reference to userInferace
 }
 
-export class MCreateJob extends MJob { }
 
-export class MUpdateJob extends MJob { }
+//make reference to companyInterface
 
+
+//make reference to userInferace
