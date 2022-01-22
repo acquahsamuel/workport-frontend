@@ -14,19 +14,22 @@
     <h2>{{ job.position }}</h2>
 
     <div class="header">
-      <p>Tags</p>
-      <span>
-        <i> </i>
-        <p>Engineering</p>
-      </span>
-      <span>
-        <i> </i>
-        <p>{{ job.jobStatus }}</p>
-      </span>
-      <span>
-        <i> </i>
-        <p>https://dribble.com</p>
-      </span>
+      <ul class="header-ul">
+        <li class="header-li">
+          <mat-icon> dashboard </mat-icon>
+          <a class="header-link" routerLink=""> {{ job.jobStatus }} </a>
+        </li>
+
+        <li class="header-li">
+          <mat-icon>location_on </mat-icon>
+          <a class="header-link" routerLink=""> {{ job.locationAllowed }} </a>
+        </li>
+
+        <li class="header-li">
+          <mat-icon>share </mat-icon>
+          <a class="header-link" routerLink=""> Share this job </a>
+        </li>
+      </ul>
     </div>
 
     <div class="post-overview">
@@ -38,10 +41,10 @@
         </ul>
       </div>
       <br />
-      <p>Posted on january 17th, 2018</p>
+      <p>Posted on january {{ job.date }}</p>
 
       <div class="post-desc">
-        <h2>Requirement</h2>
+        <h3>Requirement</h3>
         <p>
           Flexible working hours and the possibility to work remotely. An
           enthusiastic and friendly team in a productive working environment.
@@ -63,17 +66,19 @@
         </p>
       </div>
 
-      <h2>Experience</h2>
+      <h3>Experience</h3>
       <h4>Your requirements for the job</h4>
-      <ul class="job-lists" *ngFor="let jobdescription of job.jobDescription">
-        <li class="job-list">
-          {{jobdescription}}
+      <ul class="job-lists">
+        <li class="job-list" *ngFor="let jobdescription of job.jobDescription">
+          {{ jobdescription }}
         </li>
       </ul>
 
-      <h2>Skills Required</h2>
-      <ul class="job-lists" *ngFor="let skill of job.skills">
-        <li class="job-list">{{ skill }}</li>
+      <h3>Skills Required</h3>
+      <ul class="job-lists">
+        <li class="job-list" *ngFor="let skill of job.skills">
+          {{ skill }}
+        </li>
       </ul>
       <div class="">
         <button class="btn btn-default">Apply for position</button>

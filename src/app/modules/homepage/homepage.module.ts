@@ -33,10 +33,7 @@ import { SubscribeComponent } from './pages/subscribe/subscribe.component';
         MaterialModule,
         HomepageRoutingModule
     ],
-    providers: [
-
-    ]
-
+    providers: []
 })
 export class HomepageModule { }
 

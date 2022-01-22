@@ -7,8 +7,6 @@ import {
 } from '@angular/router';
 import { AuthService } from './auth.service';
 import { StateStorageService } from './state-storage.service';
-// import { }
-
 
 /**
  * An authentication guard class heping the router module decide on
