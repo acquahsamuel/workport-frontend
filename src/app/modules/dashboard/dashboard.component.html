@@ -1,3 +1,6 @@
+<!-- <mat-toolbar>
+  <span> Jobber </span>
+</mat-toolbar> -->
 <mat-drawer-container class="dashboard-container" autosize>
   <mat-drawer #drawer class="dashboard-sidenav" mode="side" opened>
     <div class="sidebar-wrapper">
@@ -8,7 +11,6 @@
           alt="user profile"
         />
       </div>
-
       <div
         class="link-container"
         *ngFor="let link of links"
@@ -48,7 +50,6 @@
         <button mat-menu-item (click)="logout()">
           Logout <mat-icon> power_settings_new </mat-icon>
         </button>
-        <button mat-menu-item>Enroll <mat-icon>add</mat-icon></button>
       </mat-menu>
     </div>
   </div>

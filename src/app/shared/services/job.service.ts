@@ -1,27 +1,41 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
-const BASE_URL = `http://localhost:3000/jobs`;
+const BASE_URL = `https://workport.herokuapp.com/api/v1/`;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
-
 export class JobService {
-  constructor(private httpClient: HttpClient) { }
+  private model = "jobs";
 
-  getAllJobs() {
-    return this.httpClient.get(BASE_URL);
+  constructor(private httpClient: HttpClient) {}
+
+  allJobs() {
+    return this.httpClient.get(this.getUrl());
   }
 
-  getJob(id: number) {
-    return this.httpClient.get(BASE_URL);
-    // return { ...this.p};
+  findJob(jobId) {
+    return this.httpClient.get(this.getUrlById(jobId));
   }
 
-  // Add IJob interface
-  createJob() {
-    // this.httpClient.post()
+  createJob(job) {
+    return this.httpClient.post(this.getUrl(), job);
   }
 
+  updateJob(job) {
+    return this.httpClient.put(this.getUrlById(job.id), job);
+  }
+
+  deleteJob(jobId) {
+    return this.httpClient.delete(this.getUrlById(jobId));
+  }
+
+  private getUrl() {
+    return `${BASE_URL}${this.model}`;
+  }
+
+  private getUrlById(jobId) {
+    return `${this.getUrl}/${jobId}`;
+  }
 }

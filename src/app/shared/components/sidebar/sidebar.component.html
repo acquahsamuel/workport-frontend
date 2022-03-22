@@ -1,5 +1,5 @@
-<li class="category-list">
-  <input [type]="[inputType]" />
-  {{ title }}
-</li>
-
+<section class="example-section">
+  <mat-checkbox *ngFor="let category of categories" class="example-margin">
+    {{ category.name }}
+  </mat-checkbox>
+</section>

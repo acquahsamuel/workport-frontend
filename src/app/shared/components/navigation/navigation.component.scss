@@ -10,7 +10,8 @@
   position: fixed;
   margin-bottom: 7px;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
+  border: 1px solid black;
 }
 
 .nav-brand img {
@@ -26,13 +27,13 @@
 .nav-items a {
   text-decoration: none;
   display: inline-block;
-  margin: 0 .7rem;
+  margin: 0 0.7rem;
   color: black;
 }
 
 .signup {
   border: 1px solid black;
-  padding: .5rem .9rem;
+  padding: 0.5rem 0.9rem;
   background-color: rgb(10, 10, 9);
   color: rgb(235, 235, 235);
   // border-radius: 3px;

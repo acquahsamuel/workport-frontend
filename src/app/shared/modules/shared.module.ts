@@ -5,14 +5,13 @@ import { LoaderComponent } from '../components/loader/loader.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [LoaderComponent],
   imports: [
     CommonModule,
     MaterialModule
   ],
   providers: [],
-  exports: [LoaderComponent]
+  exports: [LoaderComponent] 
 })
 
 export class SharedModule { }
-

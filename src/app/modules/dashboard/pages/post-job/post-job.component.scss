@@ -8,35 +8,55 @@
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 1rem;
+  padding: 1rem 0 0.5rem 0;
+  box-sizing: border-box;
 }
 
 .form-group {
   margin: 1.2rem 0;
 }
 
+label {
+  text-transform: capitalize;
+}
+
 .form-input,
 .form-select {
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-radius: 0.4rem;
   outline: none;
-  font-size: 13px;
-  border: 1px solid rgb(226, 224, 221);
+  font-size: 14px;
+  border: 1px solid rgb(209, 208, 207);
   width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
 }
 
 .form-select option {
-  font-size: .8rem;
+  font-size: 26px;
+  margin-top: 13px;
 }
 
+.form-input:focus {
+  border-color: #01070e;
+  box-shadow: 0 0 0 0.2rem rgba(2, 8, 15, 0.25);
+}
 
-.text-small{
-  font-size: .8rem;
+.form-select option {
+  font-size: 0.8rem;
+}
+
+.text-small {
+  font-size: 0.8rem;
 }
 
 textarea {
   outline: none;
   border-radius: 0.2rem;
+}
+
+mat-form-field {
+  width: 100%;
 }
 
 .main-right {
@@ -57,13 +77,13 @@ textarea {
 
 @media screen and (max-width: 500px) {
   .container {
-    padding: 1rem;
-    max-width: 20rem;
+    padding-left: 0.3rem;
+    max-width: 25rem;
   }
 
   .form {
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   .form-input {

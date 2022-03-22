@@ -1,15 +1,12 @@
 export interface ICategory {
-    categoryId: string;
-    categoryName: string;
+  categoryId: string;
+  categoryName: string;
 }
 
 export interface IUpdateCategory {
-    categoryName?: string;
+  categoryName?: string;
 }
 
 export class Category implements ICategory {
-    constructor(
-        public categoryName: string,
-        public categoryId: string
-    ) { }
+  constructor(public categoryName: string, public categoryId: string) {}
 }

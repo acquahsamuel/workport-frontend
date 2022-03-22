@@ -11,7 +11,6 @@
   a {
     text-decoration: none;
     color: white;
-
   }
 }
 
@@ -65,6 +64,11 @@
   display: inline-block;
   color: rgb(231, 201, 144);
   text-decoration: none;
+}
+
+.category-list{
+  list-style: none;
+  padding-bottom: 5px;
 }
 
 .main-content {
@@ -158,7 +162,7 @@
     }
 
     .footer-lists {
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
   }
 }
@@ -189,7 +193,42 @@
     }
 
     .footer-lists {
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
   }
+}
+
+.main-content-listings {
+  border: 1px solid rgb(63, 62, 62);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  margin-bottom: 3px;
+}
+
+.main-content-listings:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(185, 179, 179);
+}
+
+.btn {
+  padding: 5px 20px;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  outline: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-dark {
+  background: rgb(92, 87, 87);
 }

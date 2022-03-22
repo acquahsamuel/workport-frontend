@@ -1,11 +1,4 @@
 export class AppConstants {
-    // ApiURL Endpoint
-    static BASE_URL = '';
-
-    static PREVIEW = '';
-    static WATCH = '';
+  // ApiURL Endpoint
+  static BASE_URL = '';
 }
-
-
-export type BANNER = 'BANNER';
-export type THUMBNAIL = 'THUMBMAIL';

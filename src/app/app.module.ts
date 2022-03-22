@@ -6,8 +6,9 @@ import { NotifierModule } from 'angular-notifier';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AdminModule } from './modules/admin/admin.module';
 import { UserAuthModule } from './modules/user-auth/user-auth.module';
@@ -15,9 +16,7 @@ import { HomepageModule } from './modules/homepage/homepage.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
 
   imports: [
     BrowserModule,
@@ -25,19 +24,18 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     MaterialModule,
     NotifierModule,
     NgxWebstorageModule.forRoot(),
-
-    //TODO NOT BEST APPROACH (REFACTOR)
     AdminModule,
     UserAuthModule,
     DashboardModule,
     HomepageModule,
     EditorModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
 
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    // { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
-
+export class AppModule {}

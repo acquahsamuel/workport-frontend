@@ -1,17 +1,18 @@
 <div class="signup-container">
   <app-logo></app-logo>
-  <form class="form" [formGroup]="loginForm" (ngSubmit)="(onSubmit)">
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <h3>Login</h3>
     <div class="btn-group">
       <button class="btn btn-default">Login up with Google</button>
     </div>
 
     <div class="form-group">
-      <label for=""> Email</label>
+      <label for="">Email</label>
       <input
         class="form-input"
         type="email"
         required
+        name="email"
         placeholder="username@gmail.com"
         formControlName="email"
         [ngClass]="{ 'is-invalid': submitted && formField.email.errors }"
@@ -25,7 +26,7 @@
     </div>
 
     <div class="form-group">
-      <label for=""> Password </label>
+      <label for="">Password</label>
       <input
         class="form-input"
         type="password"
@@ -48,19 +49,24 @@
 
     <div class="form-group terms">
       <input type="checkbox" />
-      <p>I agree with <a href=""> Term </a> and <a href=""> Privacy </a></p>
+      <p>
+        I agree with
+        <a href="">Term</a>
+        and
+        <a href="">Privacy</a>
+      </p>
     </div>
 
-    <button class="btn btn-dark" (click)="login()">Login</button>
+    <button class="btn btn-dark">Login</button>
 
     <hr class="border-line" />
     <div class="btn-cta">
       <span>Don't have an account</span>
-      <a routerLink="/signup"> Signup </a>
+      <a routerLink="/signup">Signup</a>
     </div>
     <div class="btn-cta">
-      <span> Forgot password </span>
-      <a routerLink="/reset-password"> Password reset </a>
+      <span>Forgot password</span>
+      <a routerLink="/reset-password">Password reset</a>
     </div>
   </form>
 </div>

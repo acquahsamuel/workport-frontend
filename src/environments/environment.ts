@@ -4,12 +4,10 @@
 
 export const environment = {
   // production: false
-
   production: false,
   assetPreLoader : '',
   APP : 'Workport',
-  // APIPreLoader : 'PerfectionTracker',
-  // APIPreLoader_2 : 'base',
+  apiUrl: 'http://localhost:5000/api/v1'
 };
 
 /*

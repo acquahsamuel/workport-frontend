@@ -1,66 +1,52 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import decode from 'jwt-decode';
+import { ISignUp, IUser, User } from '../dto/user.dto';
+import { map } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
 
-
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthService {
-  constructor(
-    private jwtHelper: JwtHelperService,
-    private router: Router,
-    private httpClient: HttpClient
-  ) { }
+  BASE_URL = 'https://workport.herokuapp.com/api/v1';
 
-  BASE_URL = 'http://localhost:5000/api/v1';
-  NAME_KEY = 'name';
-  TOKEN_KEY = 'token';
+  private userSubject: BehaviorSubject<User>;
+  public user: Observable<User>;
 
-   getname() {
-    return localStorage.getItem(this.NAME_KEY);
+  constructor(private router: Router, private http: HttpClient) {}
+
+  public get userValue(): User {
+    return this.userSubject.value;
   }
 
-  public isAuthenticated(): boolean {
-    return !!localStorage.getItem(this.TOKEN_KEY);
+  public register(user: ISignUp) {
+    return this.http.post(`${this.BASE_URL}/auth/register`, user);
   }
 
-
-  public tokenHeader() {
-    let header = new Headers({ 'Authorization': 'Bearer' + localStorage.getItem(this.TOKEN_KEY) });
-    // return new RequestOptions({ headers: header });
-    return 'request options';
+  public login(username, password) {
+    return this.http
+      .post<User>(`${this.BASE_URL}/auth/login`, { username, password })
+      .pipe(
+        map((user) => {
+          localStorage.setItem('user', JSON.stringify(user));
+          this.userSubject.next(user);
+          return user;
+        })
+      );
   }
 
-  //pass in login payload (fields)
-  public login(loginData) {
-    this.httpClient.post(this.BASE_URL + '/login', loginData).subscribe(response => {
-      this.authenticate(response);
-    })
+  public forgotPassword(email: string) {
+    return this.http.post(`${this.BASE_URL}/auth/forgotpassword`, email);
   }
 
+  public updateDetails(id: string, data: string) {
+    return this.http.put(`${this.BASE_URL}/updatedetails/${id}`, data);
+  }
 
   public logout() {
-    localStorage.removeItem(this.NAME_KEY);
-    localStorage.removeItem(this.TOKEN_KEY);
+    localStorage.removeItem('user');
+    this.userSubject.next(null);
+    this.router.navigate(['/login']);
   }
-
-
-  public authenticate(res) {
-    var authResponse = res.json();
-
-    if (!authResponse.token)
-      return;
-
-    localStorage.setItem(this.TOKEN_KEY, authResponse.token)
-    localStorage.setItem(this.NAME_KEY, authResponse.firstName)
-    this.router.navigate(['/']);
-  }
-
-
-
-
-
-
-
 }

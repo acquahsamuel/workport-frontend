@@ -1,24 +1,41 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+const BASE_URL = 'http://localhost:5000/api/v1/';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
-
 export class CompanyService {
-  BASE_URL = 'http://localhost:5000/api/v1';
-  COMAPANIES_URL = 'http://localhost:5000/api/v1/companies';
+  private model = 'companies';
 
-  NAME_KEY = 'name';
-  TOKEN_KEY = 'token';
-  CURRENT_USER = 'currentUser';
+  constructor(private httpClient: HttpClient) {}
 
+  all() {
+    return this.httpClient.get(this.getUrl());
+  }
 
-  constructor(
-    private httpClient: HttpClient
-    ) { }
+  find(jobId) {
+    return this.httpClient.get(this.getUrlById(jobId));
+  }
 
+  create(job) {
+    return this.httpClient.post(this.getUrl(), job);
+  }
 
+  update(job) {
+    return this.httpClient.put(this.getUrlById(job.id), job);
+  }
 
+  delete(jobId) {
+    return this.delete(this.getUrlById(jobId));
+  }
+
+  private getUrl() {
+    return `${BASE_URL}${this.model}`;
+  }
+
+  private getUrlById(id) {
+    return `${this.getUrl}/${id}`;
+  }
 }

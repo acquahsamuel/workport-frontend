@@ -1,52 +1,47 @@
+import { first } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormControl,
-  NgForm,
-  FormGroupDirective,
-  FormGroup, Validators,
-  FormArray
-} from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
-
-
-/** Error when invalid control is dirty, touched, or submitted. */
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
+  submitted = false;
+  signUpForm: FormGroup;
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
-
+    this.signUpForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
   }
 
-
-  signUpForm = new FormGroup({
-    email: new FormControl('', [
-      Validators.required,
-      Validators.email
-    ]),
-
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(5)
-    ]),
-  })
-
-
-  signUpSubmit(){
-
+  get formField() {
+    return this.signUpForm.controls;
   }
 
-
+  onSubmit() {
+    if (this.signUpForm.invalid) {
+      return;
+    }
+    console.log(this.signUpForm.value);
+    this.authService.register(this.signUpForm.value).subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (err) => {
+        if (!err.status) {
+          // this.signUpForm.setErrors({ noConnection: true });
+        }
+      },
+    });
+  }
 }

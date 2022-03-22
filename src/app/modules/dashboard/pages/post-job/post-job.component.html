@@ -1,17 +1,49 @@
 <section class="container">
   <div class="main-left">
-    <form action="" class="form">
+    <form [formGroup]="postJobForm" class="form" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for=""> Job Title </label>
-        <input class="form-input" type="text" placeholder="" />
+        <label for="">Job Title</label>
+        <input
+          class="form-input"
+          formControlName="position"
+          type="text"
+          name="position"
+          placeholder="eg. senior software engineer"
+        />
         <span class="text-small">
-          Example: “Senior Designer”. Titles must describe one position.
+          Example: "Principal Software Engineer”. Titles must describe one
+          position.
         </span>
       </div>
 
       <div class="form-group">
-        <label for=""> Category </label>
-        <select name="jobs" id="" class="form-select">
+        <label for="">Locations Allowed</label>
+        <br />
+        <br />
+        <select
+          name="locationAllowed"
+          formControlName="locationAllowed"
+          id=""
+          class="form-select"
+        >
+          <option value="">Select location</option>
+          <option value="remote">Remote</option>
+          <option value="usa">USA</option>
+          <option value="ghana">Ghana</option>
+          <option value="canada">Canada</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="">Category</label>
+        <select
+          name="jobCategory"
+          formControlName="jobCategory"
+          id=""
+          class="form-select"
+        >
+          <option value="">Select Category</option>
           <option value="Web Development">Web Development</option>
           <option value="design">Design</option>
           <option value="product">Product</option>
@@ -30,13 +62,20 @@
       </div>
 
       <div class="form-group">
-        <label for=""> Application Link or Email </label>
-        <input class="form-input" type="email" placeholder="" />
+        <label for="">Tags job could be searched with</label>
+        <input
+          class="form-input"
+          formControlName="jobTags"
+          type="email"
+          name="jobTags"
+          placeholder="eg. nodejs"
+        />
+        <div></div>
       </div>
 
       <div class="form-group">
         <mat-card-header>
-          <mat-card-title>Description</mat-card-title>
+          <p>Job Description</p>
         </mat-card-header>
 
         <mat-card-content>
@@ -55,44 +94,38 @@
             alignleft aligncenter alignright alignjustify | \
             bullist numlist outdent indent | removeformat | help'
             }"
+            formControlName="jobDescription"
+            name="jobDescription"
           ></editor>
         </mat-card-content>
       </div>
 
       <p>Tell us More about your Company</p>
       <div class="form-group">
-        <label for=""> Company Name </label>
-        <input class="form-input" type="text" placeholder="" />
+        <label for="">Company Name</label>
+        <input
+          class="form-input"
+          name="companyName"
+          formControlName="companyName"
+          type="text"
+          placeholder="eg. company inc"
+        />
       </div>
 
       <div class="form-group">
-        <label for=""> Company Location </label>
-        <input class="form-input" type="text" placeholder="" />
-      </div>
-
-      <div class="form-group">
-        <label for=""> Company Statement </label>
-        <input class="form-input" type="text" placeholder="" />
-      </div>
-
-      <div class="form-group">
-        <label for=""> Upload logo </label>
-        <input type="file" name="" id="" />
-      </div>
-
-      <div class="form-group">
-        <label for=""> Company's Website URL </label>
-        <input class="form-input" type="text" placeholder="" />
-      </div>
-
-      <div class="form-group">
-        <label for=""> Email </label>
-        <input class="form-input" type="email" placeholder="" />
+        <label for="">Company Website</label>
+        <input
+          class="form-input"
+          name="companyUrl"
+          formControlName="companyUrl"
+          type="url"
+          placeholder="https://www.companywebsite.com"
+        />
       </div>
 
       <div class="form-group">
         <mat-card-header>
-          <mat-card-title> Company Description </mat-card-title>
+          <p>Company Description</p>
         </mat-card-header>
 
         <mat-card-content>
@@ -111,13 +144,75 @@
             alignleft aligncenter alignright alignjustify | \
             bullist numlist outdent indent | removeformat | help'
             }"
+            formControlName="companyDescription"
           ></editor>
         </mat-card-content>
       </div>
 
+      <div class="form-group">
+        <label for="">Company Size</label>
+        <input
+          class="form-input"
+          name="companySize"
+          formControlName="companySize"
+          type="email"
+          placeholder="0-10"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="">Upload logo</label> <br />
+        <input
+          type="file"
+          name="companyLogo"
+          formControlName="companyLogo"
+          id=""
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="">Company Twitter</label>
+        <input
+          class="form-input"
+          name="companyTwitter"
+          formControlName="companyTwitter"
+          type="url"
+          placeholder="https://www.companywebsite.com"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="">Company LinkedIn</label>
+        <input
+          class="form-input"
+          name="companyLinkedin"
+          formControlName="companyLinkedin"
+          type="url"
+          placeholder="https://www.companylinkedin.com"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="">Company Email</label>
+        <input
+          class="form-input"
+          name="companyEmail"
+          formControlName="companyEmail"
+          type="email"
+          placeholder="companyemail@gmail.com"
+        />
+        <!-- <p class="error-message" *ngIf="!companyEmail.invalid"></p> -->
+      </div>
+
       <div class="">
-        <button class="btn btn-default">Post job</button>
+        <button [disabled]="postJobForm.invalid" class="btn btn-default">
+          Post job
+        </button>
       </div>
     </form>
   </div>
 </section>
+
+<div>Form Content : {{ postJobForm.value | json }}</div>
+<div>Form is valid : {{ postJobForm.valid | json }}</div>
+<!-- <div>Error around name : {{ postJobForm.controls.name.errors | json }}</div>  -->
