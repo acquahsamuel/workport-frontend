@@ -6,7 +6,7 @@ import {
   RouterStateSnapshot
 } from '@angular/router';
 import { AuthService } from './auth.service';
-import { StateStorageService } from './state-storage.service';
+// import { StateStorageService } from './state-storage.service';
 
 /**
  * An authentication guard class heping the router module decide on
@@ -19,7 +19,7 @@ export class AuthGuardService implements CanActivate {
   constructor(
     public auth: AuthService,
     public router: Router,
-    private stateStorageService: StateStorageService
+    // private stateStorageService: StateStorageService
   ) { }
 
   canActivate(
