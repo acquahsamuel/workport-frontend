@@ -10,7 +10,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AuthService {
   BASE_URL = 'https://workport.herokuapp.com/api/v1';
-           // https://workport.herokuapp.com/api/v1/auth/register
+  // https://workport.herokuapp.com/api/v1/auth/register
 
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
@@ -23,19 +23,23 @@ export class AuthService {
 
   // TODO : replace interface for user
   public register(user: any) {
-    return this.http.post(`${this.BASE_URL}/auth/register`, user);
+    return this.http.post(`${this.BASE_URL}/auth/register`, user).pipe(
+      map((user) => {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        // this.userSubject.next(user);
+        return user;
+      })
+    );
   }
 
-  public login(user : any) {
-    return this.http
-      .post<User>(`${this.BASE_URL}/auth/login`, user)
-      .pipe(
-        map((user) => {
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          this.userSubject.next(user);
-          return user;
-        })
-      );
+  public login(user: any) {
+    return this.http.post<User>(`${this.BASE_URL}/auth/login`, user).pipe(
+      map((user) => {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        this.userSubject.next(user);
+        return user;
+      })
+    );
   }
 
   public forgotPassword(email: string) {

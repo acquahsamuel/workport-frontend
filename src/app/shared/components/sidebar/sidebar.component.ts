@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Categories } from '../../constants/app.constants';
 
-
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',

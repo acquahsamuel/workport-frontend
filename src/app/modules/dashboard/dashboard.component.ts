@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {}
 
@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
     { path: 'your-posts', icon: 'business', title: 'Your Posts' },
     { path: 'post-job', icon: 'work', title: 'Post Job' },
     { path: 'profile', icon: 'account_circle', title: 'Profile' },
-    { path: 'logout', icon: 'exit_to_app', title: 'Logout' },
+    // { path: '/logout', icon: 'exit_to_app', title: 'Logout' },
   ];
 
   user = {
@@ -30,5 +30,7 @@ export class DashboardComponent implements OnInit {
 
   logout() {
     this.router.navigateByUrl('/login');
+    // this.authService.logout();
+    // console.log('clicked');
   }
 }

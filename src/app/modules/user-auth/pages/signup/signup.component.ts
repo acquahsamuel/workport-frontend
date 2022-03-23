@@ -33,8 +33,18 @@ export class SignupComponent implements OnInit {
       return;
     }
     console.log(this.signUpForm.value);
-    this.authService.register(this.signUpForm.value).subscribe((idxUser) => {
-      console.log(idxUser);
+    this.authService.register(this.signUpForm.value).subscribe({
+      /**Handle the this keyword with arrow function */
+      next: (response) => {
+        
+      },
+      complete() {},
+      error: (err) => {
+        // console.log(err);
+        if(!err.status){
+          this.signUpForm.setErrors({ noConnection : true });
+        }
+      },
     });
   }
 }
