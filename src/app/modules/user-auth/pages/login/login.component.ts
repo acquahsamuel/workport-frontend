@@ -42,15 +42,8 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    // this.authService
-    //   .login(this.loginForm.valid)
-    //   .subscribe({
-    //     next: (response) => {
-    //       console.log(response);
-    //     },
-    //     error: (err) => {
-    //       console.log(err);
-    //     },
-    //   });
+    this.authService.login(this.loginForm.value).subscribe(data =>{
+      console.log(data);
+    });
   }
 }

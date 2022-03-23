@@ -7,20 +7,20 @@
     </div>
 
     <div class="form-group">
-      <label for=""> Username</label>
+      <label for=""> Email </label>
       <input
         class="form-input"
-        formControlName="username"
+        formControlName="email"
         type="text"
-        name="username"
-        placeholder="username"
-        [ngClass]="{ 'is-invalid': submitted && formField.username.errors }"
+        name="email"
+        placeholder="username@email.com"
+        [ngClass]="{ 'is-invalid': submitted && formField.email.errors }"
       />
       <div
-        *ngIf="submitted && formField.username.errors"
+        *ngIf="submitted && formField.email.errors"
         class="invalid-feedback"
       >
-        <div *ngIf="formField.username.errors.required">
+        <div *ngIf="formField.email.errors.required">
           Username is required
         </div>
       </div>

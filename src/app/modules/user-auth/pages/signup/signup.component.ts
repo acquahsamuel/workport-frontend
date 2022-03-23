@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
@@ -33,15 +33,8 @@ export class SignupComponent implements OnInit {
       return;
     }
     console.log(this.signUpForm.value);
-    this.authService.register(this.signUpForm.value).subscribe({
-      next: (response) => {
-        console.log(response);
-      },
-      error: (err) => {
-        if (!err.status) {
-          // this.signUpForm.setErrors({ noConnection: true });
-        }
-      },
+    this.authService.register(this.signUpForm.value).subscribe((idxUser) => {
+      console.log(idxUser);
     });
   }
 }
