@@ -50,15 +50,12 @@ export class PostJobComponent implements OnInit {
     ]),
   });
 
-  // get formField() {
-  //   return this.postJobForm.controls;
-  // }
 
   onSubmit() {
-    // this.jobService.createJob(this.postJobForm.value).subscribe((valx) => {
-    //   this.jobModel = valx;
-    //   console.log(valx);
-    // });
+    this.jobService.createJob(this.postJobForm.value).subscribe((valx) => {
+      // this.jobModel = valx;
+      console.log(valx);
+    });
     console.log(this.postJobForm.value);
   }
 }

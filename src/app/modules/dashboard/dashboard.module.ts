@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { MaterialModule } from "src/app/material.module";
-// import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { ReactiveFormsModule } from "@angular/forms";
 import { EditorModule } from "@tinymce/tinymce-angular";
 import { DashboardComponent } from "./dashboard.component";
