@@ -13,6 +13,10 @@ import { HeaderComponent } from './pages/home/header/header.component';
 import { HeaderAdComponent } from './pages/home/header-ad/header-ad.component';
 import { JobTypesComponent } from 'src/app/shared/components/job-types/job-types.component';
 import { SubscribeComponent } from './pages/subscribe/subscribe.component';
+import { SubscriberFooterComponent } from 'src/app/shared/components/subscriber-footer/subscriber-footer.component';
+// import { S}
+
+// import {  }
 
 @NgModule({
     declarations: [
@@ -26,6 +30,7 @@ import { SubscribeComponent } from './pages/subscribe/subscribe.component';
         HeaderAdComponent,
         JobTypesComponent,
         BrandFooterComponent,
+        SubscriberFooterComponent,
         SubscribeComponent,
     ],
     imports: [

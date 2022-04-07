@@ -29,6 +29,7 @@ export class AuthService {
    * 
    * @param user 
    * @returns 
+   *  * @description user register
    */
   public register(user: any) {
     return this.http.post(`${this.BASE_URL}/auth/register`, user).pipe
@@ -39,6 +40,12 @@ export class AuthService {
       );
   }
 
+  /**
+   * 
+   * @param user 
+   * @returns 
+   * @description user signup **
+   */
   public signup(user: any) {
     return this.http.post(`${this.BASE_URL}/auth/register`, user).pipe(tap(() => {
       this.signedin$.next(true);

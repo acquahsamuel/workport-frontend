@@ -14,13 +14,14 @@ export class HomeComponent implements OnInit {
   constructor(private jobService: JobService) {}
 
   ngOnInit(): void {
-    // this.isLoading = true;
-    // this.loadAllJobs();
+    this.isLoading = true;
+    this.loadAllJobs();
   }
 
   loadAllJobs() {
     this.jobService.allJobs().subscribe((jobs) => {
       this.jobListings = jobs;
+      console.log(this.jobListings);
       this.isLoading = false;
     });
   }

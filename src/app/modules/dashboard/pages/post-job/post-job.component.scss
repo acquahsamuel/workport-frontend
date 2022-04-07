@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+.heading-main{
+  margin: 2rem 0;
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: 400;
+ 
+}
+
 .form {
   display: flex;
   flex-direction: column;

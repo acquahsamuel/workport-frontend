@@ -1,7 +1,9 @@
 <app-header></app-header>
 <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+
 <section class="main-content">
   <div class="container">
+
     <div class="main-body">
       <div class="sidebar">
         <ul class="category-lists">
@@ -22,8 +24,8 @@
           </p>
         </div>
         <h3 class="title">New Remote jobs</h3>
-        <div>
-          <a *ngFor="let job of jobListings">
+        <div class="jobs-listings">
+          <a *ngFor="let job of jobListings.data">
             <div
               class="main-content-listings"
               [routerLink]="['/job-details', job.id]"
@@ -38,10 +40,21 @@
               </div>
             </div>
           </a>
+
+          
         </div>
+
+        <section>
+          <app-subscriber-footer></app-subscriber-footer>
+        </section>
+    
       </div>
     </div>
+
+    
   </div>
 </section>
 
-<app-brand-footer></app-brand-footer>
+
+
+<!-- <app-brand-footer></app-brand-footer> -->

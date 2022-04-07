@@ -19,8 +19,8 @@ export class JobService {
     return this.httpClient.get(this.getUrlById(jobId));
   }
 
-  createJob(job) {
-    return this.httpClient.post(this.getUrl(), job);
+  createJob(job : any ) {
+    return this.httpClient.post(this.getUrl(), JSON.stringify(job));
   }
 
   updateJob(job) {
@@ -34,6 +34,8 @@ export class JobService {
   private getUrl() {
     return `${BASE_URL}${this.model}`;
   }
+
+
 
   private getUrlById(jobId) {
     return `${this.getUrl}/${jobId}`;

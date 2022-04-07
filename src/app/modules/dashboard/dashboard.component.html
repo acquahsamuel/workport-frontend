@@ -1,15 +1,47 @@
-<!-- <mat-toolbar>
-  <span> Jobber </span>
-</mat-toolbar> -->
+<mat-toolbar class="mat-toolbar">
+  <div class="mat-toolbar-nav-left">
+    <div class="">
+      <div class="dashboard-sidenav-content">
+        <div class="">
+          <button type="button" mat-button (click)="drawer.toggle()">
+            <mat-icon
+              aria-hidden="false"
+              class="menu-icon"
+              aria-label="Example home icon"
+              >menu</mat-icon
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+    <span> Jobber </span>
+  </div>
+  <div class="mat-toolbar-nav-right">
+    <div class="image-container">
+      <img [src]="userProfile" class="user-image" alt="profile image" />
+      <button mat-button [matMenuTriggerFor]="menu" class="user-title">
+        {{ username }} <mat-icon>keyboard_arrow_down </mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()">
+          Logout <mat-icon> power_settings_new </mat-icon>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+
+
+</mat-toolbar>
 <mat-drawer-container class="dashboard-container" autosize>
   <mat-drawer #drawer class="dashboard-sidenav" mode="side" opened>
     <div class="sidebar-wrapper">
       <div class="logo">
-        <img
+        <!-- <img
           src="./assets/images/job-logo-dark.svg"
           class="logo-image"
           alt="user profile"
-        />
+        /> -->
+        <!-- <h4> Rmtwrk </h4> -->
       </div>
       <div
         class="link-container"
@@ -29,30 +61,7 @@
     </div>
   </mat-drawer>
 
-  <div class="dashboard-sidenav-content">
-    <div class="">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        <mat-icon
-          aria-hidden="false"
-          class="menu-icon"
-          aria-label="Example home icon"
-          >menu</mat-icon
-        >
-      </button>
-    </div>
 
-    <div class="image-container">
-      <img [src]="userProfile" class="user-image" alt="profile image" />
-      <button mat-button [matMenuTriggerFor]="menu" class="user-title">
-        {{ username }} <mat-icon>keyboard_arrow_down </mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="logout()">
-          Logout <mat-icon> power_settings_new </mat-icon>
-        </button>
-      </mat-menu>
-    </div>
-  </div>
 
   <div class="main-body">
     <div class="container">

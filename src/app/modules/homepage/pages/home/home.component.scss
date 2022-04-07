@@ -74,7 +74,7 @@
 .main-content {
   background: rgb(43, 43, 44);
   // background: #eee;
-  color: rgb(173, 178, 182);
+  color: rgb(227, 230, 233);
   padding-top: 2rem;
   min-height: 90vh;
 }
@@ -91,15 +91,24 @@
   flex-grow: 1;
 }
 
+.main-content-listings {
+  border: 1px solid rgb(248, 247, 247);
+}
+
+
 .main-content-listing-cta {
-  background: rgb(97, 96, 95);
-  padding: 2rem;
+  background: rgb(65, 64, 63);
+  padding: 2.5rem;
   border-radius: 6px;
   margin-bottom: 3rem;
+
+  h3{
+    font-size: 1.1rem;
+  }
 }
 
 .title {
-  font-size: 16px;
+  font-size: 1rem;
   text-transform: capitalize;
 }
 
@@ -198,14 +207,19 @@
   }
 }
 
+.jobs-listings{
+  // border: 1px solid rgb(235, 235, 235);
+  // border-bottom: none;
+  // height: 1;
+}
+
 .main-content-listings {
-  border: 1px solid rgb(63, 62, 62);
+  border: 1px solid rgb(82, 80, 80);
   border-radius: 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
-  margin-bottom: 3px;
 }
 
 .main-content-listings:hover {
