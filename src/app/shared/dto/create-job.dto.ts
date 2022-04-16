@@ -1,4 +1,5 @@
 export interface IJob {
+  id?: string;
   position?: string;
   locationAllowed?: string;
   jobStatus?: string;
@@ -16,6 +17,7 @@ export interface IJob {
 }
 
 export interface IUpdateJob {
+  id?: string;
   position?: string;
   locationAllowed?: string;
   jobStatus?: string;
@@ -48,6 +50,5 @@ export class CreateJob implements IJob {
     public applicationURL: string,
     public applyToEmail: string,
     public postingDate: string,
-    public roles?: string[]
   ) {}
 }

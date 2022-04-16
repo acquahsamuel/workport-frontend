@@ -8,7 +8,7 @@ import { SubscribeComponent } from './pages/subscribe/subscribe.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'subscribe', component: SubscribeComponent },
-  { path: 'job-details/:jobId', component: JobDetailsComponent },
+  { path: 'job-details/:id', component: JobDetailsComponent },
   //   { path: '**', component: PagenotfoundComponent },
 ];
 

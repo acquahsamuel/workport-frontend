@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const BASE_URL = 'http://localhost:5000/api/v1/';
+const BASE_URL = 'https://workport.herokuapp.com/api/v1/';
 
 @Injectable({
   providedIn: 'root',

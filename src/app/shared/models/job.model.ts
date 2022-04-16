@@ -1,4 +1,5 @@
-export class IJob {
+export class MJob {
+    public id? : number;
     public position: string;
     public locationAllowed: string;
     public jobStatus: string;
@@ -14,8 +15,3 @@ export class IJob {
 
 }
 
-
-//make reference to companyInterface
-
-
-//make reference to userInferace

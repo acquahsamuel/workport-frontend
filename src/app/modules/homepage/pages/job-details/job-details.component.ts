@@ -1,7 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { JobService } from 'src/app/shared/services/job.service';
+
+
+export class IJob {
+  id!: number;
+  name!: string;
+  occupation!: string;
+  email!: string;
+  bio!: string;
+}
 
 @Component({
   selector: 'app-job-details',
@@ -9,21 +18,21 @@ import { JobService } from 'src/app/shared/services/job.service';
   styleUrls: ['./job-details.component.scss'],
 })
 export class JobDetailsComponent implements OnInit {
-  jobDetails = null;
-  jobId;
+  jobDetails : any;
+  id: number;
+  xdata : any;
 
-  constructor(private jobService: JobService, private route: ActivatedRoute) {}
+  constructor(
+    private jobService: JobService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      this.jobId = params.get('jobId');
-    });
-    this.loadJobs(this.jobId);
-  }
-
-  loadJobs(jobId) {
-    this.jobService.findJob(jobId).subscribe((jobIx) => {
-      this.jobId = jobIx;
+    this.id = this.route.snapshot.params['id'];
+    this.jobService.findJob(this.id).subscribe((data) => {
+      this.xdata = data;
+      console.log(this.xdata);
     });
   }
 }

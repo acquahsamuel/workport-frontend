@@ -7,8 +7,6 @@ export class MCompany {
     companyLikedin: string;
     companyEmail: string;
     invoiceNotes: string;
-
-   
 }
 
 export class MCreateCompany{ }

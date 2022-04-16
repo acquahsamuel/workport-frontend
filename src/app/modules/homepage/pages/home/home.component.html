@@ -3,7 +3,6 @@
 
 <section class="main-content">
   <div class="container">
-
     <div class="main-body">
       <div class="sidebar">
         <ul class="category-lists">
@@ -26,35 +25,27 @@
         <h3 class="title">New Remote jobs</h3>
         <div class="jobs-listings">
           <a *ngFor="let job of jobListings.data">
-            <div
-              class="main-content-listings"
-              [routerLink]="['/job-details', job.id]"
-            >
+            <div class="main-content-listings">
               <div class="listings-title">
                 <h3>{{ job.position }}</h3>
                 <p>{{ job.title }}</p>
               </div>
               <div class="listings-cta">
                 <p>{{ job.jobStatus }}</p>
-                <button class="btn btn-dark">View</button>
+                <button class="btn btn-dark" (click)="getJobDetails(job.id)">
+                  View
+                </button>
               </div>
             </div>
           </a>
-
-          
         </div>
 
-        <section>
+        <section class="footer-bottom">
           <app-subscriber-footer></app-subscriber-footer>
         </section>
-    
       </div>
     </div>
-
-    
   </div>
 </section>
-
-
 
 <!-- <app-brand-footer></app-brand-footer> -->

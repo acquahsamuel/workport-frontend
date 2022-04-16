@@ -1,6 +1,8 @@
 .container {
-  max-width: 71.25rem;
+  max-width: 75rem;
+  padding: 1.5rem;
   margin: 0 auto;
+  // border: 1px solid rgb(219, 219, 219);
 }
 
 .logo {
@@ -21,7 +23,7 @@
 .search-input {
   width: 100%;
   padding: 0.7rem;
-  border-radius: 13px;
+  border-radius: 5px;
   outline: none;
   border: none;
   font-size: 14px;
@@ -66,14 +68,13 @@
   text-decoration: none;
 }
 
-.category-list{
+.category-list {
   list-style: none;
   padding-bottom: 5px;
 }
 
 .main-content {
   background: rgb(43, 43, 44);
-  // background: #eee;
   color: rgb(227, 230, 233);
   padding-top: 2rem;
   min-height: 90vh;
@@ -95,14 +96,13 @@
   border: 1px solid rgb(248, 247, 247);
 }
 
-
 .main-content-listing-cta {
   background: rgb(65, 64, 63);
   padding: 2.5rem;
   border-radius: 6px;
   margin-bottom: 3rem;
 
-  h3{
+  h3 {
     font-size: 1.1rem;
   }
 }
@@ -110,107 +110,6 @@
 .title {
   font-size: 1rem;
   text-transform: capitalize;
-}
-
-.footer {
-  background-color: rgb(54, 53, 53);
-  padding: 1em;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.footer-lists li {
-  list-style: none;
-  padding-left: 1rem;
-}
-
-.footer-lists {
-  display: flex;
-}
-
-.footer-lists p {
-  font-size: 1.2rem;
-  color: white;
-}
-
-.footer-lists li a {
-  list-style: none;
-  text-transform: capitalize;
-  text-decoration: none;
-  color: rgb(231, 201, 144);
-}
-
-@media screen and (max-width: 500px) {
-  .logo-container {
-    // background-color: blue;
-    padding: 0.4rem;
-  }
-
-  .header {
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  .search-container {
-    order: 3;
-    padding-bottom: 0.7rem;
-    width: 80%;
-  }
-
-  .main-body {
-    .sidebar {
-      display: none;
-    }
-
-    .main-content-listing {
-      padding: 1rem;
-    }
-
-    .footer-lists {
-      font-size: 0.9rem;
-    }
-  }
-}
-
-@media screen and (max-width: 855px) {
-  .logo-container {
-    padding: 0.4rem;
-  }
-
-  .header {
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  .search-container {
-    order: 3;
-    padding-bottom: 0.7rem;
-    width: 80%;
-  }
-
-  .main-body {
-    .sidebar {
-      display: none;
-    }
-
-    .main-content-listing {
-      padding: 1rem;
-    }
-
-    .footer-lists {
-      font-size: 0.9rem;
-    }
-  }
-}
-
-.jobs-listings{
-  // border: 1px solid rgb(235, 235, 235);
-  // border-bottom: none;
-  // height: 1;
 }
 
 .main-content-listings {
@@ -245,4 +144,43 @@ a {
 
 .btn-dark {
   background: rgb(92, 87, 87);
+}
+
+@media screen and (max-width: 935px) {
+  .container {
+   overflow: hidden;
+  }
+
+  .logo-container {
+    padding: 0.4rem;
+  }
+
+  .header {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .search-container {
+    order: 3;
+    padding-bottom: 0.7rem;
+    width: 80%;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main-content-listing {
+    // padding: 1rem;
+    width: 100%;
+  }
+
+  .footer-bottom {
+    font-size: 0.9rem;
+    // background-color: aqua;
+    // width: 100%;
+    // width: 75rem;
+    // overflow: scroll;
+
+  }
 }

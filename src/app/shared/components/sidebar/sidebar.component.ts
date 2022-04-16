@@ -12,7 +12,7 @@ export class SidebarComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.categories;
-    console.log(this.categories);
+    // this.categories;
+    // console.log(this.categories);
   }
 }

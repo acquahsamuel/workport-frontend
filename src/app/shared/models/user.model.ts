@@ -1,4 +1,4 @@
-export interface IUser {
+export interface MUser {
     user_id?: string;
     name: string;
     email: string;
@@ -7,13 +7,13 @@ export interface IUser {
 }
 
 
-export class IUpdateUser {
+export class MUpdateUser {
     name?: string;
     email?: string;
     password?: string;
 }
 
-export class CreateUser implements IUser {
+export class CreateUser implements MUser {
     constructor() { }
     public name: string;
     public email: string;
