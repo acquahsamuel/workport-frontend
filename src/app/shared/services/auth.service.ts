@@ -1,10 +1,13 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ISignUp, IUser, User } from '../dto/user.dto';
+import { User } from '../dto/user.dto';
+import decode from 'jwt-decode';
 import { map } from 'rxjs/operators';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { stringify } from 'querystring';
 
 @Injectable({
   providedIn: 'root',
@@ -12,86 +15,127 @@ import { tap } from 'rxjs/operators';
 export class AuthService {
   BASE_URL = 'https://workport.herokuapp.com/api/v1';
 
-  private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
   public signedin$ = new BehaviorSubject(false);
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(
+    private router: Router,
+    private jwtHelper: JwtHelperService,
+    private http: HttpClient
+  ) {}
 
   /**
-   * 
-   */
-  public get userValue(): User {
-    return this.userSubject.value;
-  }
-
-  /**
-   * 
-   * @param user 
-   * @returns 
-   *  * @description user register
-   */
-  public register(user: any) {
-    return this.http.post(`${this.BASE_URL}/auth/register`, user).pipe
-      (map((user) => {
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        return user;
-      })
-      );
-  }
-
-  /**
-   * 
-   * @param user 
-   * @returns 
+   *
+   * @param user
+   * @returns
    * @description user signup **
    */
-  public signup(user: any) {
-    return this.http.post(`${this.BASE_URL}/auth/register`, user).pipe(tap(() => {
-      this.signedin$.next(true);
-    }))
+  signUp(user: any) {
+    return this.http.post(`${this.BASE_URL}/auth/register`, user);
   }
 
   /**
-   * 
-   * @param user 
-   * @returns 
+   *
+   * @param user
+   * @returns
    */
-  public login(user: any) {
-    return this.http.post<User>(`${this.BASE_URL}/auth/login`, user).pipe(
+  signIn(email: string, password: string) {
+    const hash = btoa(email + ':' + password);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Basic' + hash,
+      }),
+    };
+
+    return this.http.get(`${this.BASE_URL}/auth/login`, httpOptions).pipe(
       map((user) => {
         localStorage.setItem('currentUser', JSON.stringify(user));
-        this.userSubject.next(user);
+        this.signedin$.next(true);
         return user;
       })
     );
   }
 
   /**
-   * 
-   * @param email 
-   * @returns 
+   *
+   * @returns
+   * Get authenticated state
    */
-  public forgotPassword(email: string) {
+  public isAuthenticated() {
+    const token = localStorage.getItem('currentUser');
+    // check whether the token is expired and return
+    // true or false
+    return !this.jwtHelper.isTokenExpired(token as string);
+  }
+
+  /**
+   * @description get current user
+   * @param
+   * @returns
+   */
+  getCurrentUser() {
+    const token = localStorage.getItem('currentUser');
+    const user = this.jwtHelper.decodeToken(token as string);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer' + token,
+      }),
+    };
+
+    return this.http.get(`${this.BASE_URL}/auth/me`, httpOptions);
+  }
+
+  /**
+   *
+   * @param email
+   * @returns
+   */
+  forgotPassword(email: string) {
+    // let emailer = JSON.stringify(email);
+    // payload :  { password : stringify,  }
     return this.http.post(`${this.BASE_URL}/auth/forgotpassword`, email);
   }
 
   /**
-   * 
-   * @param id 
-   * @param data 
-   * @returns 
+   *
+   * @param id
+   * @param data
+   * @returns
    */
-  public updateDetails(id: string, data: string) {
-    return this.http.put(`${this.BASE_URL}/updatedetails/${id}`, data);
+  updateUserDetails(id: string, data: string) {
+    const token = localStorage.getItem('currentUser');
+    const user = this.jwtHelper.decodeToken(token as string);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer' + token,
+      }),
+    };
+
+    return this.http.put(`${this.BASE_URL}/updatedetails/${id}`, httpOptions);
   }
 
   /**
-   * Logout 
+   * Returns the User Id Stored in the Token
+   * @returns the user_id as a string
    */
-  public logout() {
-    localStorage.removeItem('user');
-    this.userSubject.next(null);
+  getUserId(): string {
+    const token = localStorage.getItem('currentUser');
+    const tokenPayload: any = decode(token as string);
+    return tokenPayload.sub;
+  }
+
+  /**
+   * Logout
+   */
+  logout() {
+    localStorage.removeItem('currentUser');
+    this.signedin$.next(null);
     this.router.navigate(['/login']);
   }
 }

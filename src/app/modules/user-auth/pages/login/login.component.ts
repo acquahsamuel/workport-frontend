@@ -11,9 +11,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
-  model: any = {};
-  isAuthenticated = false;
   loading = false;
+  // data = { 
+
+  // }
 
   constructor(
     private formBuilder: FormBuilder,
@@ -42,8 +43,9 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authService.login(this.loginForm.value).subscribe(data =>{
-      console.log(data);
-    });
+   
+    // this.authService.signIn(this.data).subscribe(data =>{
+    //   console.log(data);
+    // });
   }
 }

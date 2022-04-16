@@ -1,4 +1,3 @@
-import { first } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -18,6 +17,9 @@ export class SignupComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+     /**
+      * Signup forms
+      */
     this.signUpForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -33,7 +35,7 @@ export class SignupComponent implements OnInit {
       return;
     }
     console.log(this.signUpForm.value);
-    this.authService.register(this.signUpForm.value).subscribe({
+    this.authService.signUp(this.signUpForm.value).subscribe({
       /**Handle the this keyword with arrow function */
       next: (response) => {
         

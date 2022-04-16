@@ -4,23 +4,15 @@ import { Router } from '@angular/router';
 import { JobService } from 'src/app/shared/services/job.service';
 
 
-export class IJob {
-  id!: number;
-  name!: string;
-  occupation!: string;
-  email!: string;
-  bio!: string;
-}
 
 @Component({
   selector: 'app-job-details',
   templateUrl: './job-details.component.html',
   styleUrls: ['./job-details.component.scss'],
 })
-export class JobDetailsComponent implements OnInit {
-  jobDetails : any;
-  id: number;
-  xdata : any;
+export class JobDetailsComponent implements OnInit {  
+  jobDetails : any = null;
+  
 
   constructor(
     private jobService: JobService,
@@ -29,10 +21,11 @@ export class JobDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    this.jobService.findJob(this.id).subscribe((data) => {
-      this.xdata = data;
-      console.log(this.xdata);
-    });
+    const id  = this.route.snapshot.params['id'];
+
+    this.jobService.findJob(id).subscribe((res : any) => {
+       this.jobDetails = res?.data ;   
+       console.log(this.jobDetails);
+    }) ;
   }
 }

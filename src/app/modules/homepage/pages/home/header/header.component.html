@@ -1,28 +1,34 @@
 <app-header-ad></app-header-ad>
 <header class="header">
-    <div class="logo-container">
-      <strong class="logo">
-        <a routerLink="/" routerLinkActive="active"> rmtwrk </a>
-      </strong>
-    </div>
-  
-    <div class="search-container">
-      <input type="text" class="search-input" placeholder="Search for jobs..." />
-    </div>
-  
-    <div class="navigation-link">
-      <ul class="navigation-lists">
+  <div class="logo-container">
+    <strong class="logo">
+      <a routerLink="/" routerLinkActive="active"> rmtwrk </a>
+    </strong>
+  </div>
+
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="Search for jobs..." />
+  </div>
+
+  <div class="navigation-link">
+    <ul class="navigation-lists">
+      <li class="navigation-list">
+        <a routerLink="/login" routerLinkActive="active"> List your postion </a>
+      </li>
+      <li class="navigation-list">
+        <a routerLink="/subscribe" routerLinkActive="active"> Subscribe </a>
+      </li>
+      <ng-container *ngIf="signedin$ | async">
         <li class="navigation-list">
-          <a routerLink="/login" routerLinkActive="active">
-          List your postion
-          </a>
+          <a routerLink="/" routerLinkActive="active"> Dashboard </a>
         </li>
+      </ng-container>
+
+      <ng-container *ngIf="!(signedin$ | async)">
         <li class="navigation-list">
-          <a routerLink="/subscribe" routerLinkActive="active"> Subscribe </a>
+          <a routerLink="/login" routerLinkActive="active">Post a job</a>
         </li>
-        <li class="navigation-list">
-          <a routerLink="/signup" routerLinkActive="active">Post a job</a>
-        </li>
-      </ul>
-    </div>
-  </header>
+      </ng-container>
+    </ul>
+  </div>
+</header>
