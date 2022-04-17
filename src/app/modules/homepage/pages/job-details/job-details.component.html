@@ -1,6 +1,6 @@
 <app-header></app-header>
 
- <section class="container">
+<section class="container">
   <div class="main-overview" *ngIf="jobDetails">
     <div class="logo-container">
       <img
@@ -10,9 +10,9 @@
         srcset=""
       />
     </div>
-  
-    <h2>{{ jobDetails.position  }}</h2>
-    <h5>{{ jobDetails.title  }}    </h5>
+
+    <h2>{{ jobDetails.position }}</h2>
+    <h5>{{ jobDetails.title }}</h5>
 
     <div class="header">
       <ul class="header-ul">
@@ -23,7 +23,9 @@
 
         <li class="header-li">
           <mat-icon>location_on </mat-icon>
-          <a class="header-link" routerLink=""> {{ jobDetails.locationAllowed }} </a>
+          <a class="header-link" routerLink="">
+            {{ jobDetails.locationAllowed }}
+          </a>
         </li>
 
         <li class="header-li">
@@ -42,49 +44,23 @@
         </ul>
       </div>
       <br />
-      <p>Posted on january {{ jobDetails.datePosted | date }}</p>
+      <p>Posted on  {{ jobDetails.datePosted | date }}</p>
 
       <div class="post-desc">
         <h3>Requirement</h3>
-        <p>
-          Flexible working hours and the possibility to work remotely. An
-          enthusiastic and friendly team in a productive working environment.
-          Varied and challenging activities in a constantly growing and
-          future-oriented industry. Great coaching and development
-          opportunities. We have an annual budget for external training courses
-          and conferences. We previously attended GitHub Universe in London and
-          Amsterdam. An afternoon each sprint (every 2 weeks) to work on
-          something that interests you. Want to learn a new programming
-          language?
-        </p>
-
-        <p>
-          That’s fine by us. It doesn't have to be work-related. It’s there to
-          help you expand your skill set and keep the creative juices flowing.
-          Always a cold Fritz-Kola in the fridge (if you decide to stop by our
-          office). Join us for whole company get-togethers. Our past retreats
-          have been in Belgium, Prague & Spain. Our next one is in Portugal.
-        </p>
+        <div #description class="description">
+          {{ update(description)}}
+        </div>
       </div>
-
-      <h3>Experience</h3>
-      <h4>Your requirements for the job</h4>
-      <ul class="job-lists">
-        <li class="job-list">
-          <!-- {{ desc }} -->
-          {{ jobDetails.jobDescription }}
-        </li>
-      </ul>
-
       <h3>Skills Required</h3>
       <ul class="job-lists">
         <li class="job-list" *ngFor="let skill of jobDetails.skills">
           {{ skill }}
         </li>
       </ul>
-      <div class="">
+      <div>
         <button class="btn btn-default">Apply for position</button>
       </div>
     </div>
   </div>
-</section> 
+</section>

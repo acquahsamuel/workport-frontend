@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { IJob } from 'src/app/shared/dto/create-job.dto';
 import { JobService } from 'src/app/shared/services/job.service';
 
 
@@ -11,9 +12,8 @@ import { JobService } from 'src/app/shared/services/job.service';
   styleUrls: ['./job-details.component.scss'],
 })
 export class JobDetailsComponent implements OnInit {  
-  jobDetails : any = null;
+  jobDetails : IJob = null;
   
-
   constructor(
     private jobService: JobService,
     private route: ActivatedRoute,
@@ -25,7 +25,12 @@ export class JobDetailsComponent implements OnInit {
 
     this.jobService.findJob(id).subscribe((res : any) => {
        this.jobDetails = res?.data ;   
-       console.log(this.jobDetails);
     }) ;
   }
+
+
+  update(jobDescription) {
+    jobDescription.innerHTML = this.jobDetails.jobDescription;   
+  }
+
 }
