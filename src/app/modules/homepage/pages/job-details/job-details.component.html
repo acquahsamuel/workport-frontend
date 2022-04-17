@@ -18,7 +18,7 @@
       <ul class="header-ul">
         <li class="header-li">
           <mat-icon> dashboard </mat-icon>
-          <a class="header-link" routerLink=""> {{ jobDetails.jobStatus }} </a>
+          <a class="header-link" routerLink=""> {{ jobDetails.jobType }} </a>
         </li>
 
         <li class="header-li">
@@ -30,7 +30,7 @@
 
         <li class="header-li">
           <mat-icon>share </mat-icon>
-          <a class="header-link" routerLink=""> Share this job </a>
+          <a class="header-link"> Share this job </a>
         </li>
       </ul>
     </div>
@@ -47,17 +47,11 @@
       <p>Posted on  {{ jobDetails.datePosted | date }}</p>
 
       <div class="post-desc">
-        <h3>Requirement</h3>
+        <h3> Job Description </h3>
         <div #description class="description">
           {{ update(description)}}
         </div>
       </div>
-      <h3>Skills Required</h3>
-      <ul class="job-lists">
-        <li class="job-list" *ngFor="let skill of jobDetails.skills">
-          {{ skill }}
-        </li>
-      </ul>
       <div>
         <button class="btn btn-default">Apply for position</button>
       </div>

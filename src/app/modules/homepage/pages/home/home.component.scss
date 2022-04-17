@@ -107,6 +107,11 @@
   }
 }
 
+.listings-title p,
+.listings-cta {
+  text-transform: capitalize;
+}
+
 .title {
   font-size: 1rem;
   text-transform: capitalize;
@@ -148,7 +153,7 @@ a {
 
 @media screen and (max-width: 935px) {
   .container {
-   overflow: hidden;
+    overflow: hidden;
   }
 
   .logo-container {
@@ -171,12 +176,10 @@ a {
   }
 
   .main-content-listing {
-    // padding: 1rem;
     width: 100%;
   }
 
   .footer-bottom {
     font-size: 0.9rem;
- 
   }
 }

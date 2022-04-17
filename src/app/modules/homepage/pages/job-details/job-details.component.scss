@@ -42,15 +42,15 @@
 }
 
 
-p,
-li {
+
+.description{
+  font-family: "Inter", sans-serif;
   color: rgb(59, 57, 57);
-  font-family: "Roboto", sans-serif;
+  // font-family: "Roboto", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  font-size: 1.1rem;
-  overflow-wrap: break-word;
-  color: rgba(0, 0, 0, 0.86);
+  font-size: 1rem;
+  overflow-wrap: break-word; 
   text-rendering: optimizeLegibility;
 }
 
@@ -91,7 +91,7 @@ h3{
 
 .social-links ul li {
   list-style: none;
-  border: 1px solid rgb(178, 177, 179);
+  border: 2px solid rgb(75, 74, 77);
   display: inline-block;
   padding: 2px 8px;
   border-radius: 0.8rem;
@@ -107,8 +107,9 @@ h3{
 
 .social-links ul li a {
   text-decoration: none;
-  font-size: 12px;
-  color: #777;
+  font-size: 15px;
+  color: rgb(75, 73, 73);
+  font-family: "Roboto", sans-serif;
 }
 
 
@@ -122,10 +123,16 @@ mat-icon{
   color: white;
   margin-top: 0.5rem;
   border-radius: 0.8rem;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .btn-default {
   background-color: rgb(15, 12, 12);
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
 }
 
 @media screen and (max-width: 500px) {
