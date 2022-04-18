@@ -19,7 +19,6 @@ export class AppRoutes {
 
 /**
  * Categories
- *
  */
 export const Categories = [
   { name: 'Sales & Marketing' },
@@ -35,7 +34,7 @@ export const Categories = [
 ];
 
 /**
- **Job Types
+ * Job Types
  */
 export const JobTypes = [
   { name: 'Full Time' },
@@ -45,6 +44,30 @@ export const JobTypes = [
 ];
 
 
-export const statesType = [
-  
-]
+/**
+ * Categories List
+ */
+export const CategoriesList = [
+  { name: 'Web Development' },
+  { name: 'Design' },
+  { name: 'Product' },
+  { name: 'Customer Service' },
+  { name: 'Data' },
+  { name: 'Sales' },
+  { name: 'DevOps/SysAdmin' },
+  { name: 'Business' },
+  { name: 'Finance' },
+  { name: 'Legal' },
+  { name: 'Human Resources' },
+  { name: 'Medical' },
+  { name: 'Teaching' },
+  { name: 'Other' },
+];
+
+export const LocationsAllowed = [
+  { name: 'Remote' },
+  { name: 'USA' },
+  { name: 'Ghana' },
+  { name: 'Canada' },
+  { name: 'Other' },
+];

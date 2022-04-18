@@ -3,6 +3,10 @@ import { NotificationService } from 'src/app/shared/services/notification.servic
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { JobService } from 'src/app/shared/services/job.service';
+import {
+  CategoriesList,
+  LocationsAllowed,
+} from 'src/app/shared/constants/app.constants';
 
 @Component({
   selector: 'app-post-job',
@@ -12,9 +16,8 @@ import { JobService } from 'src/app/shared/services/job.service';
 export class PostJobComponent implements OnInit {
   loading = false;
   submitted = false;
-  jobModel: string;
-
-  states: string[] = ['Alabama', 'Alaska', 'Arizona', 'Arkansas'];
+  locationsAllowed = LocationsAllowed;
+  categoriesList = CategoriesList;
 
   constructor(private jobService: JobService) {}
 
@@ -25,37 +28,56 @@ export class PostJobComponent implements OnInit {
     locationAllowed: new FormControl('', [Validators.required]),
 
     jobCategory: new FormControl('', [Validators.required]),
-    jobTags: new FormControl('', []),
+    jobTags: new FormControl('', [Validators.required]),
 
-    jobDescription: new FormControl('', []),
+    jobDescription: new FormControl('', [Validators.required]),
+    companyName: new FormControl('', [Validators.required]),
 
-    companyName: new FormControl('', []),
-    companyUrl: new FormControl('', [Validators.pattern('')]),
-    companyDescription: new FormControl('', [Validators.required]),
-
+    companyUrl: new FormControl('', [
+      Validators.pattern(
+        '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
+      ),
+    ]),
     companySize: new FormControl('', [Validators.required]),
-    companyLogo: new FormControl('', []),
+    companyLogo: new FormControl('', [Validators.required]),
 
     companyTwitter: new FormControl('', [
       Validators.required,
-      Validators.pattern(''),
+      Validators.pattern(
+        '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
+      ),
     ]),
     companyLinkedin: new FormControl('', [
       Validators.required,
-      Validators.pattern(''),
+      Validators.pattern(
+        '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
+      ),
     ]),
     companyEmail: new FormControl('', [
       Validators.required,
+      Validators.email,
       Validators.pattern('/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/'),
     ]),
   });
 
+  // uploadFile() {
+  //   const file = (event.target as HTMLInputElement).files[0];
+  //   this.postJobForm.patchValue({
+  //     avatar: file,
+  //   });
+  //   this.postJobForm.get('companyLogo').updateValueAndValidity();
+  // }
 
   onSubmit() {
-    this.jobService.createJob(this.postJobForm.value).subscribe((valx) => {
-      // this.jobModel = valx;
-      console.log(valx);
-    });
-    console.log(this.postJobForm.value);
+    this.jobService.createJob(this.postJobForm.value).subscribe(
+      (valx) => {
+        // this.jobModel = valx;
+        console.log(valx);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    // console.log(this.postJobForm.value);
   }
 }

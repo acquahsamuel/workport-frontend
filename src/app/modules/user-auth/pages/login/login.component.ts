@@ -15,9 +15,11 @@ export class LoginComponent implements OnInit {
   password;
   email;
 
+
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router : Router
   ) {}
 
   ngOnInit(): void {
@@ -41,15 +43,16 @@ export class LoginComponent implements OnInit {
     }
 
     this.isLoading = true;
-    this.authService.signIn(this.email, this.password).subscribe((x: any) => {
-    // this.state.verifyingCredentials = false;
-
+    this.authService.signIn(this.email, this.password).subscribe((response: any) => {
+    console.log(response);
+    
+    /**
+     * Save user token
+     */
+    this.authService.saveUserToken(response?.token);
+    this.router.navigateByUrl('/dashboard');
     // save user token
-    this.authService.saveUserToken(x.token);
-
-      // go back to The Page From Here
-      //  const url = this.states
-      // this.router.navigateByUrl('/dashboard');
+     
     });
   }
 

@@ -4,10 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule , HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { JwtInterceptor } from './shared/services/interceptors/jwt.interceptor';
 
+/**
+ * Refacotor for lazy loading
+*/
 import { AdminModule } from './modules/admin/admin.module';
 import { UserAuthModule } from './modules/user-auth/user-auth.module';
 import { HomepageModule } from './modules/homepage/homepage.module';
@@ -31,6 +34,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 
   providers: [
     // { provide: LocationStrategy, useClass: HashLocationStrategy }
+    {provide : HTTP_INTERCEPTORS, useClass : JwtInterceptor ,multi : true}
   ],
   bootstrap: [AppComponent],
 })

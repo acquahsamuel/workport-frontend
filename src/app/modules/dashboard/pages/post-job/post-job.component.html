@@ -2,8 +2,9 @@
   <h3 class="heading-main"> Create new application </h3>
   <div class="main-left">
     <form [formGroup]="postJobForm" class="form" (ngSubmit)="onSubmit()">
+  
       <div class="form-group">
-        <label for="">Job Title</label>
+        <label for=""> Job Title / Postion </label>
         <input
           class="form-input"
           formControlName="position"
@@ -18,49 +19,28 @@
       </div>
 
       <div class="form-group">
-        <label for="">Locations Allowed</label>
-        <br />
-        <br />
-        <select
-          name="locationAllowed"
-          formControlName="locationAllowed"
-          id=""
-          class="form-select"
-        >
-          <option value="">Select location</option>
-          <option value="remote">Remote</option>
-          <option value="usa">USA</option>
-          <option value="ghana">Ghana</option>
-          <option value="canada">Canada</option>
-          <option value="other">Other</option>
-        </select>
+        <!-- <label for="">Locations Allowed</label> -->
+        <mat-form-field appearance="outline">
+          <mat-label>Locations Allowed</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let location of locationsAllowed" [value]="location">
+           {{location.name}}
+         </mat-option> 
+         </mat-select>
+        </mat-form-field>
       </div>
 
-      <div class="form-group">
-        <label for="">Category</label>
-        <select
-          name="jobCategory"
-          formControlName="jobCategory"
-          id=""
-          class="form-select"
-        >
-          <option value="">Select Category</option>
-          <option value="Web Development">Web Development</option>
-          <option value="design">Design</option>
-          <option value="product">Product</option>
-          <option value="customer">Customer Service</option>
-          <option value="data">Data</option>
-          <option value="sales">Sales</option>
-          <option value="devOps">DevOps/SysAdmin</option>
-          <option value="business">Business</option>
-          <option value="finance">finance</option>
-          <option value="legail">Legal</option>
-          <option value="human-resources">Human Resources</option>
-          <option value="medical">Medical</option>
-          <option value="teaching">Teaching</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
+
+      <!-- <label for="">Select Category </label> -->
+      <mat-form-field appearance="outline">
+        <mat-label> Select Category </mat-label>
+        <mat-select>
+           <mat-option *ngFor="let category of categoriesList" [value]="category">
+            {{category.name}}
+          </mat-option> 
+        </mat-select>
+      </mat-form-field>
+
 
       <div class="form-group">
         <label for="">Tags job could be searched with</label>
@@ -86,14 +66,14 @@
               height: 200,
               menubar: false,
               plugins: [
-                'advlist autolink lists link image charmap print preview anchor',
+                'advlist autolink lists link image charmap  preview anchor',
                 'searchreplace visualblocks code fullscreen',
                 'insertdatetime media table paste code help wordcount'
               ],
               toolbar:
-                'undo redo | formatselect | bold italic backcolor | \
+                'undo redo | formatselect | bold italic | \
             alignleft aligncenter alignright alignjustify | \
-            bullist numlist outdent indent | removeformat | help'
+            bullist numlist '
             }"
             formControlName="jobDescription"
             name="jobDescription"
@@ -113,7 +93,7 @@
         />
       </div>
 
-      <div class="form-group">
+       <div class="form-group">
         <label for="">Company Website</label>
         <input
           class="form-input"
@@ -122,33 +102,7 @@
           type="url"
           placeholder="https://www.companywebsite.com"
         />
-      </div>
-
-      <div class="form-group">
-        <mat-card-header>
-          <p>Company Description</p>
-        </mat-card-header>
-
-        <mat-card-content>
-          <editor
-            apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo"
-            [init]="{
-              height: 200,
-              menubar: false,
-              plugins: [
-                'advlist autolink lists link image charmap print preview anchor',
-                'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table paste code help wordcount'
-              ],
-              toolbar:
-                'undo redo | formatselect | bold italic backcolor | \
-            alignleft aligncenter alignright alignjustify | \
-            bullist numlist outdent indent | removeformat | help'
-            }"
-            formControlName="companyDescription"
-          ></editor>
-        </mat-card-content>
-      </div>
+      </div> 
 
       <div class="form-group">
         <label for="">Company Size</label>
@@ -159,11 +113,12 @@
           type="email"
           placeholder="0-10"
         />
-      </div>
+      </div> 
 
       <div class="form-group">
         <label for="">Upload logo</label> <br />
         <input
+         
           type="file"
           name="companyLogo"
           formControlName="companyLogo"
@@ -171,7 +126,7 @@
         />
       </div>
 
-      <div class="form-group">
+    <div class="form-group">
         <label for="">Company Twitter</label>
         <input
           class="form-input"
@@ -180,9 +135,9 @@
           type="url"
           placeholder="https://www.companywebsite.com"
         />
-      </div>
+      </div> 
 
-      <div class="form-group">
+     <div class="form-group">
         <label for="">Company LinkedIn</label>
         <input
           class="form-input"
@@ -202,7 +157,6 @@
           type="email"
           placeholder="companyemail@gmail.com"
         />
-        <!-- <p class="error-message" *ngIf="!companyEmail.invalid"></p> -->
       </div>
 
       <div class="">

@@ -40,25 +40,21 @@ export class AuthService {
    * @param user
    * @returns
    */
-  signIn(email: string, password: string) {
+   signIn(email: string, password: string) {
     const hash = btoa(email + ':' + password);
 
+    //Todo - Remove the email and password from the Authorization section
     const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: 'Basic' + hash,
-      }),
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            Authorization: 'Basic ' + hash,
+        }),
+
     };
 
-    return this.http.get(`${this.BASE_URL}/auth/login`, httpOptions).pipe(
-      map((user) => {
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        this.signedin$.next(true);
-        return user;
-      })
-    );
-  }
-
+    const body = { password, email };
+    return this.http.post(`${this.BASE_URL}/auth/login`, body, httpOptions);
+}
   /**
    *
    * @returns

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -9,10 +10,13 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
   submitted = false;
+  isLoading = false;
   signUpForm: FormGroup;
+
 
   constructor(
     private authService: AuthService,
+    private router : Router,
     private formBuilder: FormBuilder
   ) {}
 
@@ -36,17 +40,21 @@ export class SignupComponent implements OnInit {
    */
   signUp() {
     this.submitted = true;
+    this.isLoading = true;
     if (this.signUpForm.invalid) {
       return;
     }
     this.authService.signUp(this.signUpForm.value).subscribe({
       /**Handle the this keyword with arrow function */
-      next: (response) => {   },
-
+      next: (response :any) => {  
+        console.log(response);
+        this.authService.saveUserToken(response?.token);
+        this.router.navigateByUrl('/dashboard');
+      },
       error: (err) => {
-        // console.log(err);
+        console.log(err);
         if(!err.status){
-          this.signUpForm.setErrors({ noConnection : true });
+          this.isLoading = false;
         }
       },
     });

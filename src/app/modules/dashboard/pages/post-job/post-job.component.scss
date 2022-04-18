@@ -19,6 +19,8 @@
   width: 50%;
   padding: 1rem 0 0.5rem 0;
   box-sizing: border-box;
+  overflow: hidden;
+  // border: 1px solid black;
 }
 
 .form-group {
@@ -70,6 +72,7 @@ mat-form-field {
 
 .main-right {
   width: 50%;
+  
 }
 
 .btn {

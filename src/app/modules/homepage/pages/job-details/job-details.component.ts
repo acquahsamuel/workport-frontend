@@ -24,10 +24,10 @@ export class JobDetailsComponent implements OnInit {
     const id  = this.route.snapshot.params['id'];
 
     this.jobService.findJob(id).subscribe((res : any) => {
-       this.jobDetails = res?.data ;   
+       this.jobDetails = res?.data ;  
+       console.log(this.jobDetails);
     }) ;
   }
-
 
   update(jobDescription) {
     jobDescription.innerHTML = this.jobDetails.jobDescription;   

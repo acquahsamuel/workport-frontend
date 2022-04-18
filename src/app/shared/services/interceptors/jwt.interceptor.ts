@@ -3,38 +3,29 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
+  HttpEventType,
   HttpInterceptor,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth.service';
-import { environment } from 'src/environments/environment';
+import { filter, tap } from 'rxjs/operators';
 
-
-     /*
-@Injectable({ providedIn : 'root' })
+@Injectable({ providedIn: 'root' })
 export class JwtInterceptor implements HttpInterceptor {
-    constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        // add auth header with jwt if user is logged in and request is to the api url
+  intercept(
+    request: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
 
-       
-        const user = this.authService.userValue;
-        const isLoggedIn = user && user.token;
+    // add auth header with jwt if user is logged in and request is to the api url
+    // console.log(request);
+    
+    const modifiedReq = request.clone({
+      // withCredentials : true
+    });
 
-        const isApiUrl = request.url.startsWith(environment.apiUrl);
-        if (isLoggedIn && isApiUrl) {
-            request = request.clone({
-                setHeaders: {
-                    Authorization: `Bearer ${user.token}`
-                }
-            });
-        }
-
-        return next.handle(request);
-     
-    }
+    return next.handle(modifiedReq)
+  }
 }
-
-
-   */
