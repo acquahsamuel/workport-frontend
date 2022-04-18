@@ -6,6 +6,9 @@
 .main-overview {
   min-height: 100vh;
   margin-bottom: 3rem;
+
+
+ 
 }
 
 .logo {
@@ -143,6 +146,17 @@ mat-icon{
 
   .main-overview {
     padding: 0.3rem;
+
+    h2{
+      font-size: 1.4rem;
+    }
+  }
+
+  .header-link{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   p,
