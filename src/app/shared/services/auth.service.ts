@@ -70,6 +70,19 @@ export class AuthService {
     return !this.jwtHelper.isTokenExpired(token as string);
   }
 
+
+  
+  /**
+   * Saves a User token to the LocalStorage
+   * @param token - the users token
+   */
+   saveUserToken(token: string) {
+    // localStorage.setItem('currentUser', JSON.stringify(x.token));
+    localStorage.setItem('currentUser', token);
+  }
+
+  
+
   /**
    * @description get current user
    * @param
@@ -95,8 +108,6 @@ export class AuthService {
    * @returns
    */
   forgotPassword(email: string) {
-    // let emailer = JSON.stringify(email);
-    // payload :  { password : stringify,  }
     return this.http.post(`${this.BASE_URL}/auth/forgotpassword`, email);
   }
 

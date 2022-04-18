@@ -9,12 +9,21 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  state = {
+    togglePassword: false,
+    verifyingCredentials: false,
+    emailValid: false,
+    passwordValid: false,
+    emailFocus: false,
+    passwordFocus: false,
+    loginError: false,
+  };
+
   loginForm: FormGroup;
   submitted = false;
   loading = false;
-  // data = { 
-
-  // }
+  password;
+  email;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,9 +52,16 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-   
-    // this.authService.signIn(this.data).subscribe(data =>{
-    //   console.log(data);
-    // });
+    this.authService.signIn(this.email, this.password).subscribe((x: any) => {
+      this.state.verifyingCredentials = false;
+
+      // save user token
+      this.authService.saveUserToken(x.token);
+
+      // go back to The Page From Here
+      //  const url = this.states
+      this.router.navigateByUrl('/dashboard');
+    });
+
   }
 }
