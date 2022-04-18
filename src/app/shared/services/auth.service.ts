@@ -8,12 +8,13 @@ import decode from 'jwt-decode';
 import { map } from 'rxjs/operators';
 import { tap } from 'rxjs/operators';
 import { stringify } from 'querystring';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  BASE_URL = 'https://workport.herokuapp.com/api/v1';
+  private  BASE_URL = environment.BASE_URL;
 
   public user: Observable<User>;
   public signedin$ = new BehaviorSubject(false);

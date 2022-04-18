@@ -25,8 +25,6 @@ export class HomeComponent implements OnInit {
     this.isLoading = true;
     this.loadAllJobs();
     this.checkAuth();
-
-    // this.authService.isAuthenticated();
   }
 
   loadAllJobs() {

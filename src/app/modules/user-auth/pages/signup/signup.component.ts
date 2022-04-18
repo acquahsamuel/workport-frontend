@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
      /**
-      * Signup forms
+      * Signup form control
       */
     this.signUpForm = this.formBuilder.group({
       email: ['', Validators.required],
@@ -30,17 +30,19 @@ export class SignupComponent implements OnInit {
     return this.signUpForm.controls;
   }
 
-  onSubmit() {
+   /**
+   * @description handles signup
+   * @returns 
+   */
+  signUp() {
+    this.submitted = true;
     if (this.signUpForm.invalid) {
       return;
     }
-    console.log(this.signUpForm.value);
     this.authService.signUp(this.signUpForm.value).subscribe({
       /**Handle the this keyword with arrow function */
-      next: (response) => {
-        
-      },
-      complete() {},
+      next: (response) => {   },
+
       error: (err) => {
         // console.log(err);
         if(!err.status){
@@ -48,5 +50,10 @@ export class SignupComponent implements OnInit {
         }
       },
     });
+  }
+
+
+  onReset(){
+    this.signUpForm.reset();
   }
 }

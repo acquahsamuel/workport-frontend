@@ -119,6 +119,18 @@ label {
   color: rgb(233, 47, 47);
 }
 
+
+.is-invalid{
+  color: rgb(233, 47, 47);
+}
+
+
+mat-spinner{
+  display: flex;
+  color: white;
+  text-align: center;
+}
+
 @media screen and (max-width: 500px) {
   .form {
     width: 17rem;

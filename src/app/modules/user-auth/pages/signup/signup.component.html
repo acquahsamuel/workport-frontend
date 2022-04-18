@@ -1,6 +1,6 @@
 <div class="signup-container">
   <app-logo></app-logo>
-  <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <form class="form" [formGroup]="signUpForm" (ngSubmit)="signUp()">
     <h3>Signup</h3>
     <div class="btn-group">
       <button class="btn btn-default">Sign up with Google</button>
@@ -16,13 +16,8 @@
         placeholder="username@email.com"
         [ngClass]="{ 'is-invalid': submitted && formField.email.errors }"
       />
-      <div
-        *ngIf="submitted && formField.email.errors"
-        class="invalid-feedback"
-      >
-        <div *ngIf="formField.email.errors.required">
-          Username is required
-        </div>
+      <div *ngIf="submitted && formField.email.errors" class="invalid-feedback">
+        <div *ngIf="formField.email.errors.required"> Email is required</div>
       </div>
     </div>
 
@@ -61,4 +56,6 @@
       <a routerLink="/login"> Log in </a>
     </div>
   </form>
+
+  <!-- {{ signUpForm | json }} -->
 </div>

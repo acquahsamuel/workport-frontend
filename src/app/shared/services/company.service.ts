@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-const BASE_URL = 'https://workport.herokuapp.com/api/v1/';
+import { environment } from 'src/environments/environment';
+// const BASE_URL = 'https://workport.herokuapp.com/api/v1';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CompanyService {
-  private model = 'companies';
-
+  private BASE_URL = `${environment.BASE_URL}/companies`; 
+ 
   constructor(private httpClient: HttpClient) {}
 
   all() {
@@ -32,7 +32,7 @@ export class CompanyService {
   }
 
   private getUrl() {
-    return `${BASE_URL}${this.model}`;
+    return `${this.BASE_URL}`;
   }
 
   private getUrlById(id) {

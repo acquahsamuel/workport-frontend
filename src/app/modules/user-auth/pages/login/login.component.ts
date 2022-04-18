@@ -9,59 +9,56 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  state = {
-    togglePassword: false,
-    verifyingCredentials: false,
-    emailValid: false,
-    passwordValid: false,
-    emailFocus: false,
-    passwordFocus: false,
-    loginError: false,
-  };
-
   loginForm: FormGroup;
   submitted = false;
-  loading = false;
+  isLoading = false;
   password;
   email;
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
-    private route: ActivatedRoute,
     private authService: AuthService
   ) {}
 
   ngOnInit(): void {
+    /**
+     * Login form control
+     */
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
-  //formFieldValue
-  get formField() {
-    return this.loginForm.controls;
-  }
-
-  // onSubmit()
-  onSubmit() {
+  /**
+   * @description handles login
+   * @returns 
+   */
+  logIn() {
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
 
-    this.loading = true;
+    this.isLoading = true;
     this.authService.signIn(this.email, this.password).subscribe((x: any) => {
-      this.state.verifyingCredentials = false;
+    // this.state.verifyingCredentials = false;
 
-      // save user token
-      this.authService.saveUserToken(x.token);
+    // save user token
+    this.authService.saveUserToken(x.token);
 
       // go back to The Page From Here
       //  const url = this.states
-      this.router.navigateByUrl('/dashboard');
+      // this.router.navigateByUrl('/dashboard');
     });
-
   }
+
+
+  /**
+   * Get form values from controls
+   */
+   get formField() {
+    return this.loginForm.controls;
+  }
+
 }

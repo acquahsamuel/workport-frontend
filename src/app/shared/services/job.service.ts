@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-const BASE_URL = `https://workport.herokuapp.com/api/v1/`;
-const BASE_URRL = `https://workport.herokuapp.com/api/v1/jobs`;
+import { environment } from 'src/environments/environment';
+// https://workport.herokuapp.com/api/v1/jobs
 
 @Injectable({
   providedIn: 'root',
 })
 export class JobService {
-  private model = 'jobs';
+  private BASE_URL = `${environment.BASE_URL}/jobs`;
 
   constructor(private httpClient: HttpClient) {}
 
@@ -17,7 +16,7 @@ export class JobService {
   }
 
   findJob(jobId) {
-    return this.httpClient.get(`${BASE_URRL}/${jobId}`);
+    return this.httpClient.get(`${this.BASE_URL}/${jobId}`);
   }
 
   createJob(job: any) {
@@ -33,7 +32,7 @@ export class JobService {
   }
 
   private getUrl() {
-    return `${BASE_URL}${this.model}`;
+    return `${this.BASE_URL}`;
   }
 
   private getUrlById(jobId) {

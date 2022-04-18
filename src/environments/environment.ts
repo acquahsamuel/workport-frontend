@@ -5,9 +5,10 @@
 export const environment = {
   // production: false
   production: false,
+  enableDebug : true,
   assetPreLoader : '',
   APP : 'Workport',
-  apiUrl: 'http://localhost:5000/api/v1'
+  BASE_URL: 'http://localhost:5000/api/v1'
 };
 
 /*
