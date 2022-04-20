@@ -5,9 +5,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../dto/user.dto';
 import decode from 'jwt-decode';
-import { map } from 'rxjs/operators';
-import { tap } from 'rxjs/operators';
-import { stringify } from 'querystring';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -15,8 +12,6 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
   private  BASE_URL = environment.BASE_URL;
-
-  public user: Observable<User>;
   public signedin$ = new BehaviorSubject(false);
 
   constructor(

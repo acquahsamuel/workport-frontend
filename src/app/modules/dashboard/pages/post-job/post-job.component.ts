@@ -16,7 +16,7 @@ import {
 export class PostJobComponent implements OnInit {
   loading = false;
   submitted = false;
-  locationsAllowed = LocationsAllowed;
+  countriesAllowed = LocationsAllowed;
   categoriesList = CategoriesList;
 
   constructor(private jobService: JobService) {}
@@ -25,7 +25,7 @@ export class PostJobComponent implements OnInit {
 
   postJobForm = new FormGroup({
     position: new FormControl('', [Validators.required]),
-    locationAllowed: new FormControl('', [Validators.required]),
+    locationsAllowed: new FormControl('', [Validators.required]),
 
     jobCategory: new FormControl('', [Validators.required]),
     jobTags: new FormControl('', [Validators.required]),
@@ -60,6 +60,10 @@ export class PostJobComponent implements OnInit {
     ]),
   });
 
+  get getControls(){
+    return this.postJobForm.controls;
+  }
+
   // uploadFile() {
   //   const file = (event.target as HTMLInputElement).files[0];
   //   this.postJobForm.patchValue({
@@ -69,15 +73,25 @@ export class PostJobComponent implements OnInit {
   // }
 
   onSubmit() {
+    this.submitted = true;
+    console.log(this.postJobForm.value);
+
+    if (this.postJobForm.invalid) {
+      return;
+    }
+
     this.jobService.createJob(this.postJobForm.value).subscribe(
       (valx) => {
-        // this.jobModel = valx;
         console.log(valx);
       },
       (error) => {
         console.log(error);
       }
     );
-    // console.log(this.postJobForm.value);
+  }
+
+  onreset() {
+    this.submitted = false;
+    this.postJobForm.reset();
   }
 }

@@ -1,6 +1,6 @@
 <mat-toolbar class="mat-toolbar">
+  <div class="mat-toolbar-content">
   <div class="mat-toolbar-nav-left">
-    <div class="">
       <div class="dashboard-sidenav-content">
         <div class="">
           <button type="button" mat-button (click)="drawer.toggle()">
@@ -13,9 +13,10 @@
           </button>
         </div>
       </div>
-    </div>
     <span> Jobber </span>
   </div>
+
+
   <div class="mat-toolbar-nav-right">
     <div class="image-container">
       <img [src]="userProfile" class="user-image" alt="profile image" />
@@ -29,19 +30,16 @@
       </mat-menu>
     </div>
   </div>
-
-
+</div>
 </mat-toolbar>
+
+
+
 <mat-drawer-container class="dashboard-container" autosize>
-  <mat-drawer #drawer class="dashboard-sidenav" mode="side">
+  <mat-drawer #drawer class="dashboard-sidenav" mode="side"  opened>
     <div class="sidebar-wrapper">
       <div class="logo">
-        <!-- <img
-          src="./assets/images/job-logo-dark.svg"
-          class="logo-image"
-          alt="user profile"
-        /> -->
-        <!-- <h4> Rmtwrk </h4> -->
+        <!-- <h4> Rmtwrk </h4>  -->
       </div>
       <div
         class="link-container"
@@ -54,14 +52,12 @@
           [routerLink]="link.path"
           routerLinkActive="active"
         >
-          <mat-icon class="mat-18 icon">{{ link.icon }}</mat-icon>
+          <!-- <mat-icon class="mat-18 icon">{{ link.icon }}</mat-icon> -->
           {{ link.title }}
         </a>
       </div>
     </div>
   </mat-drawer>
-
-
 
   <div class="main-body">
     <div class="container">

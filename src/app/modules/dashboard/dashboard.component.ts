@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
 
   isLoading = false;
   title = '';
-  username = 'username';
+  username = 'Samuel';
   userProfile = './assets/images/placeholder.png';
   links = [
     { path: 'your-posts', icon: 'business', title: 'Your Posts' },
