@@ -47,6 +47,12 @@
       </div>
     </div>
 
+    <mat-error class="matchError" *ngIf="loginForm.errors">
+      <ng-container *ngIf="loginForm.errors.credentials">
+          Invalid username or password
+      </ng-container>
+  </mat-error>
+
     <div class="form-group terms">
       <input type="checkbox" />
       <p>

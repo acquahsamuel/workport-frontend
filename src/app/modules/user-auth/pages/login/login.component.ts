@@ -15,11 +15,10 @@ export class LoginComponent implements OnInit {
   password;
   email;
 
-
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router : Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -34,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   /**
    * @description handles login
-   * @returns 
+   * @returns
    */
   logIn() {
     this.submitted = true;
@@ -43,25 +42,27 @@ export class LoginComponent implements OnInit {
     }
 
     this.isLoading = true;
-    this.authService.signIn(this.email, this.password).subscribe((response: any) => {
-    console.log(response);
-    
-    /**
-     * Save user token
-     */
-    this.authService.saveUserToken(response?.token);
-    this.router.navigateByUrl('/dashboard');
-    // save user token
-     
+    this.authService.signIn(this.email, this.password).subscribe({
+      next: (response: any) => {
+        /**
+         * Save user token
+         */
+        this.authService.saveUserToken(response?.token);
+        this.router.navigateByUrl('/dashboard/post-job');
+        // save user token
+      },
+      error: ({ error }) => {
+        if (error.username || error.password) {
+          this.loginForm.setErrors({ credentials: true });
+        }
+      },
     });
   }
-
 
   /**
    * Get form values from controls
    */
-   get formField() {
+  get formField() {
     return this.loginForm.controls;
   }
-
 }

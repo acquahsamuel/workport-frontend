@@ -1,7 +1,7 @@
 <section class="container">
   <h3 class="heading-main">Create new application</h3>
   <div class="main-left">
-    <form [formGroup]="postJobForm" class="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="postJobForm" class="form">
       <div class="form-group">
         <label for=""> Job Title / Postion </label>
         <input
@@ -28,12 +28,12 @@
       <div class="form-group">
         <mat-form-field appearance="outline">
           <mat-label>Locations Allowed</mat-label>
-          <mat-select>
+          <mat-select formControlName="locationsAllowed">
             <mat-option
-              *ngFor="let locationsAllowed of countriesAllowed"
-              [value]="locationsAllowed"
+              *ngFor="let location of locationAllowed"
+              [value]="location"
             >
-              {{ locationsAllowed.name }}
+              {{ location.name }}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -42,12 +42,12 @@
       <!-- <label for="">Select Category </label> -->
       <mat-form-field appearance="outline">
         <mat-label> Select Category </mat-label>
-        <mat-select>
+        <mat-select formControlName="jobCategory">
           <mat-option
-            *ngFor="let jobCategory of categoriesList"
-            [value]="jobCategory"
+            *ngFor="let category of categoriesList"
+            [value]="category"
           >
-            {{ jobCategory.name }}
+            {{ category.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -201,12 +201,9 @@
       </div>
 
       <div class="">
-        <button class="btn btn-default">Post job</button>
+        <button class="btn btn-default" (click)="createJob()">Post job</button>
       </div>
     </form>
   </div>
 </section>
 
-<!-- <div>Form Content : {{ postJobForm.value | json }}</div> -->
-<!-- <div>Form is valid : {{ postJobForm.valid | json }}</div> -->
-<!-- <div>Error around name : {{ postJobForm.controls.name.errors | json }}</div>  -->

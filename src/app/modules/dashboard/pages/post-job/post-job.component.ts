@@ -16,7 +16,7 @@ import {
 export class PostJobComponent implements OnInit {
   loading = false;
   submitted = false;
-  countriesAllowed = LocationsAllowed;
+  locationAllowed = LocationsAllowed;
   categoriesList = CategoriesList;
 
   constructor(private jobService: JobService) {}
@@ -33,16 +33,16 @@ export class PostJobComponent implements OnInit {
     jobDescription: new FormControl('', [Validators.required]),
     companyName: new FormControl('', [Validators.required]),
 
-    companyUrl: new FormControl('', [
-      Validators.pattern(
-        '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
-      ),
-    ]),
     companySize: new FormControl('', [Validators.required]),
     companyLogo: new FormControl('', [Validators.required]),
 
     companyTwitter: new FormControl('', [
       Validators.required,
+      Validators.pattern(
+        '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
+      ),
+    ]),
+    companyUrl: new FormControl('', [
       Validators.pattern(
         '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
       ),
@@ -56,7 +56,7 @@ export class PostJobComponent implements OnInit {
     companyEmail: new FormControl('', [
       Validators.required,
       Validators.email,
-      Validators.pattern('/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/'),
+     
     ]),
   });
 
@@ -64,22 +64,15 @@ export class PostJobComponent implements OnInit {
     return this.postJobForm.controls;
   }
 
-  // uploadFile() {
-  //   const file = (event.target as HTMLInputElement).files[0];
-  //   this.postJobForm.patchValue({
-  //     avatar: file,
-  //   });
-  //   this.postJobForm.get('companyLogo').updateValueAndValidity();
-  // }
 
-  onSubmit() {
+  createJob() {
     this.submitted = true;
-    console.log(this.postJobForm.value);
+    // console.log(this.postJobForm.value);
+    // if (this.postJobForm.invalid) {
+    //   return;
+    // }
 
-    if (this.postJobForm.invalid) {
-      return;
-    }
-
+   console.log('Clicked');
     this.jobService.createJob(this.postJobForm.value).subscribe(
       (valx) => {
         console.log(valx);
