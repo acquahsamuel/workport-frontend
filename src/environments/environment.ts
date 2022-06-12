@@ -8,7 +8,8 @@ export const environment = {
   enableDebug : true,
   assetPreLoader : '',
   APP : 'Workport',
-  BASE_URL: 'http://localhost:5000/api/v1'
+  // BASE_URL: 'http://localhost:5000/api/v1',
+  BASE_URL : 'https://workport.herokuapp.com/api/v1'
 };
 
 /*

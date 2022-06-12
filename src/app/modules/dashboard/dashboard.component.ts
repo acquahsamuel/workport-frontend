@@ -15,8 +15,8 @@ export class DashboardComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-   this.authService.getCurrentUser().subscribe(iUser =>{
-     console.log(iUser);
+   this.authService.getCurrentUser().subscribe(x =>{
+    console.log(x);
    })
   }
 

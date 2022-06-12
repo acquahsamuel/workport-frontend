@@ -35,14 +35,14 @@ export class LoginComponent implements OnInit {
    * @description handles login
    * @returns
    */
-  logInS() {
+   logInSubmit() {
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
 
     this.authService.logIn(this.email, this.password).subscribe((x : any) =>{
-      console.log(x + ' x');
+      // console.log(x + ' x');
       this.authService.saveUserToken(x?.token);
       this.router.navigateByUrl('/dashboard/post-job');
 

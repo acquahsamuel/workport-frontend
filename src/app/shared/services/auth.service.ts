@@ -1,24 +1,23 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { User } from '../dto/user.dto';
-import  decode from 'jwt-decode';
-import { environment } from 'src/environments/environment';
-
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { BehaviorSubject, Observable } from "rxjs";
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+import { User } from "../dto/user.dto";
+import decode from "jwt-decode";
+import { environment } from "src/environments/environment";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root"
 })
 export class AuthService {
-  private  BASE_URL = environment.BASE_URL;
+  private BASE_URL = environment.BASE_URL;
   public signedin$ = new BehaviorSubject(false);
 
   constructor(
     private router: Router,
     private jwtHelper: JwtHelperService,
-    private http: HttpClient
+    private httpClient: HttpClient
   ) {}
 
   /**
@@ -28,7 +27,7 @@ export class AuthService {
    * @description user signup **
    */
   signUp(user: any) {
-    return this.http.post(`${this.BASE_URL}/auth/register`, user);
+    return this.httpClient.post(`${this.BASE_URL}/auth/register`, user);
   }
 
   /**
@@ -36,35 +35,41 @@ export class AuthService {
    * @param user
    * @returns
    */
-   logIn(email: string, password: string) {
-    const body = { email , password };
-    // const body = { password, email };
-    return this.http.post(`${this.BASE_URL}/auth/login`, body);
-   }
+  logIn(email: string, password: string) {
+    const body = { email, password };
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+        // Authorization: 'Basic ' + hash,
+      })
+    };
+    return this.httpClient.post(`${this.BASE_URL}/auth/login`, body, {
+      ...httpOptions,
+      observe: "response"
+    });
+  }
   /**
    *
    * @returns
    * Get authenticated state
    */
   public isAuthenticated() {
-    const token = localStorage.getItem('currentUser');
-    // check whether the token is expired and return
-    // true or false
-    return !this.jwtHelper.isTokenExpired(token as string);
+    return localStorage.getItem("userId") ? true : false;
   }
 
-
-  
   /**
    * Saves a User token to the LocalStorage
    * @param token - the users token
    */
-   saveUserToken(token: string) {
+  saveUserToken(token: string) {
     // localStorage.setItem('currentUser', JSON.stringify(x.token));
-    localStorage.setItem('currentUser', token);
+    localStorage.setItem("userId", token);
   }
 
-  
+  removeUserToken() {
+    localStorage.removeItem("userId");
+  }
 
   /**
    * @description get current user
@@ -72,17 +77,17 @@ export class AuthService {
    * @returns
    */
   getCurrentUser() {
-    const token = localStorage.getItem('currentUser');
+    const token = localStorage.getItem("currentUser");
     const user = this.jwtHelper.decodeToken(token as string);
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer' + token,
-      }),
+        "Content-Type": "application/json",
+        Authorization: "Bearer" + token
+      })
     };
 
-    return this.http.get(`${this.BASE_URL}/auth/me`, httpOptions);
+    return this.httpClient.get(`${this.BASE_URL}/auth/me`, httpOptions);
   }
 
   /**
@@ -91,7 +96,7 @@ export class AuthService {
    * @returns
    */
   forgotPassword(email: string) {
-    return this.http.post(`${this.BASE_URL}/auth/forgotpassword`, email);
+    return this.httpClient.post(`${this.BASE_URL}/auth/forgotpassword`, email);
   }
 
   /**
@@ -101,17 +106,20 @@ export class AuthService {
    * @returns
    */
   updateUserDetails(id: string, data: string) {
-    const token = localStorage.getItem('currentUser');
+    const token = localStorage.getItem("currentUser");
     const user = this.jwtHelper.decodeToken(token as string);
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer' + token,
-      }),
+        "Content-Type": "application/json",
+        Authorization: "Bearer" + token
+      })
     };
 
-    return this.http.put(`${this.BASE_URL}/updatedetails/${id}`, httpOptions);
+    return this.httpClient.put(
+      `${this.BASE_URL}/updatedetails/${id}`,
+      httpOptions
+    );
   }
 
   /**
@@ -119,7 +127,7 @@ export class AuthService {
    * @returns the user_id as a string
    */
   getUserId(): string {
-    const token = localStorage.getItem('currentUser');
+    const token = localStorage.getItem("currentUser");
     const tokenPayload: any = decode(token as string);
     return tokenPayload.sub;
   }
@@ -128,8 +136,8 @@ export class AuthService {
    * Logout
    */
   logout() {
-    localStorage.removeItem('currentUser');
-    this.signedin$.next(null);
-    this.router.navigate(['/login']);
+    return this.httpClient.get(this.BASE_URL + "/logout", {
+      withCredentials: true
+    });
   }
 }

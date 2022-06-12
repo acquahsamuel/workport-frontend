@@ -1,31 +1,57 @@
-import { Injectable } from '@angular/core';
 import {
-  HttpRequest,
-  HttpHandler,
   HttpEvent,
-  HttpEventType,
   HttpInterceptor,
-} from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { AuthService } from '../auth.service';
-import { filter, tap } from 'rxjs/operators';
+  HttpHandler,
+  HttpRequest,
+  HttpResponse,
+  HttpErrorResponse
+} from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable, throwError } from "rxjs";
+import { retry, catchError } from "rxjs/operators";
+import { AuthService } from "../auth.service";
+import { NotificationService } from "../notification.service";
 
-@Injectable({ providedIn: 'root' })
-export class JwtInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService) {}
+@Injectable()
+export class HttpErrorInterceptor implements HttpInterceptor {
+  constructor(
+    private authService: AuthService,
+    private notificationService: NotificationService
+  ) {}
 
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    return next.handle(request).pipe(
+      retry(1),
+      catchError((error: HttpErrorResponse) => {
+        console.log(error);
+        // if the error is a 401, redirect to the login page
 
-    // add auth header with jwt if user is logged in and request is to the api url
-    // console.log(request);
-    
-    const modifiedReq = request.clone({
-      // withCredentials : true
-    });
+        if (error.status === 401) {
+          //remove current token
+          this.authService.removeUserToken();
+          window.location.href = "/login";
+        }
 
-    return next.handle(modifiedReq)
+        let errorMessage = "";
+
+        if (error instanceof ErrorEvent) {
+          // client-side error
+
+          errorMessage = `Error: ${error as string}`;
+        } else {
+          // server-side error
+          errorMessage = `Error Code: ${error.message} \nMessage: ${error.error
+            .message}`;
+        }
+
+        this.notificationService.notify(errorMessage, 'neutral-toast');
+        window.alert(errorMessage);
+
+        return throwError(error);
+      })
+    );
   }
 }
