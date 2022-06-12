@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 // const BASE_URL = 'https://workport.herokuapp.com/api/v1';
 
@@ -11,31 +11,81 @@ export class CompanyService {
  
   constructor(private httpClient: HttpClient) {}
 
-  all() {
-    return this.httpClient.get(this.getUrl());
+  /**
+   * 
+   * @returns 
+   */
+  getAllCompanyListing() {
+    const httpOptions = {
+      headers : new HttpHeaders({
+        'Content-Type' : 'application/json'
+      })
+    }
+    return this.httpClient.get(this.BASE_URL , httpOptions);
   }
 
-  find(jobId) {
-    return this.httpClient.get(this.getUrlById(jobId));
+  /**
+   * 
+   * @param companyId 
+   * @returns 
+   */
+  findCompanyById(companyId : string) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    return this.httpClient.get(`${this.BASE_URL}/${companyId}`, httpOptions);
   }
 
-  create(job) {
-    return this.httpClient.post(this.getUrl(), job);
+
+  /**
+   * 
+   * @param companyId 
+   */
+  createCompany(companyData : any) {
+    let payload = JSON.stringify(companyData);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    return this.httpClient.post(this.BASE_URL, payload, httpOptions);
   }
 
-  update(job) {
-    return this.httpClient.put(this.getUrlById(job.id), job);
+  /**
+   * 
+   * @param companyId 
+   * @param companyData 
+   */
+  updateCompany(companyId : string , companyData : any) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+
+    return this.httpClient.put(this.BASE_URL + companyId , companyData, httpOptions);
   }
 
-  delete(jobId) {
-    return this.delete(this.getUrlById(jobId));
-  }
 
-  private getUrl() {
-    return `${this.BASE_URL}`;
-  }
+  /**
+   * 
+   * @param jobId 
+   */
+  deleteCompany(companyId : string) {
+    // return this.delete(this.getUrlById(jobId));
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
 
-  private getUrlById(id) {
-    return `${this.getUrl}/${id}`;
+    return this.httpClient.delete(this.BASE_URL + companyId, {
+      ...httpOptions,
+      withCredentials : true
+    })
+
   }
 }

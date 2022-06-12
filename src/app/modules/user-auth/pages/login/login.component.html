@@ -1,6 +1,6 @@
 <div class="signup-container">
   <app-logo></app-logo>
-  <form class="form" [formGroup]="loginForm" (ngSubmit)="logIn()">
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="logInS()">
     <h3>Login</h3>
     <div class="btn-group">
       <button class="btn btn-default">Login up with Google</button>
@@ -63,13 +63,14 @@
       </p>
     </div>
 
-    <mat-spinner
+    <!-- <mat-spinner
       strokeWidth="3"
       [diameter]="30"
       *ngIf="isLoading"
-    ></mat-spinner>
+    ></mat-spinner> -->
 
-    <button class="btn btn-dark" *ngIf="!isLoading">Login</button>
+    <button type="submit" class="btn btn-dark" >Login</button>
+    <!-- <button class="btn btn-dark" *ngIf="!isLoading">Login</button> -->
 
     <hr class="border-line" />
     <div class="btn-cta">

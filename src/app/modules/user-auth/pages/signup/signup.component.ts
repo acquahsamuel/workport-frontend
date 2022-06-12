@@ -40,17 +40,19 @@ export class SignupComponent implements OnInit {
    */
   signUp() {
     this.submitted = true;
-    this.isLoading = true;
+    // this.isLoading = true;
     if (this.signUpForm.invalid) {
       return;
     }
     this.authService.signUp(this.signUpForm.value).subscribe({
       /**Handle the this keyword with arrow function */
+
       next: (response :any) => {  
         console.log(response);
         this.authService.saveUserToken(response?.token);
         this.router.navigateByUrl('/dashboard');
       },
+      
       error: (err) => {
         console.log(err);
         if(!err.status){

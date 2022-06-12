@@ -67,11 +67,7 @@ export class PostJobComponent implements OnInit {
 
   createJob() {
     this.submitted = true;
-    // console.log(this.postJobForm.value);
-    // if (this.postJobForm.invalid) {
-    //   return;
-    // }
-
+  
    console.log('Clicked');
     this.jobService.createJob(this.postJobForm.value).subscribe(
       (valx) => {

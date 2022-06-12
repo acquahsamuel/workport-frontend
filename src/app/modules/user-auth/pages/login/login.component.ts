@@ -35,28 +35,21 @@ export class LoginComponent implements OnInit {
    * @description handles login
    * @returns
    */
-  logIn() {
+  logInS() {
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
 
-    this.isLoading = true;
-    this.authService.signIn(this.email, this.password).subscribe({
-      next: (response: any) => {
-        /**
-         * Save user token
-         */
-        this.authService.saveUserToken(response?.token);
-        this.router.navigateByUrl('/dashboard/post-job');
-        // save user token
-      },
-      error: ({ error }) => {
-        if (error.username || error.password) {
-          this.loginForm.setErrors({ credentials: true });
-        }
-      },
-    });
+    this.authService.logIn(this.email, this.password).subscribe((x : any) =>{
+      console.log(x + ' x');
+      this.authService.saveUserToken(x?.token);
+      this.router.navigateByUrl('/dashboard/post-job');
+
+      (err) =>{
+        console.log('Hell error ' + err);
+      }
+    })
   }
 
   /**

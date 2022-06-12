@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AuthService } from './auth.service';
+import { UserService } from './user.service';
+import { HttpClient , HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-// https://workport.herokuapp.com/api/v1/jobs
+
 
 @Injectable({
   providedIn: 'root',
@@ -9,33 +11,104 @@ import { environment } from 'src/environments/environment';
 export class JobService {
   private BASE_URL = `${environment.BASE_URL}/jobs`;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private userService : UserService,
+    private authService : AuthService
+    
+    ) {}
 
-  allJobs() {
-    return this.httpClient.get(this.getUrl());
+    /**
+     * 
+     * @returns 
+     */
+  getAllJobs() {
+    const httpOptions = {
+      headers : new HttpHeaders({
+        'Content-Type' : 'application/json'
+      })
+    }
+    return this.httpClient.get(this.BASE_URL , httpOptions);
   }
 
-  findJob(jobId) {
-    return this.httpClient.get(`${this.BASE_URL}/${jobId}`);
+  /**
+   * 
+   * @param jobId 
+   * @returns 
+   */
+  findJobById(jobId : string) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+
+    return this.httpClient.get(`${this.BASE_URL}/${jobId}`, httpOptions);
   }
 
+  /**
+   * 
+   * @param slug
+   */
+  getJobBySlug(slug: string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    return this.httpClient.get(this.BASE_URL + slug , httpOptions);
+  }
+
+  /**
+   * 
+   * @param job 
+   * @returns 
+   */
   createJob(job: any) {
-    return this.httpClient.post(this.getUrl(), JSON.stringify(job));
+    let payload = JSON.stringify(job);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    return this.httpClient.post(this.BASE_URL, payload, httpOptions);
   }
 
-  updateJob(job) {
-    return this.httpClient.put(this.getUrlById(job.id), job);
+
+  /**
+   * 
+   * @param job 
+   * @param id 
+   * @returns 
+   */
+  updateJob(job : any, jobId : string) {
+    const payload = JSON.stringify(job);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+
+    return this.httpClient.put(this.BASE_URL + jobId , payload , httpOptions)
   }
 
-  deleteJob(jobId) {
-    return this.httpClient.delete(this.getUrlById(jobId));
-  }
 
-  private getUrl() {
-    return `${this.BASE_URL}`;
-  }
+  /**
+   * 
+   * @param jobId 
+   * @returns 
+   */
+  deleteJob(jobId : string) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
 
-  private getUrlById(jobId) {
-    return `${this.getUrl}/${jobId}`;
+    return this.httpClient.delete(this.BASE_URL + jobId, {
+      ...httpOptions,
+      withCredentials : true
+    })
   }
 }

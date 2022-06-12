@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadAllJobs() {
-    this.jobService.allJobs().subscribe((jobs) => {
+    this.jobService.getAllJobs().subscribe((jobs) => {
       this.jobListings = jobs;
       this.isLoading = false;
     });

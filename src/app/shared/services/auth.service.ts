@@ -4,8 +4,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../dto/user.dto';
-import decode from 'jwt-decode';
+import  decode from 'jwt-decode';
 import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -35,21 +36,11 @@ export class AuthService {
    * @param user
    * @returns
    */
-   signIn(email: string, password: string) {
-    const hash = btoa(email + ':' + password);
-
-    //Todo - Remove the email and password from the Authorization section
-    const httpOptions = {
-        headers: new HttpHeaders({
-            'Content-Type': 'application/json',
-            Authorization: 'Basic ' + hash,
-        }),
-
-    };
-
-    const body = { password, email };
-    return this.http.post(`${this.BASE_URL}/auth/login`, body, httpOptions);
-}
+   logIn(email: string, password: string) {
+    const body = { email , password };
+    // const body = { password, email };
+    return this.http.post(`${this.BASE_URL}/auth/login`, body);
+   }
   /**
    *
    * @returns

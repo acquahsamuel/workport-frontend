@@ -15,9 +15,9 @@ export class DashboardComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.authService.signedin$.subscribe(signedin =>{
-      this.signedin = signedin;
-    })
+   this.authService.getCurrentUser().subscribe(iUser =>{
+     console.log(iUser);
+   })
   }
 
   isLoading = false;
