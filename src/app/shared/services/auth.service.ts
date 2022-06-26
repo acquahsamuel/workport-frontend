@@ -36,7 +36,8 @@ export class AuthService {
    * @returns
    */
   logIn(email: string, password: string) {
-    const body = { email, password };
+    // const info = 
+    const body =  JSON.stringify({ email, password });
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -45,8 +46,7 @@ export class AuthService {
       })
     };
     return this.httpClient.post(`${this.BASE_URL}/auth/login`, body, {
-      ...httpOptions,
-      observe: "response"
+      ...httpOptions
     });
   }
   /**

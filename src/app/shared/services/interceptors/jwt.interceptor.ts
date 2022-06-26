@@ -47,7 +47,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
             .message}`;
         }
 
-        this.notificationService.notify(errorMessage, 'neutral-toast');
+        this.notificationService.notify(errorMessage, 'error-toast');
         window.alert(errorMessage);
 
         return throwError(error);

@@ -12,8 +12,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   isLoading = false;
-  password;
-  email;
+  password = '';
+  email = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -41,14 +41,18 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.authService.logIn(this.email, this.password).subscribe((x : any) =>{
-      // console.log(x + ' x');
-      this.authService.saveUserToken(x?.token);
+    // let payload = {
+    //   email : this.email,
+    //   password : this.password
+    // }
+
+    this.authService.logIn(this.email, this.password)
+    .subscribe((res : any) =>{
+      console.log(res );
+      this.authService.saveUserToken(res?.token);
       this.router.navigateByUrl('/dashboard/post-job');
 
-      (err) =>{
-        console.log('Hell error ' + err);
-      }
+  
     })
   }
 

@@ -34,7 +34,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 
   providers: [
     // { provide: LocationStrategy, useClass: HashLocationStrategy }
-    {provide : HTTP_INTERCEPTORS, useClass : HttpErrorInterceptor ,multi : true}
+    // {provide : HTTP_INTERCEPTORS, useClass : HttpErrorInterceptor ,multi : true}
   ],
   bootstrap: [AppComponent],
 })

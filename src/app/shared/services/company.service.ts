@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-// const BASE_URL = 'https://workport.herokuapp.com/api/v1';
+// const BASE_URL = 'https://workport-api.herokuapp.com/api/v1';
 
 @Injectable({
   providedIn: 'root',
@@ -60,6 +60,7 @@ export class CompanyService {
    * @param companyData 
    */
   updateCompany(companyId : string , companyData : any) {
+    
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
