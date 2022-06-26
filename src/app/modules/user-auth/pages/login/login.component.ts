@@ -12,8 +12,17 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   isLoading = false;
-  password = '';
-  email = '';
+  state = {
+    togglePassword: false,
+    verifyingCredentials: false,
+    emailValid: false,
+    passwordValid: false,
+    emailFocus: false,
+    passwordFocus: false,
+    loginError: false
+  };
+
+  loginError;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,6 +38,7 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
+    // this.currentLoggedUser();
   }
 
   /**
@@ -36,25 +46,35 @@ export class LoginComponent implements OnInit {
    * @returns
    */
    logInSubmit() {
-    this.submitted = true;
-    if (this.loginForm.invalid) {
-      return;
+
+    if (this.loginForm.valid) {
+      this.state.verifyingCredentials = true;
+      this.authService.logIn(this.loginForm.value).subscribe(
+
+        (x: any) => {
+          // stop loading
+          this.state.verifyingCredentials = false;
+
+          // save user token
+          this.authService.saveUserToken(x.token);
+          this.router.navigateByUrl('/dashboard/post-job')
+        },
+
+        (err) => {
+          this.state.loginError = true;
+          this.state.verifyingCredentials = false;
+          this.loginError = 'Login failed, check email and password and Try Again';
+          // this.stateErrors.login = JSON.stringify(err.error.error);
+        });
+
+    } else {
+      this.state.loginError = true;
+      this.state.verifyingCredentials = false;
+      this.loginError = 'Login failed, check email and password and Try Again';
     }
-
-    // let payload = {
-    //   email : this.email,
-    //   password : this.password
-    // }
-
-    this.authService.logIn(this.email, this.password)
-    .subscribe((res : any) =>{
-      console.log(res );
-      this.authService.saveUserToken(res?.token);
-      this.router.navigateByUrl('/dashboard/post-job');
-
-  
-    })
   }
+
+
 
   /**
    * Get form values from controls

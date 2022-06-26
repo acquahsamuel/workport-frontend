@@ -6,7 +6,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule , HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpErrorInterceptor } from './shared/services/interceptors/jwt.interceptor';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+// import { HttpErrorInterceptor } from './shared/services/interceptors/jwt.interceptor';
 
 /**
  * Refacotor for lazy loading
@@ -35,6 +36,8 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
   providers: [
     // { provide: LocationStrategy, useClass: HashLocationStrategy }
     // {provide : HTTP_INTERCEPTORS, useClass : HttpErrorInterceptor ,multi : true}
+    JwtHelperService,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
   ],
   bootstrap: [AppComponent],
 })

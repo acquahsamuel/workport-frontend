@@ -1,7 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, FormGroupDirective, FormControl, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-signup',
@@ -9,15 +20,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
+  state = {
+    togglePassword: false,
+    toggleConfirmPassword: false,
+    verifyingCredentials: false,
+    passwordsValid: false,
+    lastnameFocus: false,
+    firstnameFocus: false,
+    emailFocus: false,
+    phoneFocus: false,
+    passwordFocus: false,
+    confirmPasswordFocus: false,
+    signupError: false,
+  };
+
   submitted = false;
   isLoading = false;
+  signupError;
   signUpForm: FormGroup;
+
+
+  matcher = new MyErrorStateMatcher();
 
 
   constructor(
     private authService: AuthService,
     private router : Router,
-    private formBuilder: FormBuilder
+    private jwtService : JwtHelperService,
+    private formBuilder: FormBuilder,
+    private snackBar : MatSnackBar,
   ) {}
 
   ngOnInit(): void {
@@ -39,31 +70,53 @@ export class SignupComponent implements OnInit {
    * @returns 
    */
   signUp() {
-    this.submitted = true;
-    // this.isLoading = true;
-    if (this.signUpForm.invalid) {
-      return;
-    }
-    this.authService.signUp(this.signUpForm.value).subscribe({
-      /**Handle the this keyword with arrow function */
 
-      next: (response :any) => {  
-        console.log(response);
-        this.authService.saveUserToken(response?.token);
-        this.router.navigateByUrl('/dashboard');
+    if(this.signUpForm.valid){
+
+      this.state.verifyingCredentials = true;
+
+      this.authService.signUp(this.signUpForm.value).subscribe((account) =>{
+        this.signIn(account);
       },
-      
-      error: (err) => {
-        console.log(err);
-        if(!err.status){
-          this.isLoading = false;
-        }
-      },
-    });
+
+      (err : any) =>{
+        this.state.signupError = true;
+        this.state.verifyingCredentials = false;
+        this.signupError = 'Login failed , check email and password and try again';
+
+        this.signupError = 'Sign up error,' + err.error.error;
+        this.snackBar.open("Create account failed" , err.error.error + "" , {duration :3000})
+      })
+    }else{
+      this.state.signupError = true;
+      this.state.verifyingCredentials = false;
+      this.signupError = 'Correct all field and try again';
+      this.snackBar.open('Creating account faild', '', { duration: 3000 })
+    }
+  }
+
+  signIn(account : any){
+    this.authService.logIn(this.signUpForm.value).subscribe(
+      (x : any) =>{
+        this.state.verifyingCredentials =false;
+        this.authService.saveUserToken(x?.token);
+        this.router.navigateByUrl('/dashboard')
+        
+    },
+
+    (err : any) =>{
+      this.state.signupError = true;
+      this.state.verifyingCredentials = false;
+      this.signupError = "Login failed" + err.error.error;
+      this.snackBar.open("Creating account failed", err.error.error + '' , { duration: 3000 })
+    }
+    
+    )
   }
 
 
   onReset(){
     this.signUpForm.reset();
   }
+
 }

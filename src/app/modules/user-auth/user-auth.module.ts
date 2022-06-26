@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserAuthRoutingModule } from './user-auth-routing.module';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { LogoComponent } from '../homepage/components/logo/logo.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
@@ -25,7 +26,10 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     HttpClientModule,
     UserAuthRoutingModule,
   ],
-  providers: []
+  providers: [ JwtHelperService,
+     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },]
 })
 
 export class UserAuthModule { }
+
+

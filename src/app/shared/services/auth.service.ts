@@ -3,7 +3,8 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 import { BehaviorSubject, Observable } from "rxjs";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { User } from "../dto/user.dto";
+import { CookieService } from "ngx-cookie-service";
+import { IUser, User } from "../dto/user.dto";
 import decode from "jwt-decode";
 import { environment } from "src/environments/environment";
 
@@ -12,13 +13,32 @@ import { environment } from "src/environments/environment";
 })
 export class AuthService {
   private BASE_URL = environment.BASE_URL;
+  // public jwtHelper : JwtHelperService = new JwtHelperService();
+
+
   public signedin$ = new BehaviorSubject(false);
 
   constructor(
-    private router: Router,
     private jwtHelper: JwtHelperService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    // private cookieService: CookieService
   ) {}
+
+
+  public hasRole(expectedRole: string) {
+    const token = localStorage.getItem('currentUser');
+    // decode the token to get its payload
+    const tokenPayload: any = decode(token);
+
+    const roles = tokenPayload.roles.filter((role) => role.toLowerCase() === expectedRole.toLowerCase());
+
+    if (roles.length >= 1) {
+      return true;
+    }
+
+    return false;
+  }
+
 
   /**
    *
@@ -35,9 +55,8 @@ export class AuthService {
    * @param user
    * @returns
    */
-  logIn(email: string, password: string) {
-    // const info = 
-    const body =  JSON.stringify({ email, password });
+  logIn(data : any) {
+    const body = JSON.stringify(data);
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -45,17 +64,18 @@ export class AuthService {
         // Authorization: 'Basic ' + hash,
       })
     };
-    return this.httpClient.post(`${this.BASE_URL}/auth/login`, body, {
-      ...httpOptions
-    });
+    return this.httpClient.post(`${this.BASE_URL}/auth/login`, body, httpOptions)
   }
   /**
    *
    * @returns
    * Get authenticated state
    */
-  public isAuthenticated() {
-    return localStorage.getItem("userId") ? true : false;
+  public isAuthenticated()  : boolean {
+    const token = localStorage.getItem('currentUser');
+    // Check whether the token is expired and return
+    // true or false
+    return !this.jwtHelper.isTokenExpired(token);
   }
 
   /**
@@ -63,13 +83,10 @@ export class AuthService {
    * @param token - the users token
    */
   saveUserToken(token: string) {
-    // localStorage.setItem('currentUser', JSON.stringify(x.token));
-    localStorage.setItem("userId", token);
+    localStorage.setItem("currentUser", token);
   }
 
-  removeUserToken() {
-    localStorage.removeItem("userId");
-  }
+
 
   /**
    * @description get current user
@@ -77,17 +94,19 @@ export class AuthService {
    * @returns
    */
   getCurrentUser() {
-    const token = localStorage.getItem("currentUser");
-    const user = this.jwtHelper.decodeToken(token as string);
-
+    // const token = localStorage.getItem('currentUser');
+    const token = localStorage.getItem('currentUser');
+    console.log(token);
+    const user = this.jwtHelper.decodeToken(token);
+  
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
-        Authorization: "Bearer" + token
+        Authorization: 'Bearer ' + token
       })
     };
 
-    return this.httpClient.get(`${this.BASE_URL}/auth/me`, httpOptions);
+    return this.httpClient.get(`${this.BASE_URL}/auth/me`, httpOptions)
   }
 
   /**
@@ -128,16 +147,20 @@ export class AuthService {
    */
   getUserId(): string {
     const token = localStorage.getItem("currentUser");
-    const tokenPayload: any = decode(token as string);
+    const tokenPayload: any = decode(token);
     return tokenPayload.sub;
+  }
+
+
+   
+  removeUserToken() {
+    localStorage.removeItem("currentUser");
   }
 
   /**
    * Logout
    */
   logout() {
-    return this.httpClient.get(this.BASE_URL + "/logout", {
-      withCredentials: true
-    });
+    localStorage.removeItem('currentUser');
   }
 }

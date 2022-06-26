@@ -1,0 +1,10 @@
+"position": "Angular Developer",
+        "title" : "Software Engineer",
+        "locationAllowed": "Remote",
+        "jobCategory": "Integration , solution and desing",
+        "jobSearchTags": ["Fintech","Healthcare" ,"Banking"],
+        "currency" : "USD",
+        "company" : "623a4184d7cfbe66f0e18dff",
+        "jobType" : "part-time",
+        "jobDescription": "As a Senior Product Designer, you'll be the team's design expert. You'll focus on delivering the best possible experience for our end users as well as admins. You will work closely with the rest of the Product team (Product Managers, Product Designers and Product Analyst) to turn conceptual ideas and hypotheses into valuable experiences. You will be tasked with taking the overall product experience to the next level.",
+        "applicationURL": "https://mycompany.com/application/912"
