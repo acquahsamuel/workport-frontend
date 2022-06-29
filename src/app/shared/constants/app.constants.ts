@@ -48,26 +48,26 @@ export const JobTypes = [
  * Categories List
  */
 export const CategoriesList = [
-  { name: 'Web Development' },
-  { name: 'Design' },
-  { name: 'Product' },
-  { name: 'Customer Service' },
-  { name: 'Data' },
-  { name: 'Sales' },
-  { name: 'DevOps/SysAdmin' },
-  { name: 'Business' },
-  { name: 'Finance' },
-  { name: 'Legal' },
-  { name: 'Human Resources' },
-  { name: 'Medical' },
-  { name: 'Teaching' },
-  { name: 'Other' },
+  'Web Development' ,
+  'Design' ,
+  'Product' ,
+  'Customer Service' ,
+  'Data' ,
+  'Sales' ,
+  'DevOps/SysAdmin' ,
+  'Business' ,
+  'Finance' ,
+  'Legal' ,
+  'Human Resources' ,
+  'Medical' ,
+  'Teaching' ,
+  'Other' 
 ];
 
 export const LocationsAllowed = [
-  { name: 'Remote' },
-  { name: 'USA' },
-  { name: 'Ghana' },
-  { name: 'Canada' },
-  { name: 'Other' },
+   'Remote',
+   'USA',
+   'Ghana',
+   'Canada',
+   'Other'
 ];

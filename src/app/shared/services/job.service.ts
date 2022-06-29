@@ -66,10 +66,12 @@ export class JobService {
    */
   createJob(job: any) {
     let payload = JSON.stringify(job);
+    const token = localStorage.getItem('currentUser');
 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token,
       }),
     };
     return this.httpClient.post(this.BASE_URL, payload, httpOptions);

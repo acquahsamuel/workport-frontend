@@ -12,7 +12,9 @@
           placeholder="eg. senior software engineer"
           [ngClass]="{
             'is-invalid': submitted && getControls.position.errors
-          }"
+          }
+          
+          "
         />
         <div
           *ngIf="submitted && getControls.position.errors"
@@ -25,15 +27,42 @@
         </div>
       </div>
 
+
+
+      <div class="form-group">
+        <label for=""> Job Title </label>
+        <input
+          class="form-input"
+          formControlName="title"
+          type="text"
+          name="title"
+          placeholder="eg. senior software engineer"
+          [ngClass]="{
+            'is-invalid': submitted && getControls.title.errors
+          }
+          
+          "
+        />
+        <div
+          *ngIf="submitted && getControls.title.errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="getControls.title.errors.required">
+            Example: "Principal Software Engineer”. Titles must describe one
+            position.
+          </div>
+        </div>
+      </div>
+
       <div class="form-group">
         <mat-form-field appearance="outline">
           <mat-label>Locations Allowed</mat-label>
-          <mat-select formControlName="locationsAllowed">
+          <mat-select formControlName="locationAllowed">
             <mat-option
               *ngFor="let location of locationAllowed"
               [value]="location"
             >
-              {{ location.name }}
+              {{ location }}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -47,28 +76,24 @@
             *ngFor="let category of categoriesList"
             [value]="category"
           >
-            {{ category.name }}
+            {{ category }}
           </mat-option>
         </mat-select>
       </mat-form-field>
 
       <div class="form-group">
         <label for="">Tags job could be searched with</label>
-        <input
-          class="form-input"
-          formControlName="jobTags"
-          type="email"
-          name="jobTags"
-          placeholder="eg. nodejs"
-          [ngClass]="{
-            'is-invalid': submitted && getControls.jobTags.errors
-          }"
-        />
+        <mat-form-field appearance="outline">
+          <mat-label>Toppings</mat-label>
+          <mat-select formControlName="jobSearchTags" multiple>
+            <mat-option *ngFor="let topping of categoriesList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
         <div
-          *ngIf="submitted && getControls.jobTags.errors"
+          *ngIf="submitted && getControls.jobSearchTags.errors"
           class="invalid-feedback"
         >
-          <div *ngIf="getControls.jobTags.errors.required">
+          <div *ngIf="getControls.jobSearchTags.errors.required">
             Example: "Software engineer, node, javascript "
           </div>
         </div>
@@ -80,7 +105,7 @@
         </mat-card-header>
 
         <mat-card-content>
-          <editor
+          <!-- <editor
             apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo"
             [init]="{
               height: 200,
@@ -100,7 +125,22 @@
             [ngClass]="{
               'is-invalid': submitted && getControls.jobDescription.errors
             }"
-          ></editor>
+          ></editor> -->
+          <editor apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo" formControlName="jobDescription" name="description"
+          #editor [init]="{
+                            height: 180,
+                            width: '100%',
+                            menubar: false,
+                            plugins: [
+                              'advlist autolink lists link image charmap print preview anchor',
+                              'searchreplace visualblocks code fullscreen',
+                              'insertdatetime media table paste code help wordcount'
+                            ],
+                            toolbar:
+                            'undo redo | formatselect | bold italic backcolor | \
+                            alignleft aligncenter alignright alignjustify | \
+                            bullist numlist outdent indent | removeformat | help'
+                          }"></editor>
         </mat-card-content>
         <div
           *ngIf="submitted && getControls.jobDescription.errors"
@@ -135,7 +175,42 @@
         </div>
       </div>
 
+
+
       <div class="form-group">
+        <label for=""> Currency </label>
+        <input
+          class="form-input"
+          name="currency"
+          formControlName="currency"
+          type="url"
+          placeholder=""
+        />
+      </div>
+
+      <div class="form-group">
+        <label for=""> Application URL </label>
+        <input
+          class="form-input"
+          name="companyUrl"
+          formControlName="applicationURL"
+          placeholder=""
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="">  Job Type </label>
+        <input
+          class="form-input"
+          name="jobType"
+          formControlName="jobType"
+          type="url"
+          placeholder="https://www.companywebsite.com"
+        />
+      </div>
+
+      <!-- <div class="form-group">
         <label for="">Company Website</label>
         <input
           class="form-input"
@@ -144,9 +219,9 @@
           type="url"
           placeholder="https://www.companywebsite.com"
         />
-      </div>
+      </div> -->
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="">Company Size</label>
         <input
           class="form-input"
@@ -155,9 +230,9 @@
           type="email"
           placeholder="0-10"
         />
-      </div>
+      </div> -->
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="">Upload logo</label> <br />
         <input
           type="file"
@@ -165,9 +240,9 @@
           formControlName="companyLogo"
           id=""
         />
-      </div>
+      </div> -->
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="">Company Twitter</label>
         <input
           class="form-input"
@@ -176,9 +251,9 @@
           type="url"
           placeholder="https://www.companywebsite.com"
         />
-      </div>
+      </div> -->
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="">Company LinkedIn</label>
         <input
           class="form-input"
@@ -187,9 +262,9 @@
           type="url"
           placeholder="https://www.companylinkedin.com"
         />
-      </div>
+      </div> -->
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="">Company Email</label>
         <input
           class="form-input"
@@ -198,7 +273,7 @@
           type="email"
           placeholder="companyemail@gmail.com"
         />
-      </div>
+      </div> -->
 
       <div class="">
         <button class="btn btn-default" (click)="submit()">Post job</button>

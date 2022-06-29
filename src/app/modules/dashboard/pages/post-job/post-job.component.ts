@@ -19,45 +19,56 @@ export class PostJobComponent implements OnInit {
   locationAllowed = LocationsAllowed;
   categoriesList = CategoriesList;
 
+  toppingList = CategoriesList;
+
   constructor(private jobService: JobService) {}
 
   ngOnInit(): void {}
 
   postJobForm = new FormGroup({
     position: new FormControl('', [Validators.required]),
-    locationsAllowed: new FormControl('', [Validators.required]),
+    title :  new FormControl('', [Validators.required]), 
+
+    locationAllowed: new FormControl('', [Validators.required]),
 
     jobCategory: new FormControl('', [Validators.required]),
-    jobTags: new FormControl('', [Validators.required]),
+    jobSearchTags: new FormControl('', [Validators.required]),
+
+    currency : new FormControl('', [Validators.required]),
 
     jobDescription: new FormControl('', [Validators.required]),
     companyName: new FormControl('', [Validators.required]),
 
-    companySize: new FormControl('', [Validators.required]),
-    companyLogo: new FormControl('', [Validators.required]),
+    applicationURL : new FormControl('', [Validators.required]),
 
-    companyTwitter: new FormControl('', [
-      Validators.required,
-      Validators.pattern(
-        '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
-      ),
-    ]),
-    companyUrl: new FormControl('', [
-      Validators.pattern(
-        '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
-      ),
-    ]),
-    companyLinkedin: new FormControl('', [
-      Validators.required,
-      Validators.pattern(
-        '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
-      ),
-    ]),
-    companyEmail: new FormControl('', [
-      Validators.required,
-      Validators.email,
+
+    jobType : new FormControl('', [Validators.required]),
+
+    // companySize: new FormControl('', [Validators.required]),
+    // companyLogo: new FormControl('', [Validators.required]),
+
+    // companyTwitter: new FormControl('', [
+    //   Validators.required,
+    //   Validators.pattern(
+    //     '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
+    //   ),
+    // ]),
+    // companyUrl: new FormControl('', [
+    //   Validators.pattern(
+    //     '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
+    //   ),
+    // ]),
+    // companyLinkedin: new FormControl('', [
+    //   Validators.required,
+    //   Validators.pattern(
+    //     '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
+    //   ),
+    // ]),
+    // companyEmail: new FormControl('', [
+    //   Validators.required,
+    //   Validators.email,
      
-    ]),
+    // ]),
   });
 
   get getControls(){
@@ -66,7 +77,26 @@ export class PostJobComponent implements OnInit {
 
 
   submit() {
-    console.log(this.postJobForm.value);
+    // console.log(this.postJobForm.value);
+    let payload =  {
+      position: this.postJobForm.get('position').value,
+      title :  this.postJobForm.get('title').value,
+      locationAllowed: this.postJobForm.get('locationAllowed').value,
+      jobCategory: this.postJobForm.get('jobCategory').value,
+      jobSearchTags: this.postJobForm.get('jobSearchTags').value,
+      currency :  this.postJobForm.get('currency').value,
+      company : "623a4184d7cfbe66f0e18dff",
+      jobType :  this.postJobForm.get('jobType').value,
+      jobDescription:  this.postJobForm.get('jobDescription').value,
+      applicationURL:  this.postJobForm.get('applicationURL').value
+
+
+     }
+    this.jobService.createJob(payload).subscribe((res : any) =>{
+      console.log(res);
+    },(err : any) =>{
+      console.log(err);
+    })
   }
 
   onreset() {

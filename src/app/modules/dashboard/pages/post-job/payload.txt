@@ -1,10 +1,40 @@
 "position": "Angular Developer",
-        "title" : "Software Engineer",
-        "locationAllowed": "Remote",
-        "jobCategory": "Integration , solution and desing",
-        "jobSearchTags": ["Fintech","Healthcare" ,"Banking"],
-        "currency" : "USD",
-        "company" : "623a4184d7cfbe66f0e18dff",
-        "jobType" : "part-time",
-        "jobDescription": "As a Senior Product Designer, you'll be the team's design expert. You'll focus on delivering the best possible experience for our end users as well as admins. You will work closely with the rest of the Product team (Product Managers, Product Designers and Product Analyst) to turn conceptual ideas and hypotheses into valuable experiences. You will be tasked with taking the overall product experience to the next level.",
-        "applicationURL": "https://mycompany.com/application/912"
+"title" : "Software Engineer",
+"locationAllowed": "Remote",
+"jobCategory": "Integration , solution and desing",
+"jobSearchTags": ["Fintech","Healthcare" ,"Banking"],
+"currency" : "USD",
+"company" : "623a4184d7cfbe66f0e18dff",
+"jobType" : "part-time",
+"jobDescription": "As a Senior Product Designer, you'll be the team's design expert. You'll focus on delivering the best possible experience for our end users as well as admins. You will work closely with the rest of the Product team (Product Managers, Product Designers and Product Analyst) to turn conceptual ideas and hypotheses into valuable experiences. You will be tasked with taking the overall product experience to the next level.",
+"applicationURL": "https://mycompany.com/application/912"
+
+
+
+        Remote job description
+
+Halo Media is seeking a Senior Full Stack Software Engineer to help our teams deliver with high quality and on time. You will also deliver amazing web and mobile experiences by working closely with other engineers and UI/UX designers.
+
+Did you know that research shows that women and people from underrepresented groups often apply to jobs only if they meet 100% of the qualifications? Please know that no one ever meets 100% of the qualifications. If much of this describes you, we encourage you to apply. At Halo, we are committed to attracting, engaging, developing, and retaining a diverse team. We are committed to creating an inclusive culture that allows all teammates, of all experiences and identities, to thrive. We encourage talented individuals of all backgrounds to apply.
+
+To be successful in this role, you should be confident in delivering quality web solutions using Angular and Node. We also expect you to be excited about delivering simple solutions to complex problems and want to continually learn more about yourself and about technology. Ultimately, you will make sure we have a great team of engineers that maximize confidence when delivering exceptional user experiences across client projects.
+
+Responsibilities:
+Accurately estimate effort and deliver quality solutions aligned with requirements
+Work as part of a team to deliver as estimated and on time
+Bring new ideas and technologies to the team
+Analyze requirements in order to clearly define successful solutions
+Lead by example across engineering excellence, testing, and quality
+Communicate clearly across functional areas and with clients
+Proactively identify gaps and implement improvements
+Requirements:
+Proven track record of successfully delivering quality websites for 5+ years
+Experience using Angular, NodeJS/JavaScript, and relational/NoSQL databases
+Proven success with distributed (multi-tiered) systems or microservices
+Hands-on experience writing responsive layouts
+Solid understanding of Agile methodologies
+Extensive experience relying on unit testing in a continuous integration environment
+Experience guiding and coaching coworkers
+Excited about delivering user-focused software solutions
+Bonus experiences: NgRx, Ionic, Design Systems, AWS, CICD
+What we offer?
