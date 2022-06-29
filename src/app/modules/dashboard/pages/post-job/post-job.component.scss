@@ -111,3 +111,48 @@ mat-form-field {
     width: 100%;
   }
 }
+
+
+
+.big-text {
+  font-size: 48px;
+}
+
+.normal-text {
+  font-size: 16px;
+}
+
+.small-text {
+  font-size: 10px;
+}
+
+.big-text, .normal-text, .small-text {
+  margin-bottom: 50px;
+}
+
+.containing-element {
+  background: #fdd;
+}
+
+.inline-block-element {
+  background: #ddf;
+  border: 1px solid #aaf;
+  border-right: 1px solid #2f2;
+  height: 4em;
+  width: 4em;
+}
+
+
+/**** here's the magic ****/
+.containing-element {
+  font-size: 5%;
+}
+
+.inline-block-element {
+  display: inline-block;
+  *display: inline; zoom: 1; /* for IE */
+
+  font-size: 2000%;
+  margin-left: -1px;
+  *margin-left: 0; /* for IE */
+}

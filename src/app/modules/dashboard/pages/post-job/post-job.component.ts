@@ -18,10 +18,17 @@ export class PostJobComponent implements OnInit {
   submitted = false;
   locationAllowed = LocationsAllowed;
   categoriesList = CategoriesList;
-
+  
   toppingList = CategoriesList;
+  description = null;
+  
+ 
 
-  constructor(private jobService: JobService) {}
+  constructor(
+    private router : Router,
+    private jobService: JobService,
+    private nofication : NotificationService,
+    ) {}
 
   ngOnInit(): void {}
 
@@ -76,6 +83,9 @@ export class PostJobComponent implements OnInit {
   }
 
 
+  // const description = TINYMCE_SCRIPT_SRC.
+
+
   submit() {
     // console.log(this.postJobForm.value);
     let payload =  {
@@ -93,14 +103,20 @@ export class PostJobComponent implements OnInit {
 
      }
     this.jobService.createJob(payload).subscribe((res : any) =>{
-      console.log(res);
+      console.log(res.statusCode);
+
+      if(res.status === 'success'){
+        this.nofication.notify('Job Created successfully' , 'success-toast' ,) 
+        this.postJobForm.reset();
+        this.router.navigateByUrl('/jobs')
+      }
     },(err : any) =>{
       console.log(err);
     })
   }
 
-  onreset() {
-    this.submitted = false;
-    this.postJobForm.reset();
-  }
+  // onreset() {
+  //   this.submitted = false;
+  //   this.postJobForm.reset();
+  // }
 }

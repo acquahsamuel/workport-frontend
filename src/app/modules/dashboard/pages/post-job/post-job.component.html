@@ -84,7 +84,7 @@
       <div class="form-group">
         <label for="">Tags job could be searched with</label>
         <mat-form-field appearance="outline">
-          <mat-label>Toppings</mat-label>
+          <mat-label> Serch tags </mat-label>
           <mat-select formControlName="jobSearchTags" multiple>
             <mat-option *ngFor="let topping of categoriesList" [value]="topping">{{topping}}</mat-option>
           </mat-select>
@@ -100,47 +100,65 @@
       </div>
 
       <div class="form-group">
+        <label for="">  Job Type </label>
+        <input
+          class="form-input"
+          name="jobType"
+          formControlName="jobType"
+          type="url"
+          placeholder=""
+        />
+      </div>
+
+
+      <div class="form-group">
         <mat-card-header>
           <p>Job Description</p>
         </mat-card-header>
 
         <mat-card-content>
-          <!-- <editor
-            apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo"
-            [init]="{
-              height: 200,
-              menubar: false,
-              plugins: [
-                'advlist autolink lists link image charmap  preview anchor',
-                'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table paste code help wordcount'
-              ],
-              toolbar:
-                'undo redo | formatselect | bold italic | \
-            alignleft aligncenter alignright alignjustify | \
-            bullist numlist '
-            }"
-            formControlName="jobDescription"
-            name="jobDescription"
-            [ngClass]="{
-              'is-invalid': submitted && getControls.jobDescription.errors
-            }"
-          ></editor> -->
-          <editor apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo" formControlName="jobDescription" name="description"
+      
+          <!-- <editor formControlName="jobDescription"  apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo" name="description"
           #editor [init]="{
-                            height: 180,
-                            width: '100%',
-                            menubar: false,
-                            plugins: [
-                              'advlist autolink lists link image charmap print preview anchor',
-                              'searchreplace visualblocks code fullscreen',
-                              'insertdatetime media table paste code help wordcount'
-                            ],
-                            toolbar:
-                            'undo redo | formatselect | bold italic backcolor | \
-                            alignleft aligncenter alignright alignjustify | \
-                            bullist numlist outdent indent | removeformat | help'
-                          }"></editor>
+            height: 300,
+            width: '100%',
+            menubar: false,
+            preformatted : true,
+            convert_fonts_to_spans : true,
+            element_format : 'html',
+            entity_encoding : 'raw',
+            invalid_elements : 'strong,em',
+            extended_valid_elements : 'img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]',
+            block_formats: 'Paragraph=p;Header 1=h1;Header 2=h2;Header 3=h3',
+            powerpaste_clean_filtered_inline_elements: 'strong, em, b, i, u, strike, sup, sub, font',
+            plugins: [
+              'advlist autolink lists link image charmap print preview anchor',
+              'searchreplace visualblocks code fullscreen',
+              'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'paste | undo redo   | bold | fontsizeselect | alignleft aligncenter alignright alignjustify | outdent indent'
+          }"></editor> -->
+          <editor formControlName="jobDescription"  apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo" name="description"
+          #editor [init]="{
+            height: 300,
+            width: '100%',
+            menubar: false,
+            preformatted : true,
+            element_format : 'html',
+            entity_encoding : 'raw',
+            invalid_elements : 'strong,em,font-size',
+            extended_valid_elements : 'img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]',
+            powerpaste_clean_filtered_inline_elements: 'strong, em, b, i, u, strike, sup, sub, font',
+            plugins: [
+              'advlist autolink lists link image charmap print preview anchor',
+              'searchreplace visualblocks code fullscreen',
+              'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'paste | undo redo   | bold | fontsizeselect | alignleft aligncenter alignright alignjustify | outdent indent'
+          }"></editor>
+
+
+          {{ postJobForm.get('jobDescription').value  }}
         </mat-card-content>
         <div
           *ngIf="submitted && getControls.jobDescription.errors"
@@ -199,17 +217,7 @@
       </div>
 
 
-      <div class="form-group">
-        <label for="">  Job Type </label>
-        <input
-          class="form-input"
-          name="jobType"
-          formControlName="jobType"
-          type="url"
-          placeholder="https://www.companywebsite.com"
-        />
-      </div>
-
+  
       <!-- <div class="form-group">
         <label for="">Company Website</label>
         <input

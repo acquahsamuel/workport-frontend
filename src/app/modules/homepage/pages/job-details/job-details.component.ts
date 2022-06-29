@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { IJob } from 'src/app/shared/dto/create-job.dto';
 import { JobService } from 'src/app/shared/services/job.service';
-
+import { SafeHtmlPipe } from './formate';
+import { ViewChild, ElementRef } from '@angular/core';
 
 
 @Component({
@@ -12,7 +13,9 @@ import { JobService } from 'src/app/shared/services/job.service';
   styleUrls: ['./job-details.component.scss'],
 })
 export class JobDetailsComponent implements OnInit {  
+  @ViewChild('containerDiv') containerDiv: ElementRef;
   jobDetails : IJob = null;
+  description = null;
   
   constructor(
     private jobService: JobService,
@@ -29,8 +32,13 @@ export class JobDetailsComponent implements OnInit {
     }) ;
   }
 
+
+
   update(jobDescription) {
+    console.log(jobDescription);
     jobDescription.innerHTML = this.jobDetails.jobDescription;   
+    document.documentElement.innerHTML.replace(/</g,"&lt;") + "</pre>";
   }
+  
 
 }
