@@ -14,7 +14,7 @@ export interface IJob {
 
   currency?: string;
   salaryInterval?: string;
-  jobDescription?: string;
+  jobDescription: string;
   applicationURL?: string;
 
   

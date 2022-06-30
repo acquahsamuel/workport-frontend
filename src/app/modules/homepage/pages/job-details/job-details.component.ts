@@ -14,9 +14,8 @@ import { ViewChild, ElementRef } from '@angular/core';
 })
 export class JobDetailsComponent implements OnInit {  
   @ViewChild('containerDiv') containerDiv: ElementRef;
-  jobDetails : IJob = null;
-  description = null;
-  
+  jobDetails : any;
+
   constructor(
     private jobService: JobService,
     private route: ActivatedRoute,
@@ -34,11 +33,9 @@ export class JobDetailsComponent implements OnInit {
 
 
 
-  update(jobDescription) {
-    console.log(jobDescription);
-    jobDescription.innerHTML = this.jobDetails.jobDescription;   
-    document.documentElement.innerHTML.replace(/</g,"&lt;") + "</pre>";
+  renderDescription(template : any) {
+    console.log(template);
+    // console.log(jobDes this.jobDetails.description);
+    template.innerHTML = this.jobDetails.jobDescription.toString();   
   }
-  
-
 }

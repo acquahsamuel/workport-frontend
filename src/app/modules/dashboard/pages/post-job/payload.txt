@@ -38,3 +38,715 @@ Experience guiding and coaching coworkers
 Excited about delivering user-focused software solutions
 Bonus experiences: NgRx, Ionic, Design Systems, AWS, CICD
 What we offer?
+
+
+
+   "jobDescription": "&lt;section id=\"st-companyDescription\" class=\"job-section\">\n&lt;div>\n&lt;h2 class=\"title\">Company Description&lt;/h2>\n&lt;/div>\n&lt;div class=\"wysiwyg\">\n&lt;p>McFadyen Digital is the leading advisor and implementer of ecommerce marketplace solutions.  During 15 years of implementing marketplaces, we&rsquo;ve built dozens of platforms that cumulatively generate billions of dollars of GMV.  We&rsquo;re honored to have served 10% of the Fortune 500.  Over 250 global brands like ABB, AB InBev, ACCO, Albertsons, American Red Cross, American Eagle Outfitters, US Army, US Agriculture Dept, (and many more letters in the alphabet) have entrusted their digital transformations to McFadyen. We operate global offices across the US, Brazil, and India. McFadyen Digital has been a trusted employer for 34 years and believe that people are the most important part of our company.  We&rsquo;re proud of our Great Place to Work certification.  &nbsp;&lt;/p>\n&lt;p>Learn more about us at our website: &lt;a href=\"http://www.mcfadyen.com/\">www.mcfadyen.com&lt;/a>  &nbsp;&lt;/p>\n&lt;/div>\n&lt;/section>\n&lt;section id=\"st-jobDescription\" class=\"job-section\">\n&lt;div>\n&lt;h2 class=\"title\">Job Description&lt;/h2>\n&lt;/div>\n&lt;div class=\"wysiwyg\">\n&lt;p>Top 5 responsibilities: &nbsp;&lt;/p>\n&lt;ul>\n&lt;li>\n&lt;p>Work closely with the onshore teams and clients while running and being responsible for multiple projects at the offshore development center.  &nbsp;&lt;/p>\n&lt;/li>\n&lt;li>\n&lt;p>Create reusable and clean UI pattern framework that application developers can use to plung and play &nbsp;&lt;/p>\n&lt;/li>\n&lt;li>\n&lt;p>Devise complex architectural front end functional elements  &nbsp;&lt;/p>\n&lt;/li>\n&lt;li>\n&lt;p>Team with our Application Developers to bridge the client's side with server side code &nbsp;&lt;/p>\n&lt;/li>\n&lt;/ul>\n&lt;ul>\n&lt;li>\n&lt;p>Provide production support for all implemented changes &nbsp;&lt;/p>\n&lt;/li>\n&lt;/ul>\n&lt;/div>\n&lt;/section>",
+            "applicationURL": "https://www.youtube.com/watch?v=odARVZwelJU",
+
+
+            {
+    "course_id": "49df9e30-db5b-4695-ac4c-c501d2a2195e",
+    "name": "How to Start Your Own Podcast",
+    "base_price": 30,
+    "enrollments": 0,
+    "num_of_ratings": 0,
+    "overview": "This is a comprehensive course on how you can start your own podcast using basic tools and equipment and publishing on a platform that gives you access to a broad audience. In this course, you'd be taken through how to use your Smartphone's default recorder to record sound, transfer that recording to your computer or personal Computer.\n\nFrom there, you'd be introduced to Audacity, a free sound editing software and taught how to use Audacity Effectively to clean up your sound and make it professional. Lastly, you'd be trained in how to upload your Finished files to Anchor.fm and share with the rest of the world.\n\nCome Along, let's journey together.",
+    "category": {
+        "id": "34b0e9a9-d91b-4af2-a48b-1d583aad992f",
+        "name": "Sound Engineering"
+    },
+    "description": "\u003cp\u003eSound Engineering is here to stay and getting skills in it would help you communicate clearly. Podcasting is a way to relate to a group of people who share the same interests in a particular topic as you. Get to know how to do that in this course.\u003c/p\u003e\n\u003cp\u003eA\u0026nbsp;\u003cstrong\u003epodcast\u003c/strong\u003e\u0026nbsp;is an audio file that can be downloaded from the Internet, often in MP3 format. Once a\u0026nbsp;\u003cstrong\u003epodcast\u003c/strong\u003e\u0026nbsp;has been downloaded, it can be listened to on a computer, or be transferred to a portable device such as an iPod or other Portable Media Player (PMP), a mobile phone, or a Personal Digital Assistant (PDA).\u003c/p\u003e",
+    "skill_level": "Intermediate",
+    "slug": "how-to-start-your-own-podcast",
+    "banner": "https://storage.googleapis.com/storage.kumasihive.com/courses/banner_49df9e30-db5b-4695-ac4c-c501d2a2195e",
+    "is_enrolled": false,
+    "is_approved": true,
+    "thumbnail": "https://storage.googleapis.com/storage.kumasihive.com/courses/thumbnail_49df9e30-db5b-4695-ac4c-c501d2a2195e",
+    "instructors": [
+        {
+            "instructor_id": "4738d513-1241-4f4a-915a-eddabad128c2",
+            "email": "david@kumasihive.com",
+            "firstname": "David",
+            "lastname": "Amfo-Kwakye",
+            "profile_pic": {
+                "id": "39787437-e5ba-4066-9349-5d7f3832af31",
+                "url": "https://storage.googleapis.com/storage.kumasihive.com/instructors/instructor_39787437-e5ba-4066-9349-5d7f3832af31"
+            },
+            "phone_number": "+233 551 790 864",
+            "bio": "\u003cp\u003eI am passionate about Sound Engineering and the need to impact such knowledge in Students and people eager to know about it. Podcasting is a great way to communicate your ideas and reach a wide audience. Join me on this journey.\u003c/p\u003e",
+            "skills": [
+                "Sound Engineering"
+            ],
+            "courses": [
+                "49df9e30-db5b-4695-ac4c-c501d2a2195e",
+                "7a2cc4ab-b97f-4df5-83ec-5854503722b5"
+            ],
+            "social_media_handles": [
+                {
+                    "platform": "LINKEDIN",
+                    "url": "https://www.linkedin.com/in/david-amfo-kwakye-7798b298/"
+                },
+                {
+                    "platform": "FACEBOOK",
+                    "url": "https://web.facebook.com/daviddiamond.walter1/"
+                },
+                {
+                    "platform": "INSTAGRAM",
+                    "url": "https://instagram.com/amfo_kwakye"
+                },
+                {
+                    "platform": "TWITTER",
+                    "url": "https://twitter.com/amfo_kwakye?s=08"
+                }
+            ],
+            "creator_id": "23ef82be-e49d-4094-a842-90ce2461bd89"
+        }
+    ],
+    "prerequisites": [
+        {
+            "id": "19443304-c35b-4e63-87bf-c6f306c858ff",
+            "value": "Laptop or Personal Computer"
+        },
+        {
+            "id": "f2646c51-1044-47c0-a76a-541f566d5426",
+            "value": "Smartphone"
+        },
+        {
+            "id": "3f8236a4-7a6e-4559-b8a2-bdc104455781",
+            "value": "Internet Access"
+        }
+    ],
+    "what_you_will_learn": [
+        {
+            "id": "19443304-c35b-4e63-87bf-c6f306c858ff",
+            "value": "Laptop or Personal Computer"
+        },
+        {
+            "id": "f2646c51-1044-47c0-a76a-541f566d5426",
+            "value": "Smartphone"
+        },
+        {
+            "id": "3f8236a4-7a6e-4559-b8a2-bdc104455781",
+            "value": "Internet Access"
+        }
+    ],
+    "curriculum": [
+        {
+            "id": "8f61155c-75ae-4cc0-bb24-96f31d915e15",
+            "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+            "order": 0,
+            "name": "Introduction To Podcasting",
+            "completed": false,
+            "lessons": [
+                {
+                    "id": "762663ee-6b5f-4c03-9767-e27973127167",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Introduction to Podcasting",
+                    "description": "This gives an overview of what to expect throughout the course",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [
+                        {
+                            "id": "b250ba80-d01a-4ce2-a88b-5fb5837325ec",
+                            "value": "http://somedomain.com"
+                        }
+                    ],
+                    "goals": [
+                        {
+                            "id": "ced26c15-69ef-49a3-b962-594aff9aabe7",
+                            "value": "Learn the basics"
+                        }
+                    ],
+                    "video": {
+                        "id": "c599eaaa-7757-4190-bd29-bc0844d7d7e4",
+                        "lesson_id": "762663ee-6b5f-4c03-9767-e27973127167",
+                        "url": "https://vimeo.com/501821240",
+                        "hls_url": "https://player.vimeo.com/external/501821240.m3u8?s=eb1c41fca0432ad245df1296d311cedf16010cfe",
+                        "is_promo": true,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "ddde6f03-32f2-489e-b068-1fa0091b1976",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Expectations for the Course",
+                    "description": "This gives an overview of what you'd gain out of the course",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "d535c36d-1657-47c6-81de-00ad05026651",
+                        "lesson_id": "ddde6f03-32f2-489e-b068-1fa0091b1976",
+                        "url": "https://vimeo.com/501838584",
+                        "hls_url": "https://player.vimeo.com/external/501838584.m3u8?s=bb8d9dff359f965e642df07bcb5a72ecfbb402a2",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "bac9bde9-cec4-49cb-8134-4dad9b045467",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Tools and Equipment Needed",
+                    "description": "This lets you know what tools and equipment you need to start your podcast",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "a6e5ae73-ebe4-48c7-b33b-fbb795648abd",
+                        "lesson_id": "bac9bde9-cec4-49cb-8134-4dad9b045467",
+                        "url": "https://vimeo.com/501838731",
+                        "hls_url": "https://player.vimeo.com/external/501838731.m3u8?s=0faf4f29ad0dbcfbf3c3f320870a989e5458f460",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "8f6da11f-a4b0-45bd-995a-a2ba08c3092b",
+            "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+            "order": 1,
+            "name": "Introduction to Audacity",
+            "completed": false,
+            "lessons": [
+                {
+                    "id": "35b49997-7da4-43f4-8065-793afa35df54",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Welcome to Audacity",
+                    "description": "",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "a72bde86-e8ff-48ec-b340-c37e927afb6d",
+                        "lesson_id": "35b49997-7da4-43f4-8065-793afa35df54",
+                        "url": "https://vimeo.com/501838845",
+                        "hls_url": "https://player.vimeo.com/external/501838845.m3u8?s=b10c4e667a29598aad254629032046f804f04c27",
+                        "is_promo": true,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "0d560040-e5c5-4431-b24e-2d27a24fb0cb",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Downloading and Installing Audacity",
+                    "description": "This Takes you through how to download and install Audacity to your Personal Computer or Laptop",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [
+                        {
+                            "id": "cc323acc-c5bd-4611-812d-0e968125ad4c",
+                            "value": "www.audacity.com"
+                        }
+                    ],
+                    "goals": [],
+                    "video": {
+                        "id": "9c6bc4c6-4597-454c-8872-56ef54af718c",
+                        "lesson_id": "0d560040-e5c5-4431-b24e-2d27a24fb0cb",
+                        "url": "https://vimeo.com/501838912",
+                        "hls_url": "https://player.vimeo.com/external/501838912.m3u8?s=16482b434aaf2d1f6d085a72bb222f07cef0313d",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "fb642b61-a3e1-4862-be32-ff0278eff123",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Layout, Interface and Functions of Audacity",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "80e86038-4dd4-4f14-8cb1-cbeea3b24b99",
+                        "lesson_id": "fb642b61-a3e1-4862-be32-ff0278eff123",
+                        "url": "https://vimeo.com/501838966",
+                        "hls_url": "https://player.vimeo.com/external/501838966.m3u8?s=658282e74e22c8fb7867f3b4a063f303534071ae",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "24f53958-4c2e-455c-b8d8-5ed160490f98",
+            "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+            "order": 2,
+            "name": "Recording Audio With Your Smartphone",
+            "completed": false,
+            "lessons": [
+                {
+                    "id": "422e4da8-eb71-4eb2-bbb8-b8553176a82b",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Audio Philosophy",
+                    "description": "",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "34e4442b-0b76-415e-9bfa-cc00287521d6",
+                        "lesson_id": "422e4da8-eb71-4eb2-bbb8-b8553176a82b",
+                        "url": "https://vimeo.com/501839031",
+                        "hls_url": "https://player.vimeo.com/external/501839031.m3u8?s=b1dc4815901bcbdc94bf808898fd216524c0d75a",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "8e616322-4c6e-48e2-a5fe-cda709f829e7",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "How to Record Sound",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "34891342-259a-4ede-aaec-a126c52750f1",
+                        "lesson_id": "8e616322-4c6e-48e2-a5fe-cda709f829e7",
+                        "url": "https://vimeo.com/501839088",
+                        "hls_url": "https://player.vimeo.com/external/501839088.m3u8?s=b6b91777d5935efb28b67a262a959465e0636c36",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "40de53d4-bb12-4967-bb89-63d2f98395c0",
+            "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+            "order": 3,
+            "name": "Editing in Audacity",
+            "completed": false,
+            "lessons": [
+                {
+                    "id": "6f4db133-b72a-424b-bb50-ecbde7fd8863",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Importing Sound into Audacity",
+                    "description": "",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "30d42054-694d-42a1-a0e6-f41b27e28c47",
+                        "lesson_id": "6f4db133-b72a-424b-bb50-ecbde7fd8863",
+                        "url": "https://vimeo.com/501839251",
+                        "hls_url": "https://player.vimeo.com/external/501839251.m3u8?s=d28847d6af8de31f1b94c0001c62ace1421a6a6e",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "d6a02b7e-d8fb-40a9-9873-b356830121b2",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Recording and Editing of Introduction",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "31ccaec8-3c2e-496d-b5f3-e01a96300a97",
+                        "lesson_id": "d6a02b7e-d8fb-40a9-9873-b356830121b2",
+                        "url": "https://vimeo.com/501839297",
+                        "hls_url": "https://player.vimeo.com/external/501839297.m3u8?s=5b2b06cc73b4efbede46d86d2cd6822e872390e0",
+                        "is_promo": true,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "76bd0964-4723-47b1-96c3-a7154ccbbed7",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Recording and Editing Main Interview",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "45a00db4-285e-4927-89b0-c1f750c88fe2",
+                        "lesson_id": "76bd0964-4723-47b1-96c3-a7154ccbbed7",
+                        "url": "https://vimeo.com/501839403",
+                        "hls_url": "https://player.vimeo.com/external/501839403.m3u8?s=abb6595bb7556f63006dacf40829e22956fe910e",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "e2345ec3-553f-4a10-9bd1-cecbcf99a0f2",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Recording and Editing Outro and Call to Action",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "729189f5-c549-40f0-9739-d64173a1ecb1",
+                        "lesson_id": "e2345ec3-553f-4a10-9bd1-cecbcf99a0f2",
+                        "url": "https://vimeo.com/501839492",
+                        "hls_url": "https://player.vimeo.com/external/501839492.m3u8?s=d11c7c18488bd46a50ff559291c8fd7d5ce63731",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "63ba406d-7347-4c8c-aa9e-53a1177e5f1d",
+            "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+            "order": 4,
+            "name": "Editing in Audacity 2",
+            "completed": false,
+            "lessons": [
+                {
+                    "id": "e572d2b6-c270-4830-b969-e602dc88be02",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Creating Templates",
+                    "description": "",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "319d19c8-9f73-4294-92fb-d3d46eba241e",
+                        "lesson_id": "e572d2b6-c270-4830-b969-e602dc88be02",
+                        "url": "https://vimeo.com/501839593",
+                        "hls_url": "https://player.vimeo.com/external/501839593.m3u8?s=b44b73b844a8077c8a4b116994e6d672dd141cc0",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "a7c92fe2-be58-4a3d-aeae-4c300b74a2ec",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Editing Scenarios",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "3a7baf2a-7668-4252-99ae-0a3bacbc3be9",
+                        "lesson_id": "a7c92fe2-be58-4a3d-aeae-4c300b74a2ec",
+                        "url": "https://vimeo.com/501839670",
+                        "hls_url": "https://player.vimeo.com/external/501839670.m3u8?s=a411f840b3c809c79529ba63f2987d2b8cb0a057",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "0f2ed85a-abae-4dc7-ad34-b2b407e0ca02",
+            "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+            "order": 5,
+            "name": "Editing in Audacity 3",
+            "completed": false,
+            "lessons": [
+                {
+                    "id": "adb06f73-9cb2-4f76-9b1b-e9b16f0d4686",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Saving Projects",
+                    "description": "",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "871defe9-381e-41d7-b1ca-1fc7e58b5969",
+                        "lesson_id": "adb06f73-9cb2-4f76-9b1b-e9b16f0d4686",
+                        "url": "https://vimeo.com/501839737",
+                        "hls_url": "https://player.vimeo.com/external/501839737.m3u8?s=126501364755ae02a6592c72ca317d0583eec616",
+                        "is_promo": true,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "4cff4185-f831-40ae-b7f3-9992b3baa743",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Exporting Project as mp3",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "f872ab57-35f5-4ab8-9043-d478bfb2e7ef",
+                        "lesson_id": "4cff4185-f831-40ae-b7f3-9992b3baa743",
+                        "url": "https://vimeo.com/501839810",
+                        "hls_url": "https://player.vimeo.com/external/501839810.m3u8?s=86411c15565dfb0c4196ff70cfda7ff7d1875566",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "452fb6f3-75bf-441e-ac8a-ad0d31970584",
+            "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+            "order": 6,
+            "name": "Getting Started with Anchor",
+            "completed": false,
+            "lessons": [
+                {
+                    "id": "9f13945b-d352-43a6-b4e1-cb1d984c319d",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Anchor Platform",
+                    "description": "",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [
+                        {
+                            "id": "6f628b10-f18b-4a61-b555-7e5834525ff1",
+                            "value": "www.anchor.fm"
+                        }
+                    ],
+                    "goals": [],
+                    "video": {
+                        "id": "bd5e0dc0-5c77-493f-8ddf-88a41f722bb3",
+                        "lesson_id": "9f13945b-d352-43a6-b4e1-cb1d984c319d",
+                        "url": "https://vimeo.com/501838475",
+                        "hls_url": "https://player.vimeo.com/external/501838475.m3u8?s=f6803a36d90ae0d1c9a9ff027c47cee5daf332a4",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "189389ff-4ba6-443d-a55a-b4666d38f95c",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Creating your account on Achor.fm",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [
+                        {
+                            "id": "54c0727b-1d3d-44f0-a3dc-1e47de5231f5",
+                            "value": "www.anchor.fm"
+                        }
+                    ],
+                    "goals": [],
+                    "video": {
+                        "id": "05fbe1a0-b489-484f-8df3-747ae7b31e8e",
+                        "lesson_id": "189389ff-4ba6-443d-a55a-b4666d38f95c",
+                        "url": "https://vimeo.com/501838413",
+                        "hls_url": "https://player.vimeo.com/external/501838413.m3u8?s=bef9da5ff1337182b5f1124e98b9a352534a887c",
+                        "is_promo": true,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "beb1866f-985a-4b1d-a1d5-a1021c32c0a6",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Uploading your audio file",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "f5ded805-dabc-49a5-b1da-9dcf881399a0",
+                        "lesson_id": "beb1866f-985a-4b1d-a1d5-a1021c32c0a6",
+                        "url": "https://vimeo.com/501838290",
+                        "hls_url": "https://player.vimeo.com/external/501838290.m3u8?s=2a985684be3d9c1cbc554c1fcc9abaf74f6c8550",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "11ee17db-079b-460a-bdfb-9975c270248b",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Show Notes and Publishing",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "b61be1ce-88ed-4125-b414-19324dd0f2fe",
+                        "lesson_id": "11ee17db-079b-460a-bdfb-9975c270248b",
+                        "url": "https://vimeo.com/501838195",
+                        "hls_url": "https://player.vimeo.com/external/501838195.m3u8?s=95214dfc2808a8b0576f3dcfb30750e4f48e6bb0",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "3ef48d6b-b29e-47b4-9f31-43adfdfc08d1",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Cover Art and Sharing Links",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "f89e69cb-1828-451e-a8bc-5c8e48c894cf",
+                        "lesson_id": "3ef48d6b-b29e-47b4-9f31-43adfdfc08d1",
+                        "url": "https://vimeo.com/501838111",
+                        "hls_url": "https://player.vimeo.com/external/501838111.m3u8?s=a9ee9f7840b302956ee4128655fa59ee885f7e99",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                },
+                {
+                    "id": "5b2245c6-ed7a-47fa-89e8-00e5bdc4b427",
+                    "course_id": "e5419c2d-bee4-4674-be02-23a42f3df371",
+                    "name": "Final Outro",
+                    "description": "hello",
+                    "type": "Video",
+                    "duration": 0,
+                    "completed": false,
+                    "resources": [],
+                    "goals": [],
+                    "video": {
+                        "id": "fd763810-9207-4dbe-bd2d-8c0ae0bc7756",
+                        "lesson_id": "5b2245c6-ed7a-47fa-89e8-00e5bdc4b427",
+                        "url": "https://vimeo.com/501838015",
+                        "hls_url": "https://player.vimeo.com/external/501838015.m3u8?s=8dc8eb68c9005e888332cfa280ccf6e5cbc6c63a",
+                        "is_promo": false,
+                        "progress": {
+                            "completed": false
+                        }
+                    },
+                    "quiz": {
+                        "completed": false
+                    }
+                }
+            ]
+        }
+    ]
+}

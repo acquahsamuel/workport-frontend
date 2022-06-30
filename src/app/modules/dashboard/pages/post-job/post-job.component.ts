@@ -20,7 +20,8 @@ export class PostJobComponent implements OnInit {
   categoriesList = CategoriesList;
   
   toppingList = CategoriesList;
-  description = null;
+  description  : string = "";
+  jobDescription : string = "";
   
  
 
@@ -30,7 +31,9 @@ export class PostJobComponent implements OnInit {
     private nofication : NotificationService,
     ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.description = this.postJobForm.get('description').value;
+  }
 
   postJobForm = new FormGroup({
     position: new FormControl('', [Validators.required]),
@@ -45,37 +48,9 @@ export class PostJobComponent implements OnInit {
 
     jobDescription: new FormControl('', [Validators.required]),
     companyName: new FormControl('', [Validators.required]),
-
     applicationURL : new FormControl('', [Validators.required]),
-
-
     jobType : new FormControl('', [Validators.required]),
 
-    // companySize: new FormControl('', [Validators.required]),
-    // companyLogo: new FormControl('', [Validators.required]),
-
-    // companyTwitter: new FormControl('', [
-    //   Validators.required,
-    //   Validators.pattern(
-    //     '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
-    //   ),
-    // ]),
-    // companyUrl: new FormControl('', [
-    //   Validators.pattern(
-    //     '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
-    //   ),
-    // ]),
-    // companyLinkedin: new FormControl('', [
-    //   Validators.required,
-    //   Validators.pattern(
-    //     '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
-    //   ),
-    // ]),
-    // companyEmail: new FormControl('', [
-    //   Validators.required,
-    //   Validators.email,
-     
-    // ]),
   });
 
   get getControls(){

@@ -48,13 +48,12 @@
 
       <div class="post-desc">
         <h3> Job Description </h3>
-        <div #description class="description">
-          {{ update(description)}}
-        </div>
-
-        <!-- <div #containerDi></div> -->
-
+        <p #description class="description">
+          {{ renderDescription(description)}}
+        </p>
       </div>
+
+      
       <div>
         <button class="btn btn-default">Apply for position</button>
       </div>

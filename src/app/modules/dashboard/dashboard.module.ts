@@ -1,7 +1,8 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { MaterialModule } from "src/app/material.module";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+// import { FormModule }
 import { EditorModule } from "@tinymce/tinymce-angular";
 import { DashboardComponent } from "./dashboard.component";
 import { DashboardRoutingModule } from "./dashboard-routing.module";
@@ -22,6 +23,7 @@ import { ProfileComponent } from "./pages/profile/profile.component";
     EditorModule,
     MaterialModule,
     ReactiveFormsModule,
+    FormsModule,
     DashboardRoutingModule
   ]
 })
