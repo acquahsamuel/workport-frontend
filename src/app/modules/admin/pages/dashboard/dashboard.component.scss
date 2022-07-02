@@ -1,0 +1,541 @@
+// html, body { height: 100%;  }
+::ng-deep.mat-progress-bar.mat-accent .mat-progress-bar-fill::after {
+    background-color: rgba(255, 228, 191, 0.65);
+  }
+  // ::ng-deep.mat-header-cell{
+  //   font-family: BentonSans-Bold !important;
+  // }
+  th{
+    font-family: BentonSans-Bold !important;
+  }
+  
+  .everything {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+  }
+  
+  mat-form-field {
+    width: 70%;
+  }
+  
+  #menus .mat-list-item .mat-list-item-content {
+    padding: 0 20px 0 5px;
+  }
+  
+  // mat-header-cell, mat-cell {
+  //   justify-content: center !important;
+  // }
+  
+  // th.mat-header-cell {
+  //   text-align: center !important;
+  // }
+  
+  
+  td, th {
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+  
+  .mat-sort-header-container {
+    justify-content: center !important;
+    align-items: flex-start;
+  }
+  
+  
+  .menu-btns {
+    display: flex;
+    // width: 14%;
+    // width: 240px;
+    background-color: #F2F2F2;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .close-button {
+    font-size: 17px !important;
+    color: #ffff;
+    opacity: 0.54;
+    cursor: pointer;
+  }
+  
+  .info {
+    .mat-menu-content {
+      background-color: #2D71B5
+    }
+  }
+  
+  .menu-two {
+    p {
+      font-size: 13px;
+    }
+  }
+  
+  .progress {
+    &.mat-progress-bar {
+      // height: 10px;
+      border-radius: 5px;
+    }
+  
+    .mat-progress-bar-fill::after {
+      background-color: #ffffff;
+      border-radius: 5px;
+    }
+  
+    .mat-progress-bar-buffer {
+      border-radius: 5px;
+      background-color: #ACACAC;
+      opacity: 35%;
+    }
+    .mat-progress-bar-background {
+      animation: none;
+      background-color: #ACACAC;
+      opacity: 35%;
+      fill: #ACACAC;
+    }
+  }
+  
+  
+  
+  button {
+    background-color: transparent;
+  }
+  
+  .inline-list {
+    background-color: #F2F2F2;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+  }
+  
+  mat-drawer {
+    width: 240px;
+  }
+  
+  mat-drawer-container {
+    height: 100%;
+  }
+  
+  
+  table{
+    width: 100%;
+   }
+  
+  
+  :host{
+    mat-drawer-content{
+      height: calc(100% - 15%) !important;
+      // border: 1px solid green !important;
+    }
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+  }
+  
+  
+  .info {
+    width: 200px !important;
+    max-width: 200px !important;
+    .mat-menu-content {
+      background-color: #2D71B5 !important
+    }
+    .menu-two {
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+  
+  #filter{
+    mat-icon{
+        width: 35px;
+        height: 40px;
+    }
+  }
+  
+  .menu-item-group{
+    display: flex;
+    margin-left: 170px;
+  }
+  
+  h4{
+    color: rgb(28, 27, 27);
+    margin: .8rem 0;
+    font-size: 15px;
+  }
+  
+  
+  /* */
+  .dashboard-empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    position: fixed;
+    top: 250px;
+    left: 750px;
+  
+    h4{
+      color: #b1bedb !important;
+    }
+  
+    p{
+      font-weight: 200;
+      font-size: 15px;
+    }
+  
+    .create-record{
+      background-color: dodgerblue;
+      color: #fff;
+      text-transform: uppercase;
+      padding: .1rem 3rem;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+  
+  .dashboard-empty-wrapper{
+    display: flex;
+    flex-direction: column;
+  
+  
+    .image{
+      width: 400px;
+      height: 400px;
+    }
+  
+    .content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  ::ng-deep .custom-class {
+    background-color: red!important;
+    background: blue;
+  }
+  
+  .custom-class{
+    width: 350px;
+    height: 42rem;
+    padding: 3rem;
+    font-size: 13.5px;
+  }
+  
+  
+  .content.title{
+    margin: .8rem 0;
+    border: 1px solid black;
+  }
+  
+  
+  .custom-class .content-search{
+    display: flex !important;
+    justify-content: space-between !important;
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+  
+    div:nth-child(2){
+      align-items: flex-start;
+      width: 55%;
+    }
+  
+  }
+  
+  .date-search{
+    width: 100%;
+    
+    mat-form-field{
+      width: 100%;
+      background-color: white
+    }
+  }
+  
+  .button-search{
+    outline: none;
+    background-color: #0955a1;
+    padding: .8rem 1rem;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    color: whitesmoke;
+  }
+  
+  
+  
+  // html, body { height: 100%;  }
+::ng-deep.mat-progress-bar.mat-accent .mat-progress-bar-fill::after {
+  background-color: rgba(255, 228, 191, 0.65);
+}
+// ::ng-deep.mat-header-cell{
+//   font-family: BentonSans-Bold !important;
+// }
+th{
+  font-family: BentonSans-Bold !important;
+}
+
+.everything {
+  margin: 0;
+  height: 100%;
+  overflow: hidden
+}
+
+mat-form-field {
+  width: 70%;
+}
+
+#menus .mat-list-item .mat-list-item-content {
+  padding: 0 20px 0 5px;
+}
+
+// mat-header-cell, mat-cell {
+//   justify-content: center !important;
+// }
+
+// th.mat-header-cell {
+//   text-align: center !important;
+// }
+
+
+td, th {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.mat-sort-header-container {
+  justify-content: center !important;
+  align-items: flex-start;
+}
+
+
+.menu-btns {
+  display: flex;
+  // width: 14%;
+  // width: 240px;
+  background-color: #F2F2F2;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-button {
+  font-size: 17px !important;
+  color: #ffff;
+  opacity: 0.54;
+  cursor: pointer;
+}
+
+.info {
+  .mat-menu-content {
+    background-color: #2D71B5
+  }
+}
+
+.menu-two {
+  p {
+    font-size: 13px;
+  }
+}
+
+.progress {
+  &.mat-progress-bar {
+    // height: 10px;
+    border-radius: 5px;
+  }
+
+  .mat-progress-bar-fill::after {
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+
+  .mat-progress-bar-buffer {
+    border-radius: 5px;
+    background-color: #ACACAC;
+    opacity: 35%;
+  }
+  .mat-progress-bar-background {
+    animation: none;
+    background-color: #ACACAC;
+    opacity: 35%;
+    fill: #ACACAC;
+  }
+}
+
+
+
+button {
+  background-color: transparent;
+}
+
+.inline-list {
+  background-color: #F2F2F2;
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+
+mat-drawer {
+  width: 240px;
+}
+
+mat-drawer-container {
+  height: 100%;
+}
+
+
+table{
+  width: 100%;
+ }
+
+
+:host{
+  mat-drawer-content{
+    height: calc(100% - 15%) !important;
+    // border: 1px solid green !important;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+
+.info {
+  width: 200px !important;
+  max-width: 200px !important;
+  .mat-menu-content {
+    background-color: #2D71B5 !important
+  }
+  .menu-two {
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+#filter{
+  mat-icon{
+      width: 35px;
+      height: 40px;
+  }
+}
+
+.menu-item-group{
+  display: flex;
+  margin-left: 170px;
+}
+
+h4{
+  color: rgb(28, 27, 27);
+  margin: .8rem 0;
+  font-size: 15px;
+}
+
+
+/* */
+.dashboard-empty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 250px;
+  left: 750px;
+
+  h4{
+    color: #b1bedb !important;
+  }
+
+  p{
+    font-weight: 200;
+    font-size: 15px;
+  }
+
+  .create-record{
+    background-color: dodgerblue;
+    color: #fff;
+    text-transform: uppercase;
+    padding: .1rem 3rem;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
+
+.dashboard-empty-wrapper{
+  display: flex;
+  flex-direction: column;
+
+
+  .image{
+    width: 400px;
+    height: 400px;
+  }
+
+  .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+::ng-deep .custom-class {
+  background-color: red!important;
+  background: blue;
+}
+
+.custom-class{
+  width: 350px;
+  height: 42rem;
+  padding: 3rem;
+  font-size: 13.5px;
+}
+
+
+.content.title{
+  margin: .8rem 0;
+  border: 1px solid black;
+}
+
+
+.custom-class .content-search{
+  display: flex !important;
+  justify-content: space-between !important;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+
+  div:nth-child(2){
+    align-items: flex-start;
+    width: 55%;
+  }
+
+}
+
+.date-search{
+  width: 100%;
+  
+  mat-form-field{
+    width: 100%;
+    background-color: white
+  }
+}
+
+.button-search{
+  outline: none;
+  background-color: #0955a1;
+  padding: .8rem 1rem;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: whitesmoke;
+}
+
+
