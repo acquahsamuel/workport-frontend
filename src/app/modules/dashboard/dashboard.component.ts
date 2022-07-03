@@ -9,32 +9,30 @@ import { AuthService } from "src/app/shared/services/auth.service";
 })
 export class DashboardComponent implements OnInit {
   // signedin = false;
-  constructor(private router: Router, private authService: AuthService) {}
-
-  ngOnInit(): void {
-    this.authService.getCurrentUser().subscribe(x => {
-      console.log(x);
-    });
-  }
-
   isLoading = false;
-  title = "";
   username = "Samuel";
   userProfile = "./assets/images/placeholder.png";
+
+
+  constructor(private router: Router, private authService: AuthService) { }
+
+  ngOnInit(): void {
+   this.loggedIn();
+  }
+
+  
   links = [
     { path: "your-posts", icon: "business", title: "Your Posts" },
     { path: "post-job", icon: "work", title: "Post Job" },
     { path: "profile", icon: "account_circle", title: "Profile" }
   ];
 
-  user = {
-    firstname: "",
-    profile_pic: "../images"
-  };
+ 
 
   loggedIn() {
-    this.authService.getCurrentUser().subscribe(res => {
-      // console.log(res)
+    this.authService.getCurrentUser().subscribe((res : any) => {
+    //  console.log(res?.data.username);
+     this.username = res?.data.username;
     });
   }
 

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from 'src/app/shared/services/auth-guard.service';
+// import { AuthGuardService }
 
 const routes: Routes = [
   {
@@ -16,19 +18,18 @@ const routes: Routes = [
         .then((m) => m.UserAuthRoutingModule),
   },
   {
+    canActivate: [AuthGuardService],
     path: "dashboard",
     loadChildren: () => import('./modules/dashboard/dashboard-routing.module')
       .then((m) => m.DashboardRoutingModule)
 
   },
   {
+    canActivate: [AuthGuardService],
     path: "admin",
     loadChildren: () => import('./modules/admin/admin-routing.module')
       .then((m) => m.AdminRoutingModule)
   },
-  {
-    path: '**', redirectTo: 'home'
-  }
 ];
 
 @NgModule({

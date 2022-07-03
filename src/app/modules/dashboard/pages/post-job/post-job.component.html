@@ -1,25 +1,16 @@
 <section class="container">
   <h3 class="heading-main">Create new application</h3>
   <div class="main-left">
-    <form [formGroup]="postJobForm" class="form">
+    <form #form="ngForm" class="form" (ngSubmit)="submit">
       <div class="form-group">
         <label for=""> Job Title / Postion </label>
-        <input
-          class="form-input"
-          formControlName="position"
-          type="text"
-          name="position"
-          placeholder="eg. senior software engineer"
-          [ngClass]="{
+        <input class="form-input" [(ngModel)]="position" type="text" name="position"
+          placeholder="eg. senior software engineer" [ngClass]="{
             'is-invalid': submitted && getControls.position.errors
           }
           
-          "
-        />
-        <div
-          *ngIf="submitted && getControls.position.errors"
-          class="invalid-feedback"
-        >
+          " />
+        <div *ngIf="submitted && getControls.position.errors" class="invalid-feedback">
           <div *ngIf="getControls.position.errors.required">
             Example: "Principal Software Engineer”. Titles must describe one
             position.
@@ -31,22 +22,13 @@
 
       <div class="form-group">
         <label for=""> Job Title </label>
-        <input
-          class="form-input"
-          formControlName="title"
-          type="text"
-          name="title"
-          placeholder="eg. senior software engineer"
-          [ngClass]="{
+        <input class="form-input" [(ngModel)]="title" type="text" name="title"
+          placeholder="eg. senior software engineer" [ngClass]="{
             'is-invalid': submitted && getControls.title.errors
           }
           
-          "
-        />
-        <div
-          *ngIf="submitted && getControls.title.errors"
-          class="invalid-feedback"
-        >
+          " />
+        <div *ngIf="submitted && getControls.title.errors" class="invalid-feedback">
           <div *ngIf="getControls.title.errors.required">
             Example: "Principal Software Engineer”. Titles must describe one
             position.
@@ -57,11 +39,8 @@
       <div class="form-group">
         <mat-form-field appearance="outline">
           <mat-label>Locations Allowed</mat-label>
-          <mat-select formControlName="locationAllowed">
-            <mat-option
-              *ngFor="let location of locationAllowed"
-              [value]="location"
-            >
+          <mat-select  name="locationAllowed" [(ngModel)]="locationAllowed">
+            <mat-option *ngFor="let location of locationList" [value]="location">
               {{ location }}
             </mat-option>
           </mat-select>
@@ -71,11 +50,8 @@
       <!-- <label for="">Select Category </label> -->
       <mat-form-field appearance="outline">
         <mat-label> Select Category </mat-label>
-        <mat-select formControlName="jobCategory">
-          <mat-option
-            *ngFor="let category of categoriesList"
-            [value]="category"
-          >
+        <mat-select name="jobCategory" [(ngModel)]="jobCategory">
+          <mat-option *ngFor="let category of categoriesList" [value]="category">
             {{ category }}
           </mat-option>
         </mat-select>
@@ -85,14 +61,11 @@
         <label for="">Tags job could be searched with</label>
         <mat-form-field appearance="outline">
           <mat-label> Serch tags </mat-label>
-          <mat-select formControlName="jobSearchTags" multiple>
+          <mat-select name="jobSerachTags" [(ngModel)]="jobSearchTags" multiple>
             <mat-option *ngFor="let topping of categoriesList" [value]="topping">{{topping}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <div
-          *ngIf="submitted && getControls.jobSearchTags.errors"
-          class="invalid-feedback"
-        >
+        <div *ngIf="submitted && getControls.jobSearchTags.errors" class="invalid-feedback">
           <div *ngIf="getControls.jobSearchTags.errors.required">
             Example: "Software engineer, node, javascript "
           </div>
@@ -100,14 +73,8 @@
       </div>
 
       <div class="form-group">
-        <label for="">  Job Type </label>
-        <input
-          class="form-input"
-          name="jobType"
-          formControlName="jobType"
-          type="url"
-          placeholder=""
-        />
+        <label for=""> Job Type </label>
+        <input class="form-input" name="jobType" [(ngModel)]="jobType" type="url" placeholder="" />
       </div>
 
 
@@ -117,8 +84,8 @@
         </mat-card-header>
 
         <mat-card-content>
-          <editor apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo" name="description"  formControlName="jobDescription"
-          #editor [init]="{
+          <editor apiKey="96v08iycybbz8rffjogkkarvz1pkcf7s6skp266n2taioplo" 
+            [(ngModel)]="jobDescription" name="description" #editor [init]="{
             height: 300,
             width: '100%',
             menubar: false,
@@ -132,37 +99,23 @@
             alignleft aligncenter alignright alignjustify | \
             bullist numlist outdent indent | removeformat | help'
           }"></editor>
-
-
-          {{ postJobForm.get('jobDescription').value  }}
         </mat-card-content>
-        <div
-          *ngIf="submitted && getControls.jobDescription.errors"
-          class="invalid-feedback"
-        >
+        <div *ngIf="submitted && getControls.jobDescription.errors" class="invalid-feedback">
           <div *ngIf="getControls.jobDescription.errors.required">
             Please add job description
           </div>
         </div>
       </div>
+      <!-- <p> {{ jobDescription }} <p> -->
 
       <p>Tell us More about your Company</p>
       <div class="form-group">
         <label for="">Company Name</label>
-        <input
-          class="form-input"
-          name="companyName"
-          formControlName="companyName"
-          type="text"
-          placeholder="eg. company inc"
-          [ngClass]="{
+        <input class="form-input" name="companyName"  [(ngModel)]="companyName" type="text"
+          placeholder="eg. company inc" [ngClass]="{
             'is-invalid': submitted && getControls.companyName.errors
-          }"
-        />
-        <div
-          *ngIf="submitted && getControls.jobDescription.errors"
-          class="invalid-feedback"
-        >
+          }" />
+        <div *ngIf="submitted && getControls.jobDescription.errors" class="invalid-feedback">
           <div *ngIf="getControls.jobDescription.errors.required">
             Please add a company
           </div>
@@ -173,27 +126,16 @@
 
       <div class="form-group">
         <label for=""> Currency </label>
-        <input
-          class="form-input"
-          name="currency"
-          formControlName="currency"
-          type="url"
-          placeholder=""
-        />
+        <input class="form-input" name="currency"  [(ngModel)]="currency" type="url" placeholder="" />
       </div>
 
       <div class="form-group">
         <label for=""> Application URL </label>
-        <input
-          class="form-input"
-          name="companyUrl"
-          formControlName="applicationURL"
-          placeholder=""
-        />
+        <input class="form-input" name="companyUrl"  [(ngModel)]="applicationURL" placeholder="" />
       </div>
 
 
-  
+
       <!-- <div class="form-group">
         <label for="">Company Website</label>
         <input
@@ -265,4 +207,3 @@
     </form>
   </div>
 </section>
-

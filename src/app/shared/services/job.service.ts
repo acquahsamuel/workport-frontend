@@ -65,7 +65,7 @@ export class JobService {
    * @returns 
    */
   createJob(job: any) {
-    let payload = JSON.stringify(job);
+    let payload = job;
     const token = localStorage.getItem('currentUser');
 
     const httpOptions = {
@@ -85,10 +85,13 @@ export class JobService {
    * @returns 
    */
   updateJob(job : any, jobId : string) {
-    const payload = JSON.stringify(job);
+    const payload = job;
+    const token = localStorage.getItem('currentUser');
+
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token,
       }),
     };
 

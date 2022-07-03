@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
 
           // save user token
           this.authService.saveUserToken(x.token);
-          this.router.navigateByUrl('/dashboard/post-job')
+          this.router.navigateByUrl('/post-job')
         },
 
         (err) => {

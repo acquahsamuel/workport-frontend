@@ -7,6 +7,21 @@
     </div>
 
     <div class="form-group">
+      <label for=""> Username </label>
+      <input
+        class="form-input"
+        formControlName="username"
+        type="text"
+        name="email"
+        placeholder="username@email.com"
+        [ngClass]="{ 'is-invalid': submitted && formField.username.errors }"
+      />
+      <div *ngIf="submitted && formField.username.errors" class="invalid-feedback">
+        <div *ngIf="formField.username.errors.required"> Username is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
       <label for=""> Email </label>
       <input
         class="form-input"

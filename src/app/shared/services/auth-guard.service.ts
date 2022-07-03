@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Router,
-  CanActivate,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot
-} from '@angular/router';
+import { Router, CanActivate, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AuthService } from './auth.service';
 // import { StateStorageService } from './state-storage.service';
 
@@ -12,20 +7,30 @@ import { AuthService } from './auth.service';
  * An authentication guard class heping the router module decide on
  * which pages the user can navigate to or not.
  *
+ * @author botchway44
  */
 @Injectable()
 export class AuthGuardService implements CanActivate {
 
-  constructor(
-    public auth: AuthService,
-    public router: Router,
-    // private stateStorageService: StateStorageService
-  ) { }
+    /**
+     *
+     * @param auth {AuthService}
+     * @param router Router
+     * @param stateStorageService
+     */
+    constructor(
+        public auth: AuthService,
+        public router: Router,
+        // private stateStorageService: StateStorageService
+    ) { }
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+        if (!this.auth.isAuthenticated()) {
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
-    //configure auth guard
-    return true;
-  }
+            // this.stateStorageService.storeUrl(state.url);
+            this.router.navigate(['/auth']);
+            return false;
+        }
+
+        return true;
+    }
 }

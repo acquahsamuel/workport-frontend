@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EditorModule } from '@tinymce/tinymce-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule , HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
-// import { HttpErrorInterceptor } from './shared/services/interceptors/jwt.interceptor';
 
 /**
  * Refacotor for lazy loading
@@ -28,7 +26,6 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     UserAuthModule,
     DashboardModule,
     HomepageModule,
-    EditorModule,
     BrowserAnimationsModule,
     HttpClientModule,
   ],

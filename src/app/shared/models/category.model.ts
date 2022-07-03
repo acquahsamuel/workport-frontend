@@ -1,11 +1,11 @@
-export class MCategory {
+export class Category {
     categoryName: string;
 }
 
-export class MUpdateCategory {
+export class UpdateCategory {
     categoryName: string;
 }
 
-export class MCreateCategory {
+export class CreateCategory {
     categoryName: string;
 }

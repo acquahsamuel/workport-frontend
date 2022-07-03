@@ -56,6 +56,7 @@ export class SignupComponent implements OnInit {
       * Signup form control
       */
     this.signUpForm = this.formBuilder.group({
+      username : ['', Validators.required],
       email: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
@@ -70,7 +71,7 @@ export class SignupComponent implements OnInit {
    * @returns 
    */
   signUp() {
-
+    console.log(this.signUpForm.value);
     if(this.signUpForm.valid){
 
       this.state.verifyingCredentials = true;
@@ -100,7 +101,7 @@ export class SignupComponent implements OnInit {
       (x : any) =>{
         this.state.verifyingCredentials =false;
         this.authService.saveUserToken(x?.token);
-        this.router.navigateByUrl('/dashboard')
+        this.router.navigateByUrl('dashboard/post-job')
         
     },
 
