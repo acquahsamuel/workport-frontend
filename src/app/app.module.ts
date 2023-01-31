@@ -19,13 +19,13 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
   declarations: [AppComponent],
 
   imports: [
+    AdminModule,
+    UserAuthModule,
+    HomepageModule,
+    DashboardModule,
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    AdminModule,
-    UserAuthModule,
-    DashboardModule,
-    HomepageModule,
     BrowserAnimationsModule,
     HttpClientModule,
   ],

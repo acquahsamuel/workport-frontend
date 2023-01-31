@@ -14,7 +14,7 @@
         type="text"
         name="email"
         placeholder="username@email.com"
-        [ngClass]="{ 'is-invalid': submitted && formField.username.errors }"
+       
       />
       <div *ngIf="submitted && formField.username.errors" class="invalid-feedback">
         <div *ngIf="formField.username.errors.required"> Username is required</div>
@@ -29,7 +29,7 @@
         type="text"
         name="email"
         placeholder="username@email.com"
-        [ngClass]="{ 'is-invalid': submitted && formField.email.errors }"
+       
       />
       <div *ngIf="submitted && formField.email.errors" class="invalid-feedback">
         <div *ngIf="formField.email.errors.required"> Email is required</div>
@@ -43,7 +43,7 @@
         formControlName="password"
         type="password"
         placeholder="password"
-        [ngClass]="{ 'is-invalid': submitted && formField.password.errors }"
+      
       />
       <div
         *ngIf="submitted && formField.password.errors"
