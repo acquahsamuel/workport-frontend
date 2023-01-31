@@ -12,4 +12,42 @@ export class YourPostsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  jobPosts = [
+    {
+
+    jobTitle : 'Demo',
+    client : 'Company xyX',
+    status : 'Active',
+    actions : ['view', 'edit' , 'delete']
+  },
+  {
+
+    jobTitle : 'Demo',
+    client : 'Company xyX',
+    status : 'Pending',
+    actions : ['view', 'edit' , 'delete']
+  },
+  {
+
+    jobTitle : 'Demo',
+    client : 'Company xyX',
+    status : 'Reject',
+    actions : ['view', 'edit' , 'delete']
+  },
+  {
+
+    jobTitle : 'Demo',
+    client : 'Company xyX',
+    status : 'Active',
+    actions : ['view', 'edit' , 'delete']
+  },   {
+
+    jobTitle : 'Demo',
+    client : 'Company xyX',
+    status : 'Active',
+    actions : ['view', 'edit' , 'delete']
+  }
+
+]
+
 }

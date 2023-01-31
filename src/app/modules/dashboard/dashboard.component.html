@@ -13,7 +13,7 @@
           </button>
         </div>
       </div>
-    <span> Jobber  </span>
+    <span> Rmtwrk  </span>
   </div>
 
 
@@ -36,10 +36,9 @@
 
 
 <mat-drawer-container class="dashboard-container" autosize>
-  <mat-drawer #drawer class="dashboard-sidenav" mode="side">
+  <mat-drawer #drawer class="dashboard-sidenav" mode="side" opened>
     <div class="sidebar-wrapper">
       <div class="logo">
-        <!-- <h4> Rmtwrk </h4>  -->
       </div>
       <div
         class="link-container"
@@ -52,7 +51,7 @@
           [routerLink]="link.path"
           routerLinkActive="active"
         >
-          <!-- <mat-icon class="mat-18 icon">{{ link.icon }}</mat-icon> -->
+          <mat-icon class="mat-18 icon">{{ link.icon }}</mat-icon>
           {{ link.title }}
         </a>
       </div>

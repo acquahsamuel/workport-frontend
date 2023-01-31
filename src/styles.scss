@@ -1,6 +1,17 @@
 // html, body { height: 100%; }
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
+
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   // font-family: "Outfit", sans-serif;
 }
+
+
